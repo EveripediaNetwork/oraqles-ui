@@ -1,7 +1,6 @@
 import type { AppProps } from 'next/app'
 import React, { StrictMode } from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
-import Fonts from '@/theme/Fonts'
 import Layout from '@/components/Layout/Layout/Layout'
 import { Montserrat } from '@next/font/google'
 import chakraTheme from '../theme'
@@ -27,7 +26,6 @@ const App = (props: OraqleAppProp) => {
         }
       `}</style>
       <ChakraProvider resetCSS theme={chakraTheme}>
-        <Fonts />
         <Layout noFooter={Component.noFooter}>
           <Component {...pageProps} />
         </Layout>
