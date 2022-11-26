@@ -16,7 +16,7 @@ const Navbar = () => {
   )
 
   return (
-    <Box boxShadow="sm" position="fixed" zIndex="banner" w="full">
+    <Box position="fixed" zIndex="banner" w="full">
       <Flex
         w="full"
         h="70px"
