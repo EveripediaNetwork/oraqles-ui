@@ -4,6 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import Layout from '@/components/Layout/Layout/Layout'
 import { Montserrat } from '@next/font/google'
 import chakraTheme from '../theme'
+import '../utils/i18n'
 
 type OraqleAppProp = Omit<AppProps, 'Component'> & {
   Component: AppProps['Component'] & { noFooter?: boolean }
