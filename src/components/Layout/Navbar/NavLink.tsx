@@ -8,7 +8,15 @@ const NavLink = (navLinkProps: NavItemType) => {
 
   return (
     <Link href={link} passHref>
-      <ChakraLink target={target}>{label}</ChakraLink>
+      <ChakraLink
+        color="navLinkColor"
+        fontSize={{ base: 'sm', lg: 'md' }}
+        fontWeight={600}
+        target={target}
+        _hover={{ textDecoration: 'none' }}
+      >
+        {label}
+      </ChakraLink>
     </Link>
   )
 }

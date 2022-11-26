@@ -17,7 +17,7 @@ const Layout = ({
   return (
     <Stack justify="space-between" minH="100vh" spacing={0}>
       <Navbar />
-      <Box as="main" pt={20}>
+      <Box as="main" pt="70px">
         {children}
       </Box>
       <Suspense>{!noFooter && <Footer />}</Suspense>
