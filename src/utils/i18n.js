@@ -12,7 +12,7 @@ export const resources = {
       //Home page
       heroHeading: 'Welcome to IQ Oraqle',
       heroParagraph:
-        'The Oraqle Service That Feeds Information To The Blockchain',
+        'The Oraqle Service That Feeds Information To The Blockchain.',
 
       //---End of Copies for Oraqles--
 

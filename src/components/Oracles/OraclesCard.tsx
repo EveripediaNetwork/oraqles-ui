@@ -1,3 +1,56 @@
-const OraclesCard = () => {}
+import React from 'react'
+import {
+  Stack,
+  VStack,
+  Box,
+  Image,
+  LinkOverlay,
+  Heading,
+  Text,
+} from '@chakra-ui/react'
+import { OraclesItemType } from '@/data/OraclesItemData'
+
+const OraclesCard = ({ id, image, title, summary }: OraclesItemType) => {
+  return (
+    <Stack
+      direction="row"
+      gap="16"
+      pos="relative"
+      borderRadius="10px"
+      border="1px solid"
+      borderColor="oraclesCardBorder"
+      boxShadow="sm"
+      p="4"
+    >
+      <LinkOverlay
+        pos="absolute"
+        top="0"
+        left="0"
+        w="full"
+        h="full"
+        href={`oracles/${id}`}
+      />
+      <Box m="0 !important">
+        <Image src={image} borderRadius="6px" w="280px" h="200px" />
+      </Box>
+      <VStack alignItems="start" justifyContent="center" flexGrow="1" py="6">
+        <Heading
+          color="oraclesHeadingColor"
+          fontSize={{ base: 'sm', md: 'lg', lg: 'xl' }}
+        >
+          {title}
+        </Heading>
+        <Text
+          w="75%"
+          mt={{ base: '3', md: '4', lg: '7' }}
+          color="oraclesTextColor"
+          fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
+        >
+          {summary}
+        </Text>
+      </VStack>
+    </Stack>
+  )
+}
 
 export default OraclesCard

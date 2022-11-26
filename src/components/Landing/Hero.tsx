@@ -24,15 +24,16 @@ const Hero = () => {
         mx="auto"
       >
         <SimpleGrid w="full" templateColumns="1fr 1fr">
-          <VStack py="16" alignItems="start">
+          <VStack py="16" alignItems="start" justifyContent="center">
             <Heading
               color="white"
               fontSize={{ base: '20', md: '32', lg: '54' }}
             >{`${t('heroHeading')}`}</Heading>
             <Text
               w="75%"
-              mt={2}
-              fontSize={{ base: 'sm', lg: 'lg' }}
+              mt={{ base: '4', lg: '2' }}
+              lineHeight={{ base: '12px', md: '16px', lg: '32px' }}
+              fontSize={{ base: 'sm', md: 'md', lg: 'lg' }}
               color="white"
             >{`${t('heroParagraph')}`}</Text>
           </VStack>

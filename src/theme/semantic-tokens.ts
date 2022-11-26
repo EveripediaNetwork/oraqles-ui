@@ -144,5 +144,17 @@ export const semanticTokens: SemanticTokens = {
       default: 'gray.700',
       _dark: 'whiteAlpha.900',
     },
+    oraclesCardBorder: {
+      default: 'gray.200',
+      _dark: 'gray.700',
+    },
+    oraclesHeadingColor: {
+      default: 'brand.500',
+      _dark: 'brand.800',
+    },
+    oraclesTextColor: {
+      default: 'gray.800',
+      _dark: 'whiteAlpha.900',
+    },
   },
 }
