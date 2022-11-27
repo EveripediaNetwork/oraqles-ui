@@ -9,8 +9,11 @@ import {
   Text,
 } from '@chakra-ui/react'
 import { OraclesItemType } from '@/data/OraclesItemData'
+import { useTranslation } from 'react-i18next'
 
 const OraclesCard = ({ id, image, title, summary }: OraclesItemType) => {
+  const { t } = useTranslation()
+
   return (
     <Stack
       direction="row"
@@ -38,7 +41,7 @@ const OraclesCard = ({ id, image, title, summary }: OraclesItemType) => {
           color="oraclesHeadingColor"
           fontSize={{ base: 'sm', md: 'lg', lg: 'xl' }}
         >
-          {title}
+          {t(title)}
         </Heading>
         <Text
           w="75%"
@@ -46,7 +49,7 @@ const OraclesCard = ({ id, image, title, summary }: OraclesItemType) => {
           color="oraclesTextColor"
           fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
         >
-          {summary}
+          {t(summary)}
         </Text>
       </VStack>
     </Stack>
