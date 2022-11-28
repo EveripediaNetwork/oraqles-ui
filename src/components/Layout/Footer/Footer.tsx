@@ -6,6 +6,7 @@ import {
   SimpleGrid,
   Stack,
   useBreakpointValue,
+  Divider,
 } from '@chakra-ui/react'
 import Newsletter from '@/components/Layout/Footer/Newsletter'
 import SocialsFooter from '@/components/Layout/Footer/SocialsFooter'
@@ -17,7 +18,8 @@ const Footer = () => {
     <Box background="brandBackground" color="default">
       <Container
         as={Stack}
-        maxW={{ base: '7xl', xl: '7xl', '2xl': '80%' }}
+        px={{ base: 3, lg: 10 }}
+        maxW={{ base: 'full', xl: '1375px', '2xl': '80%' }}
         py={5}
       >
         <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={spacing} py={10}>
@@ -28,6 +30,7 @@ const Footer = () => {
             <SocialsFooter />
           </GridItem>
         </SimpleGrid>
+        <Divider orientation="horizontal" />
       </Container>
     </Box>
   )
