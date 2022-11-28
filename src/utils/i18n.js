@@ -22,6 +22,24 @@ export const resources = {
       iqWiki: 'IQ.Wiki',
       visionFooterText:
         'IQ.Wiki’s vision is to bring blockchain knowledge to the world and knowledge onto the blockchain.',
+      whatIQ: "What's IQ?",
+      iq: 'IQ',
+      bridges: 'Bridges',
+      staking: 'Staking',
+      bonds: 'Bonds',
+      aboutUs: 'About us',
+      careers: 'Careers',
+      brainies: 'brainies',
+      resources: 'Resources',
+      glossary: 'Glossary',
+      help: 'Help',
+      blog: 'Blog',
+      faq: 'FAQ',
+      policies: 'Policies',
+      guideLines: 'Guidelines',
+      privacyPolicy: 'Privacy Policy',
+      termsOfService: 'Terms of service',
+      copyRight: '© 2022 IQ.Wiki Powered By IQ',
 
       //---End of Copies for Oraqles--
 
