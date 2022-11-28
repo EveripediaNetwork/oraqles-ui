@@ -10,7 +10,11 @@ const Newsletter = () => {
       <Text fontSize="xl" fontWeight="bold" py={2}>
         {`${t('updatesFooterHeading')}`}
       </Text>
-      <Text align={{ base: 'center', lg: 'start' }} fontSize="sm" maxW="85%">
+      <Text
+        align={{ base: 'center', lg: 'start' }}
+        fontSize="sm"
+        maxW={{ md: '85%', xl: '65%' }}
+      >
         {`${t('updatesFooterText')}`}
       </Text>
       <Button

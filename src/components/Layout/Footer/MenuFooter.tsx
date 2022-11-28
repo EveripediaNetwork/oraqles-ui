@@ -20,6 +20,7 @@ const MenuFooter = () => {
             fontWeight="medium"
             px={{ base: 3, lg: 0 }}
             fontSize="sm"
+            maxW={{ md: '85%', xl: '75%' }}
           >
             {`${t('visionFooterText')}`}
           </Text>

@@ -34,7 +34,13 @@ const OraclesCard = ({ id, image, title, summary }: OraclesItemType) => {
         href={`oracles/${id}`}
       />
       <Box m="0 !important">
-        <Image src={image} borderRadius="6px" w="280px" h="200px" />
+        <Image
+          src={image}
+          borderRadius="6px"
+          w="280px"
+          h="200px"
+          objectFit="cover"
+        />
       </Box>
       <VStack alignItems="start" justifyContent="center" flexGrow="1" py="6">
         <Heading
