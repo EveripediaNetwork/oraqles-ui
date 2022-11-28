@@ -17,7 +17,7 @@ const OraclesCard = ({ id, image, title, summary }: OraclesItemType) => {
   return (
     <Stack
       direction="row"
-      gap="16"
+      gap={{ md: '8', lg: '16' }}
       pos="relative"
       borderRadius="10px"
       border="1px solid"
@@ -37,12 +37,17 @@ const OraclesCard = ({ id, image, title, summary }: OraclesItemType) => {
         <Image
           src={image}
           borderRadius="6px"
-          w="280px"
-          h="200px"
+          w={{ md: '137px', lg: '280px' }}
+          h={{ md: '106px', lg: '200px' }}
           objectFit="cover"
         />
       </Box>
-      <VStack alignItems="start" justifyContent="center" flexGrow="1" py="6">
+      <VStack
+        alignItems="start"
+        justifyContent="center"
+        flexGrow="1"
+        py={{ base: '3', lg: '6' }}
+      >
         <Heading
           color="oraclesHeadingColor"
           fontSize={{ base: 'sm', md: 'lg', lg: 'xl' }}
@@ -53,7 +58,7 @@ const OraclesCard = ({ id, image, title, summary }: OraclesItemType) => {
           w="75%"
           mt={{ base: '3', md: '4', lg: '7' }}
           color="oraclesTextColor"
-          fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
+          fontSize={{ base: 'sm', md: 'md', lg: '2xl' }}
         >
           {t(summary)}
         </Text>

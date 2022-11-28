@@ -22,7 +22,7 @@ const Navbar = () => {
         h="70px"
         alignItems="center"
         justifyContent="space-between"
-        px={{ base: 4, md: 8 }}
+        px={{ base: 0, md: 3, lg: 8 }}
       >
         <Link href="/">
           <ChakraLink>

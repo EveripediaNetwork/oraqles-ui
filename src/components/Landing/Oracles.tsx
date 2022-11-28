@@ -7,13 +7,13 @@ const Oracles = () => {
   return (
     <Box
       as="section"
-      mt="20"
+      mt={{ md: '16', lg: '20' }}
       px={{ base: 3, lg: 10 }}
       w={{ base: 'full', lg: '90vw', xl: '1375px' }}
       mx="auto"
-      mb="20"
+      mb={{ md: '16', lg: '20' }}
     >
-      <SimpleGrid rowGap="15">
+      <SimpleGrid rowGap={{ md: '10', lg: '15' }}>
         {ORAQLES_ITEMS.map((oraqle: OraclesItemType) => (
           <OraclesCard
             id={oraqle.id}
