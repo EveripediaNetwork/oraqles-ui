@@ -13,6 +13,12 @@ export const resources = {
       heroHeading: 'Welcome to IQ Oraqle',
       heroParagraph:
         'The Oraqle Service That Feeds Information To The Blockchain.',
+      updatesFooterHeading: 'Get updated with IQ.Wiki',
+      updatesFooterText:
+        'Join our mailing list to stay in the loop with our newest feature releases, NFT drops, and tips and tricks for navigating IQ.Wiki',
+      subScribeFooterBttn: 'Suscribe Now',
+
+      communityFooterHeading: 'Community Hub',
 
       //---End of Copies for Oraqles--
 
