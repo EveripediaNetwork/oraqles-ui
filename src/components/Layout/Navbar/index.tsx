@@ -22,14 +22,14 @@ const Navbar = () => {
         h="70px"
         alignItems="center"
         justifyContent="space-between"
-        px={{ base: 0, md: 3, lg: 8 }}
+        px={{ base: 5, md: 3, lg: 8 }}
       >
         <Link href="/">
           <ChakraLink>
             <Image src={`/images/${logoSrc}`} />
           </ChakraLink>
         </Link>
-        <Flex>
+        <Flex display={{ base: 'none', md: 'flex' }}>
           <NavMenu />
         </Flex>
       </Flex>
