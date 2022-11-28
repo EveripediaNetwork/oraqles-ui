@@ -15,10 +15,13 @@ export const resources = {
         'The Oraqle Service That Feeds Information To The Blockchain.',
       updatesFooterHeading: 'Get updated with IQ.Wiki',
       updatesFooterText:
-        'Join our mailing list to stay in the loop with our newest feature releases, NFT drops, and tips and tricks for navigating IQ.Wiki',
+        'Join our mailing list to stay in the loop with our newest feature releases, NFT drops, and tips and tricks for navigating IQ.Wiki.',
       subScribeFooterBttn: 'Suscribe Now',
 
       communityFooterHeading: 'Community Hub',
+      iqWiki: 'IQ.Wiki',
+      visionFooterText:
+        'IQ.Wiki’s vision is to bring blockchain knowledge to the world and knowledge onto the blockchain.',
 
       //---End of Copies for Oraqles--
 

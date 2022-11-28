@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react'
 import Newsletter from '@/components/Layout/Footer/Newsletter'
 import SocialsFooter from '@/components/Layout/Footer/SocialsFooter'
+import MenuFooter from '@/components/Layout/Footer/MenuFooter'
 
 const Footer = () => {
   const spacing = useBreakpointValue({ base: 8, lg: 24 })
@@ -31,6 +32,7 @@ const Footer = () => {
           </GridItem>
         </SimpleGrid>
         <Divider orientation="horizontal" />
+        <MenuFooter />
       </Container>
     </Box>
   )
