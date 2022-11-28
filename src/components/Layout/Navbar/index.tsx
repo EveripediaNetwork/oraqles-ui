@@ -5,7 +5,9 @@ import {
   Image,
   Link as ChakraLink,
   useColorModeValue,
+  IconButton,
 } from '@chakra-ui/react'
+import { HamburgerIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
 import NavMenu from './NavMenu'
 
@@ -32,6 +34,12 @@ const Navbar = () => {
         <Flex display={{ base: 'none', md: 'flex' }}>
           <NavMenu />
         </Flex>
+        <IconButton
+          display={{ base: 'inline-block', md: 'none' }}
+          icon={<HamburgerIcon boxSize={{ base: 6, lg: 7 }} />}
+          variant="ghost"
+          aria-label="Toggle Navigation"
+        />
       </Flex>
     </Box>
   )
