@@ -6,11 +6,7 @@ const Newsletter = () => {
   const { t } = useTranslation()
 
   return (
-    <Stack
-      align={{ base: 'center', lg: 'flex-start' }}
-      color="default"
-      spacing={4}
-    >
+    <Stack align={{ base: 'center', lg: 'flex-start' }} spacing={4}>
       <Text fontSize="xl" fontWeight="bold" py={2}>
         {`${t('updatesFooterHeading')}`}
       </Text>

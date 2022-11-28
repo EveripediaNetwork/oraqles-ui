@@ -8,12 +8,13 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react'
 import Newsletter from '@/components/Layout/Footer/Newsletter'
+import SocialsFooter from '@/components/Layout/Footer/SocialsFooter'
 
 const Footer = () => {
   const spacing = useBreakpointValue({ base: 8, lg: 24 })
 
   return (
-    <Box background="brandBackground">
+    <Box background="brandBackground" color="default">
       <Container
         as={Stack}
         maxW={{ base: '7xl', xl: '7xl', '2xl': '80%' }}
@@ -23,7 +24,9 @@ const Footer = () => {
           <GridItem>
             <Newsletter />
           </GridItem>
-          <GridItem>&nbsp;</GridItem>
+          <GridItem>
+            <SocialsFooter />
+          </GridItem>
         </SimpleGrid>
       </Container>
     </Box>
