@@ -16,7 +16,10 @@ const Hero = () => {
   return (
     <Box
       as="section"
-      bgGradient="linear(105deg, heroBackground 50%, transparent 50%, heroBackground 50.1%)"
+      bgGradient={{
+        base: 'linear(105deg, heroBackground 60%, transparent 60%, heroBackground 60.1%)',
+        md: 'linear(105deg, heroBackground 50%, transparent 50%, heroBackground 50.1%)',
+      }}
     >
       <Flex
         px={{ base: 3, lg: 10 }}
