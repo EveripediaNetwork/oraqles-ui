@@ -1,14 +1,15 @@
 import React from 'react'
-import { Box, Flex } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 import { NavItemType, NAV_ITEMS } from '@/data/NavItemData'
 import NavLink from '@/components/Layout/Navbar/NavLink'
 import { useTranslation } from 'react-i18next'
+import ColorToggleButton from '@/components/Layout/ColorModeToggle'
 
 const NavMenu = () => {
   const { t } = useTranslation()
 
   return (
-    <Box>
+    <Flex gap={5} alignItems="center">
       <Flex gap={8}>
         {NAV_ITEMS.map((navItem: NavItemType) => (
           <NavLink
@@ -20,7 +21,8 @@ const NavMenu = () => {
           />
         ))}
       </Flex>
-    </Box>
+      <ColorToggleButton display={{ base: 'none', md: 'inherit' }} />
+    </Flex>
   )
 }
 
