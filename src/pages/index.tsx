@@ -1,11 +1,15 @@
 import React from 'react'
+import { Box } from '@chakra-ui/layout'
+import Hero from '@/components/Landing/Hero'
+import Oracles from '@/components/Landing/Oracles'
 
-const Home = () => {
+const Homepage = () => {
   return (
-    <div>
-      <p>Home</p>
-    </div>
+    <Box>
+      <Hero />
+      <Oracles />
+    </Box>
   )
 }
 
-export default Home
+export default Homepage

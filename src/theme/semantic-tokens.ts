@@ -10,6 +10,10 @@ export const semanticTokens: SemanticTokens = {
       default: 'white',
       _dark: 'gray.800',
     },
+    heroBackground: {
+      default: 'brand.500',
+      _dark: 'brand.800',
+    },
     lightCard: {
       default: 'gray.50',
       _dark: 'gray.700',
@@ -135,6 +139,26 @@ export const semanticTokens: SemanticTokens = {
     tooltipColor: {
       default: 'gray.800',
       _dark: 'whiteAlpha.900',
+    },
+    navLinkColor: {
+      default: 'gray.700',
+      _dark: 'whiteAlpha.900',
+    },
+    oraclesCardBorder: {
+      default: 'gray.200',
+      _dark: 'gray.700',
+    },
+    oraclesHeadingColor: {
+      default: 'brand.500',
+      _dark: 'brand.800',
+    },
+    oraclesTextColor: {
+      default: 'gray.800',
+      _dark: 'whiteAlpha.900',
+    },
+    oraclesBackground: {
+      default: 'gray.50',
+      _dark: 'whiteAlpha.50',
     },
   },
 }
