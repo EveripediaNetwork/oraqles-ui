@@ -156,5 +156,9 @@ export const semanticTokens: SemanticTokens = {
       default: 'gray.800',
       _dark: 'whiteAlpha.900',
     },
+    oraclesBackground: {
+      default: 'gray.50',
+      _dark: 'whiteAlpha.50',
+    },
   },
 }

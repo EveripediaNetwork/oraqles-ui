@@ -22,7 +22,7 @@ const OraclesCard = ({ id, image, title, summary }: OraclesItemType) => {
       borderRadius="10px"
       border="1px solid"
       borderColor="oraclesCardBorder"
-      boxShadow="sm"
+      boxShadow="base"
       p="4"
     >
       <LinkOverlay
