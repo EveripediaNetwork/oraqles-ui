@@ -7,4 +7,3 @@ const chainArray =
 export const { chains, provider } = configureChains(chainArray, [
   alchemyProvider({ apiKey: config.alchemyApiKey, weight: 1 }),
 ])
-
