@@ -8,7 +8,6 @@ import {
   IconButton,
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
-import Link from 'next/link'
 import NavMenu from './NavMenu'
 
 const Navbar = () => {
@@ -26,11 +25,10 @@ const Navbar = () => {
         justifyContent="space-between"
         px={{ base: 5, md: 3, lg: 8 }}
       >
-        <Link href="/">
-          <ChakraLink>
-            <Image src={`/images/${logoSrc}`} />
-          </ChakraLink>
-        </Link>
+        <ChakraLink href="/">
+          <Image src={`/images/${logoSrc}`} />
+        </ChakraLink>
+
         <Flex display={{ base: 'none', md: 'flex' }}>
           <NavMenu />
         </Flex>
