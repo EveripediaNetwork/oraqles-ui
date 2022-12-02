@@ -4,11 +4,19 @@ import { ChakraProvider } from '@chakra-ui/react'
 import Layout from '@/components/Layout/Layout/Layout'
 import { Montserrat } from '@next/font/google'
 import chakraTheme from '../theme'
+import { createClient, WagmiConfig } from 'wagmi'
+import { provider } from '@/config/wagmi'
 import '../utils/i18n'
+
 
 type OraqleAppProp = Omit<AppProps, 'Component'> & {
   Component: AppProps['Component'] & { noFooter?: boolean }
 }
+
+const client = createClient({
+  autoConnect: true,
+  provider,
+})
 
 export const montserrat = Montserrat({
   subsets: ['latin'],
@@ -27,9 +35,11 @@ const App = (props: OraqleAppProp) => {
         }
       `}</style>
       <ChakraProvider resetCSS theme={chakraTheme}>
-        <Layout noFooter={Component.noFooter}>
-          <Component {...pageProps} />
-        </Layout>
+        <WagmiConfig client={client}>
+          <Layout noFooter={Component.noFooter}>
+            <Component {...pageProps} />
+          </Layout>
+        </WagmiConfig>
       </ChakraProvider>
     </StrictMode>
   )
