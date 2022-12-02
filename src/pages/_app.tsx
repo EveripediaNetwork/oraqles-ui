@@ -13,7 +13,6 @@ type OraqleAppProp = Omit<AppProps, 'Component'> & {
 }
 
 const client = createClient({
-  autoConnect: true,
   provider,
 })
 
