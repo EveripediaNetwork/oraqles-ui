@@ -8,7 +8,7 @@ import {
   IconButton,
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
-import NavMenu from './NavMenu'
+import NavMenu from '@/components/Layout/Navbar/NavMenu'
 
 const Navbar = () => {
   const logoSrc = useColorModeValue(
