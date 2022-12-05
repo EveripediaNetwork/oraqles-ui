@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Flex,
   Box,
@@ -7,10 +7,12 @@ import {
   useColorModeValue,
   IconButton,
 } from '@chakra-ui/react'
-import { HamburgerIcon } from '@chakra-ui/icons'
+import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
 import NavMenu from '@/components/Layout/Navbar/NavMenu'
 
 const Navbar = () => {
+  const [isHamburgerOpen, setHamburger] = useState<boolean>(false)
+
   const logoSrc = useColorModeValue(
     'braindao-logo-light.svg',
     'braindao-logo-dark.svg',
@@ -33,8 +35,17 @@ const Navbar = () => {
           <NavMenu />
         </Flex>
         <IconButton
+          onClick={() => {
+            setHamburger(!isHamburgerOpen)
+          }}
           display={{ base: 'inline-block', md: 'none' }}
-          icon={<HamburgerIcon boxSize={{ base: 6, lg: 7 }} />}
+          icon={
+            isHamburgerOpen ? (
+              <CloseIcon w={4} h={4} />
+            ) : (
+              <HamburgerIcon boxSize={{ base: 6, lg: 7 }} />
+            )
+          }
           variant="ghost"
           aria-label="Toggle Navigation"
         />
