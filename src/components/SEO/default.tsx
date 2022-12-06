@@ -12,7 +12,22 @@ const SEOHeader = ({ router }: SEOHeaderProps) => {
       title="IQ Oraqles"
       titleTemplate="%s | IQ Oraqles"
       description="IQ OraQles is a service managed by BrainDAO that allows verified first parties to bring real-world information on-chain."
-      canonical={`https://${router.asPath || ''}`}
+      canonical={`https://oraqles.com${router.asPath || ''}`}
+      openGraph={{
+        title: 'IQ Oraqles',
+        description:
+          'IQ OraQles is a service managed by BrainDAO that allows verified first parties to bring real-world information on-chain.',
+        type: 'website',
+        site_name: 'IQ Oraqles',
+        images: [
+          {
+            url: 'https://iq.wiki/images/og-image-default.png',
+            width: 1200,
+            height: 630,
+            alt: 'IQ OraQles',
+          },
+        ],
+      }}
     />
   )
 }
