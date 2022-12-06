@@ -6,9 +6,11 @@ import {
   Link as ChakraLink,
   useColorModeValue,
   IconButton,
+  Collapse,
 } from '@chakra-ui/react'
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
 import NavMenu from '@/components/Layout/Navbar/NavMenu'
+import MobileNav from './MobileNav'
 
 const Navbar = () => {
   const [isHamburgerOpen, setHamburger] = useState<boolean>(false)
@@ -50,6 +52,18 @@ const Navbar = () => {
           aria-label="Toggle Navigation"
         />
       </Flex>
+      <Collapse
+        in={isHamburgerOpen}
+        animateOpacity
+        style={{
+          zIndex: 10,
+          position: 'absolute',
+          width: '100vw',
+          height: '100vh !important',
+        }}
+      >
+        <MobileNav setHamburger={setHamburger} />
+      </Collapse>
     </Box>
   )
 }
