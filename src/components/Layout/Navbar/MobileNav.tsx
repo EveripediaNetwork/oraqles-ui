@@ -10,6 +10,7 @@ type MobileNavType = {
 const MobileNav = ({ setHamburger }: MobileNavType) => {
   return (
     <VStack
+      display={{ md: 'none' }}
       h={{ base: 'calc(100vh - 70px)' }}
       justifyContent="space-between"
       backgroundColor="subMenuBg"
