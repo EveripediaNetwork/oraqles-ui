@@ -164,5 +164,9 @@ export const semanticTokens: SemanticTokens = {
       default: 'white',
       _dark: 'gray.700',
     },
+    errorPageText: {
+      default: 'gray.800',
+      _dark: 'white',
+    },
   },
 }
