@@ -1,16 +1,25 @@
 import React from 'react'
-import { Flex } from '@chakra-ui/react'
+import {
+  Flex,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Text,
+  Image,
+} from '@chakra-ui/react'
 import { NavItemType, NAV_ITEMS } from '@/data/NavItemData'
 import NavLink from '@/components/Layout/Navbar/NavLink'
 import { useTranslation } from 'react-i18next'
 import ColorToggleButton from '@/components/Layout/ColorModeToggle'
+import { ChevronDownIcon } from '@chakra-ui/icons'
 
 const NavMenu = () => {
   const { t } = useTranslation()
 
   return (
-    <Flex gap={5} alignItems="center">
-      <Flex gap={8}>
+    <Flex gap={4} alignItems="center">
+      <Flex gap={14}>
         {NAV_ITEMS.map((navItem: NavItemType) => (
           <NavLink
             id={navItem.id}
@@ -21,6 +30,29 @@ const NavMenu = () => {
           />
         ))}
       </Flex>
+      <Menu>
+        <MenuButton
+          px={3}
+          py={2}
+          transition="all 0.2s"
+          borderRadius="md"
+          borderWidth="1px"
+        >
+          <Flex alignItems="center" justifyContent="center">
+            <Image
+              objectFit="contain"
+              boxSize="23px"
+              src="/images/ethereum.svg"
+            />
+            <Text display={{ md: 'none', xl: 'unset' }}>Ethereum</Text>
+            <ChevronDownIcon />
+          </Flex>
+        </MenuButton>
+        <MenuList>
+          <MenuItem>Connect</MenuItem>
+          <MenuItem>Wallet</MenuItem>
+        </MenuList>
+      </Menu>
       <ColorToggleButton display={{ base: 'none', md: 'inherit' }} />
     </Flex>
   )

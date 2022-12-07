@@ -13,7 +13,7 @@ const ColorToggleButton = (props: Omit<IconButtonProps, 'aria-label'>) => {
       icon={<ColorModeIcon />}
       onClick={toggleColorMode}
       variant="outline"
-      size="sm"
+      size="md"
       {...props}
     />
   )

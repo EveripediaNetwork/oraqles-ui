@@ -8,8 +8,8 @@ const Oracles = () => {
     <Box
       as="section"
       mt={{ base: '12', md: '16', lg: '20' }}
-      px={{ base: 3, lg: 10 }}
-      w={{ base: 'full', lg: '90vw', xl: '1375px' }}
+      px={{ base: 3, lg: 20 }}
+      w="full"
       mx="auto"
       mb={{ base: '12', md: '16', lg: '20' }}
     >

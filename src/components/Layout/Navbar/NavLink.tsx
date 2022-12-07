@@ -10,7 +10,7 @@ const NavLink = (navLinkProps: NavItemType) => {
       href={link}
       target={target}
       color="navLinkColor"
-      fontSize={{ base: 'sm', lg: 'md' }}
+      fontSize={{ base: 'sm', lg: '16px' }}
       fontWeight={600}
       _hover={{ textDecoration: 'none' }}
     >
