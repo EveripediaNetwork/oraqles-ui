@@ -11,7 +11,7 @@ const NavLink = (navLinkProps: NavItemType) => {
       target={target}
       color="navLinkColor"
       fontSize={{ base: 'sm', lg: '16px' }}
-      fontWeight={600}
+      fontWeight={500}
       _hover={{ textDecoration: 'none' }}
     >
       {label}

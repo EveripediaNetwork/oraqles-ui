@@ -18,8 +18,8 @@ const NavMenu = () => {
   const { t } = useTranslation()
 
   return (
-    <Flex gap={4} alignItems="center">
-      <Flex gap={14}>
+    <Flex gap={6} alignItems="center">
+      <Flex gap={{ md: 8, lg: 10 }}>
         {NAV_ITEMS.map((navItem: NavItemType) => (
           <NavLink
             id={navItem.id}
