@@ -160,5 +160,9 @@ export const semanticTokens: SemanticTokens = {
       default: 'gray.50',
       _dark: 'whiteAlpha.50',
     },
+    oraclesCardBg: {
+      default: 'white',
+      _dark: 'gray.700',
+    },
   },
 }

@@ -24,8 +24,7 @@ const OraclesCard = ({ id, image, title, summary }: OraclesItemType) => {
       borderColor="oraclesCardBorder"
       boxShadow="base"
       p="4"
-      bg="gray.50"
-      _dark={{ bg: 'gray.700' }}
+      bgColor="oraclesCardBg"
     >
       <LinkOverlay
         pos="absolute"
