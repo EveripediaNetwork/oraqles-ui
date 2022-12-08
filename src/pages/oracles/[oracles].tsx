@@ -8,13 +8,17 @@ import {
   Link as ChakraLink,
 } from '@chakra-ui/react'
 import Link from 'next/link'
+import { useUSElection } from '@/hooks/useElection'
+
+const positions = ['U.S. Senate Class II', 'U.S. Senate Class III']
 
 const Oracles = () => {
   const backgroundImage = useColorModeValue(
     'oracles-background-light.png',
     'oracles-background-dark.png',
   )
-
+  const { USElectionWinner } = useUSElection(positions[0])
+  console.log(USElectionWinner)
   return (
     <Box
       bgColor="oraclesBackground"
