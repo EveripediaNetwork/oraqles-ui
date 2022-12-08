@@ -21,14 +21,34 @@ const Oracles = () => {
       bgImage={`/images/${backgroundImage}`}
       py={20}
     >
-      <Flex justifyContent="center" direction="column" mx="auto" maxW="1090px">
-        <Heading textAlign="center" color="oraclesHeadingColor">
-          AP Election Mission Control
+      <Flex
+        justifyContent="center"
+        direction="column"
+        mx="auto"
+        px={{ base: '4', lg: '0' }}
+        maxW="1090px"
+      >
+        <Heading
+          size={{ base: 'lg', lg: 'xl' }}
+          textAlign="center"
+          color="oraclesHeadingColor"
+        >
+          February 7th Super Bowl LV
         </Heading>
-        <Text mt="4" color="oraclesTextColor" textAlign="center">
+        <Text
+          mt="4"
+          fontSize={{ base: 'sm', lg: 'md' }}
+          color="oraclesTextColor"
+          textAlign="center"
+        >
           This data is read directly from the mainnet Ethereum blockchain.
         </Text>
-        <Text textAlign="center" mt="4" color="oraclesTextColor">
+        <Text
+          textAlign="center"
+          mt="4"
+          fontSize={{ base: 'sm', lg: 'md' }}
+          color="oraclesTextColor"
+        >
           Pulled from{' '}
           <Box as="span" color="oraclesHeadingColor">
             <Link href="https://iq.wiki" passHref target="_blank">

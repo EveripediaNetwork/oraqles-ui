@@ -15,7 +15,7 @@ const Layout = ({
   noFooter?: boolean
 }) => {
   return (
-    <Stack minH="100vh" spacing={0}>
+    <Stack minH="100vh" spacing={0} overflowX="hidden">
       <Navbar />
       <Box as="main">{children}</Box>
       <Suspense>{!noFooter && <Footer />}</Suspense>

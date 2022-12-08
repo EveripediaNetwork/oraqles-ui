@@ -59,13 +59,13 @@ const MenuFooter = () => {
           <GridItem colSpan={1}>
             <Stack align={{ base: 'center', md: 'flex-start' }}>
               <Heading size="sm">{`${t('Everipedia')}`}</Heading>
-              <Link prefetch={false} href="/static/about">{`${t(
+              <Link target="_blank" href="https://iq.wiki/static/about">{`${t(
                 'aboutUs',
               )}`}</Link>
-              <Link prefetch={false} href="/static/careers">{`${t(
+              <Link target="_blank" href="https://iq.wiki/static/careers">{`${t(
                 'careers',
               )}`}</Link>
-              <Link prefetch={false} href="/static/branding">{`${t(
+              <Link target="_blank" href="https://iq.wiki/branding">{`${t(
                 'Branding',
               )}`}</Link>
             </Stack>
@@ -76,9 +76,13 @@ const MenuFooter = () => {
               <Link target="_blank" href="https://learn.everipedia.org/iq/">
                 {`${t('help')}`}
               </Link>
-              <Link prefetch={false} href="/blog">{`${t('blog')}`}</Link>
-              <Link prefetch={false} href="/static/faq">{`${t('faq')}`}</Link>
-              <Link prefetch={false} href="/glossary">{`${t(
+              <Link target="_blank" href="https://iq.wiki/blog">{`${t(
+                'blog',
+              )}`}</Link>
+              <Link target="_blank" href="https://iq.wiki/static/faq">{`${t(
+                'faq',
+              )}`}</Link>
+              <Link target="_blank" href="https://iq.wiki/glossary">{`${t(
                 'glossary',
               )}`}</Link>
             </Stack>
@@ -86,13 +90,14 @@ const MenuFooter = () => {
           <GridItem colSpan={1}>
             <Stack align={{ base: 'center', md: 'flex-start' }}>
               <Heading size="sm">{`${t('policies')}`}</Heading>
-              <Link prefetch={false} href="/static/guidelines">{`${t(
-                'guideLines',
-              )}`}</Link>
-              <Link prefetch={false} href="/static/privacy">{`${t(
+              <Link
+                target="_blank"
+                href="https://iq.wiki/static/guidelines"
+              >{`${t('guideLines')}`}</Link>
+              <Link target="_blank" href="https://iq.wiki/static/privacy">{`${t(
                 'privacyPolicy',
               )}`}</Link>
-              <Link prefetch={false} href="/static/terms">{`${t(
+              <Link target="_blank" href="https://iq.wiki/static/terms">{`${t(
                 'termsOfService',
               )}`}</Link>
             </Stack>

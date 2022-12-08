@@ -5,8 +5,8 @@ import {
   Heading,
   VStack,
   Image,
-  SimpleGrid,
   Text,
+  SimpleGrid,
 } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
 
@@ -18,7 +18,7 @@ const Hero = () => {
       as="section"
       bgGradient={{
         base: 'linear(105deg, heroBackground 60%, transparent 60%, heroBackground 60.1%)',
-        md: 'linear(105deg, heroBackground 50%, transparent 50%, heroBackground 50.1%)',
+        lg: 'linear(105deg, heroBackground 50%, transparent 50%, heroBackground 50.1%)',
       }}
     >
       <Flex
