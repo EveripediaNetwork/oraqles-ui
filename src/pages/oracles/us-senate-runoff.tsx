@@ -8,7 +8,6 @@ import {
   Link as ChakraLink,
   VStack,
   Stack,
-  LinkOverlay,
 } from '@chakra-ui/react'
 import Link from 'next/link'
 import { useUSElection } from '@/hooks/useElection'
