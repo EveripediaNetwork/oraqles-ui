@@ -20,7 +20,7 @@ const SEOHeader = ({ router }: SEOHeaderProps) => {
         site_name: 'IQ Oraqles',
         images: [
           {
-            url: '/images/og-image-default.png',
+            url: 'https://oraqles-ui.vercel.app/images/og-image-default.png',
             width: 1200,
             height: 630,
             alt: 'IQ OraQles',
