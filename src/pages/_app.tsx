@@ -5,6 +5,7 @@ import Layout from '@/components/Layout/Layout/Layout'
 import { Montserrat } from '@next/font/google'
 import { createClient, WagmiConfig } from 'wagmi'
 import { provider } from '@/config/wagmi'
+import SEOHeader from '@/components/SEO/default'
 import chakraTheme from '../theme'
 import '../utils/i18n'
 
@@ -23,7 +24,7 @@ export const montserrat = Montserrat({
 })
 
 const App = (props: OraqleAppProp) => {
-  const { Component, pageProps } = props
+  const { Component, pageProps, router } = props
 
   return (
     <StrictMode>
@@ -34,6 +35,7 @@ const App = (props: OraqleAppProp) => {
       `}</style>
       <ChakraProvider resetCSS theme={chakraTheme}>
         <WagmiConfig client={client}>
+          <SEOHeader router={router} />
           <Layout noFooter={Component.noFooter}>
             <Component {...pageProps} />
           </Layout>
