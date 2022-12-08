@@ -1,5 +1,5 @@
 export type OraclesItemType = {
-  id: number
+  id: string
   title: string
   summary: string
   image: string
@@ -9,28 +9,28 @@ export type OraclesItemType = {
 
 export const ORAQLES_ITEMS: OraclesItemType[] = [
   {
-    id: 1,
+    id: 'march-madness',
     title: 'March madness 2021',
     summary:
       'Associated Press and BrainDAO partner to bring March Madness 2021 Results on-chain!',
     image: '/images/oracles--1.png',
   },
   {
-    id: 2,
+    id: 'superbowl-lv',
     title: 'February 7th, 2021 Super Bowl LV',
     summary:
       'Associated Press and BrainDAO partner to bring March Madness 2021 Results on-chain!',
     image: '/images/oracles--2.png',
   },
   {
-    id: 3,
+    id: 'us-senate-runoff',
     title: 'January 5th, 2021 Senate Runoff',
     summary:
       'Associated Press and BrainDAO partner to bring March Madness 2021 Results on-chain!',
     image: '/images/oracles--3.png',
   },
   {
-    id: 4,
+    id: 'election',
     title: 'November 3rd, 2021 Election',
     summary:
       'Associated Press and BrainDAO partner to bring March Madness 2021 Results on-chain!',

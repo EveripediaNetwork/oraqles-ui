@@ -8,17 +8,12 @@ import {
   Link as ChakraLink,
 } from '@chakra-ui/react'
 import Link from 'next/link'
-import { useUSElection } from '@/hooks/useElection'
-
-const positions = ['U.S. Senate Class II', 'U.S. Senate Class III']
 
 const Oracles = () => {
   const backgroundImage = useColorModeValue(
     'oracles-background-light.png',
     'oracles-background-dark.png',
   )
-  const { USElectionWinner } = useUSElection(positions[0])
-  console.log(USElectionWinner)
   return (
     <Box
       bgColor="oraclesBackground"
@@ -28,7 +23,7 @@ const Oracles = () => {
     >
       <Flex justifyContent="center" direction="column" mx="auto" maxW="1090px">
         <Heading textAlign="center" color="oraclesHeadingColor">
-          February 7th Super Bowl LV
+          AP Election Mission Control
         </Heading>
         <Text mt="4" color="oraclesTextColor" textAlign="center">
           This data is read directly from the mainnet Ethereum blockchain.
