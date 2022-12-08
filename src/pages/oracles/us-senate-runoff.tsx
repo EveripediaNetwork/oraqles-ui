@@ -12,7 +12,6 @@ import {
 import Link from 'next/link'
 import { useUSElection } from '@/hooks/useElection'
 import config from '@/config'
-import NextLink from 'next/link'
 import shortenAccount from '@/utils/shortenAccount'
 
 const positions = ['U.S. Senate Class II', 'U.S. Senate Class III']
@@ -97,7 +96,7 @@ const Oracles = () => {
             </VStack>
           ))}
         </Stack>
-        <NextLink
+        <Link
           href="https://docs.everipedia.org/current-oraqles-projects/jan-5-2021"
           passHref
         >
@@ -128,7 +127,7 @@ const Oracles = () => {
               January 5th, 2021 Senate Runoff
             </Text>
           </Box>
-        </NextLink>
+        </Link>
       </Box>
     </VStack>
   )
