@@ -8,11 +8,13 @@ const readContract = {
 }
 
 export const useUSElection = (position: string) => {
-  const { data: winner } = useContractRead({
+  const { data: winner, error } = useContractRead({
     ...readContract,
     functionName: 'winners',
     args: [position],
   })
+
+  console.log(winner, error)
 
   const getUSElectionWinner = () => {
     return winner
