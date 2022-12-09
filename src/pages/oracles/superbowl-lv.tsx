@@ -17,7 +17,7 @@ const Oracles = () => {
     'oracles-background-light.png',
     'oracles-background-dark.png',
   )
-  const {superbowlWinner} = useSuperbowl()
+  const { superbowlWinner } = useSuperbowl()
   console.log(superbowlWinner)
   return (
     <Box
