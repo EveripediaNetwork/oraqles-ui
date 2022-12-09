@@ -10,12 +10,15 @@ import {
 import Link from 'next/link'
 import shortenAccount from '@/utils/shortenAccount'
 import config from '@/config'
+import { useMarchMadness } from '@/hooks/useMarchMadness'
 
 const Oracles = () => {
   const backgroundImage = useColorModeValue(
     'oracles-background-light.png',
     'oracles-background-dark.png',
   )
+  const {marchMadnessIpfsHash} = useMarchMadness()
+  console.log(marchMadnessIpfsHash)
   return (
     <Box
       bgColor="oraclesBackground"
