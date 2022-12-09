@@ -21,8 +21,13 @@ const Oracles = () => {
     'oracles-background-light.png',
     'oracles-background-dark.png',
   )
-  const { USElectionWinner } = useUSElection(positions[0])
-  console.log(USElectionWinner)
+
+  const GetWinner = (i: number) => {
+    const winner = useUSElection(positions[i])
+    const result: string = winner.USElectionWinner as string
+    return result || `winner${i}`
+  }
+
   return (
     <VStack w="full" mb={{ base: '12', md: '16', lg: '20' }}>
       <Box
@@ -64,12 +69,12 @@ const Oracles = () => {
         </Flex>
       </Box>
       <Box py="10" px={{ base: 3, lg: 10 }} w="full" mx="auto">
-        <Stack direction="row" py="10" w="full">
-          {positions.map(item => (
+        <Stack direction="row" py="10" w="full" px="5">
+          {positions.map((item, i) => (
             <VStack
+              key={i}
               cursor="pointer"
               px="3"
-              mx="5"
               borderRadius="10px"
               border="1px solid"
               borderColor="oraclesCardBorder"
@@ -91,7 +96,7 @@ const Oracles = () => {
                 color="oraclesTextColor"
                 fontSize={{ base: 'xs', md: 'md', lg: '2xl' }}
               >
-                Winner 1
+                {GetWinner(i)}
               </Text>
             </VStack>
           ))}
@@ -104,7 +109,6 @@ const Oracles = () => {
             cursor="pointer"
             px="3"
             mx="5"
-            w="full"
             textAlign="center"
             py={{ base: '0', md: '3', lg: '6' }}
             borderRadius="10px"
