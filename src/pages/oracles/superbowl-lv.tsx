@@ -10,12 +10,15 @@ import {
 import Link from 'next/link'
 import shortenAccount from '@/utils/shortenAccount'
 import config from '@/config'
+import { useSuperbowl } from '@/hooks/useSuperbowl'
 
 const Oracles = () => {
   const backgroundImage = useColorModeValue(
     'oracles-background-light.png',
     'oracles-background-dark.png',
   )
+  const {superbowlWinner} = useSuperbowl()
+  console.log(superbowlWinner)
   return (
     <Box
       bgColor="oraclesBackground"

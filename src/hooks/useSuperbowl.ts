@@ -1,24 +1,23 @@
-import { electionAbi } from '@/abis/election.abi'
+import { superbowlAbi } from '@/abis/superbowl.abi'
 import config from '@/config'
 import { useContractRead } from 'wagmi'
 
 const readContract = {
   address: config.superbowlContractAddress,
-  abi: electionAbi,
+  abi: superbowlAbi,
 }
 
-export const useUSElection = (position: string) => {
+export const useSuperbowl = () => {
   const { data: winner } = useContractRead({
     ...readContract,
-    functionName: 'winners',
-    args: [position],
+    functionName: 'winner',
   })
 
-  const getUSElectionWinner = () => {
+  const getSuperbowlResult = () => {
     return winner
   }
 
   return {
-    USElectionWinner: getUSElectionWinner(),
+    superbowlWinner: getSuperbowlResult(),
   }
 }
