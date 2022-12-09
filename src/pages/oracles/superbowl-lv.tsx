@@ -10,16 +10,15 @@ import {
 import Link from 'next/link'
 import shortenAccount from '@/utils/shortenAccount'
 import config from '@/config'
-import { useSuperbowlTV } from '@/hooks/useSuperbowlTv'
+import { useSuperbowl } from '@/hooks/useSuperbowl'
 
 const Oracles = () => {
   const backgroundImage = useColorModeValue(
     'oracles-background-light.png',
     'oracles-background-dark.png',
   )
-
-  const { winner } = useSuperbowlTV()
-
+  const { superbowlWinner } = useSuperbowl()
+  console.log(superbowlWinner)
   return (
     <>
       <Box
@@ -59,7 +58,7 @@ const Oracles = () => {
           </Text>
         </Flex>
       </Box>
-      <Box>{winner}</Box>
+      <Box>&nbsp;</Box>
     </>
   )
 }
