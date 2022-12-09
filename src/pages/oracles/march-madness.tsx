@@ -17,7 +17,7 @@ const Oracles = () => {
     'oracles-background-light.png',
     'oracles-background-dark.png',
   )
-  const {marchMadnessIpfsHash} = useMarchMadness()
+  const { marchMadnessIpfsHash } = useMarchMadness()
   console.log(marchMadnessIpfsHash)
   return (
     <Box
