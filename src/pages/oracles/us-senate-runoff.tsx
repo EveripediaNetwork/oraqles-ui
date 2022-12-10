@@ -34,7 +34,7 @@ const Oracles = () => {
         bgColor="oraclesBackground"
         minH="300px"
         bgImage={`/images/${backgroundImage}`}
-        py={20}
+        pt={20}
         w="full"
       >
         <Flex
@@ -68,8 +68,14 @@ const Oracles = () => {
           </Text>
         </Flex>
       </Box>
-      <Box py="10" px={{ base: 3, lg: 10 }} w="full" mx="auto">
-        <Stack direction="row" py="10" w="full" px="5">
+      <Box px={{ base: 3, lg: 10 }} w={{ base: 'full', md: '768px' }} mx="auto">
+        <Stack
+          direction="column"
+          py="10"
+          w="full"
+          px="5"
+          spacing={{ base: '5', md: '10' }}
+        >
           {positions.map((item, i) => (
             <VStack
               key={i}
@@ -78,23 +84,25 @@ const Oracles = () => {
               borderRadius="10px"
               border="1px solid"
               borderColor="oraclesCardBorder"
-              boxShadow="base"
+              boxShadow="sm"
               alignItems="start"
               justifyContent="center"
               flexGrow="1"
-              py={{ base: '3', lg: '6' }}
+              py={{ base: '6', lg: '10' }}
             >
               <Heading
-                color="oraclesHeadingColor"
+                w="full"
+                textAlign="center"
+                color="oraclesTextColor"
                 fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
               >
                 {item}
               </Heading>
               <Text
-                w={{ base: 'full', md: '75%' }}
+                textAlign="center"
+                w="full"
                 mt={{ base: '3', md: '4', lg: '7' }}
                 color="oraclesTextColor"
-                fontSize={{ base: 'mg', lg: '2xl' }}
               >
                 {GetWinner(i)}
               </Text>
@@ -110,14 +118,14 @@ const Oracles = () => {
             px="3"
             mx="5"
             textAlign="center"
-            py={{ base: '3', lg: '6' }}
+            py={{ base: '6', lg: '10' }}
             borderRadius="10px"
             border="1px solid"
             borderColor="oraclesCardBorder"
             boxShadow="base"
           >
             <Heading
-              color="oraclesHeadingColor"
+              color="oraclesTextColor"
               fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
             >
               Developer Docs
@@ -126,7 +134,6 @@ const Oracles = () => {
               w="full"
               mt={{ base: '3', md: '4', lg: '7' }}
               color="oraclesTextColor"
-              fontSize={{ base: 'md', lg: '2xl' }}
             >
               January 5th, 2021 Senate Runoff
             </Text>
