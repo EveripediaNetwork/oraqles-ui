@@ -61,7 +61,7 @@ const Oracles = () => {
           </Text>
         </Flex>
       </Box>
-      <Box py="4" px={{ base: 3, lg: 10 }} w="full" mx="auto">
+      <Box px={{ base: 3, lg: 10 }} w={{ base: 'full', md: '768px' }} mx="auto">
         <Stack direction="column" py="10" w="full" px="5" gap="15">
           <VStack
             cursor="pointer"
@@ -69,13 +69,15 @@ const Oracles = () => {
             borderRadius="10px"
             border="1px solid"
             borderColor="oraclesCardBorder"
-            boxShadow="base"
+            boxShadow="sm"
             alignItems="start"
             justifyContent="center"
             flexGrow="1"
             py={{ base: '3', lg: '6' }}
           >
             <Heading
+              w="full"
+              textAlign="center"
               fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
               py="5"
               px="3"
@@ -95,16 +97,21 @@ const Oracles = () => {
               borderRadius="10px"
               border="1px solid"
               borderColor="oraclesCardBorder"
-              boxShadow="base"
+              boxShadow="sm"
             >
-              <Text fontSize={{ base: '29px', lg: '25px' }} fontWeight="bold">
+              <Heading
+                w="full"
+                textAlign="center"
+                color="oraclesTextColor"
+                fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
+              >
                 View on Ethereum Mainnet
-              </Text>
+              </Heading>
               <Text
                 w="full"
-                mt={{ base: '3', md: '4', lg: '7' }}
+                mt={{ base: '3', md: '4' }}
                 color="oraclesTextColor"
-                fontSize={{ base: 'md', lg: 'lg' }}
+                textAlign="center"
               >
                 View what this dashbaord might look like after race calls
                 arrive.
