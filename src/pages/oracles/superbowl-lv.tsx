@@ -22,7 +22,7 @@ const Oracles = () => {
   const { superbowlWinner } = useSuperbowl()
   const winner: string = superbowlWinner as string
   return (
-    <VStack w="full" mb={{ base: '12', md: '16', lg: '20' }}>
+    <VStack w="full" mb={{ base: '6', md: '8', lg: '10' }}>
       <Box
         bgColor="oraclesBackground"
         minH="300px"
