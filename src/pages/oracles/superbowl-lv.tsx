@@ -93,7 +93,7 @@ const Oracles = () => {
               cursor="pointer"
               px="3"
               textAlign="center"
-              py={{ base: '3', lg: '7' }}
+              py={{ base: '6', lg: '10' }}
               borderRadius="10px"
               border="1px solid"
               borderColor="oraclesCardBorder"
@@ -112,6 +112,7 @@ const Oracles = () => {
                 mt={{ base: '3', md: '4' }}
                 color="oraclesTextColor"
                 textAlign="center"
+                fontSize={{ base: 'xs', md: 'initial' }}
               >
                 View what this dashbaord might look like after race calls
                 arrive.
