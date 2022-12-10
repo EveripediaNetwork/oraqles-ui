@@ -33,7 +33,7 @@ const Oracles = () => {
           textAlign="center"
           color="oraclesHeadingColor"
         >
-          February 7th Super Bowl LV
+          Welcome to AP Election Mission Control
         </Heading>
         <Text
           mt="4"

@@ -82,11 +82,11 @@ const Oracles = () => {
               alignItems="start"
               justifyContent="center"
               flexGrow="1"
-              py={{ base: '0', md: '3', lg: '6' }}
+              py={{ base: '3', lg: '6' }}
             >
               <Heading
                 color="oraclesHeadingColor"
-                fontSize={{ base: 'xs', md: 'lg', lg: 'xl' }}
+                fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
               >
                 {item}
               </Heading>
@@ -94,7 +94,7 @@ const Oracles = () => {
                 w={{ base: 'full', md: '75%' }}
                 mt={{ base: '3', md: '4', lg: '7' }}
                 color="oraclesTextColor"
-                fontSize={{ base: 'xs', md: 'md', lg: '2xl' }}
+                fontSize={{ base: 'mg', lg: '2xl' }}
               >
                 {GetWinner(i)}
               </Text>
@@ -110,7 +110,7 @@ const Oracles = () => {
             px="3"
             mx="5"
             textAlign="center"
-            py={{ base: '0', md: '3', lg: '6' }}
+            py={{ base: '3', lg: '6' }}
             borderRadius="10px"
             border="1px solid"
             borderColor="oraclesCardBorder"
@@ -118,7 +118,7 @@ const Oracles = () => {
           >
             <Heading
               color="oraclesHeadingColor"
-              fontSize={{ base: 'xs', md: 'lg', lg: 'xl' }}
+              fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
             >
               Developer Docs
             </Heading>
@@ -126,7 +126,7 @@ const Oracles = () => {
               w="full"
               mt={{ base: '3', md: '4', lg: '7' }}
               color="oraclesTextColor"
-              fontSize={{ base: 'xs', md: 'md', lg: '2xl' }}
+              fontSize={{ base: 'md', lg: '2xl' }}
             >
               January 5th, 2021 Senate Runoff
             </Text>
