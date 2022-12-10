@@ -20,7 +20,7 @@ const Oracles = () => {
     'oracles-background-dark.png',
   )
   const { superbowlWinner } = useSuperbowl()
-  console.log(superbowlWinner)
+  const winner: string = superbowlWinner as string
   return (
     <VStack w="full" mb={{ base: '12', md: '16', lg: '20' }}>
       <Box
@@ -80,15 +80,18 @@ const Oracles = () => {
               py="5"
               px="3"
             >
-              Winner
+              {winner}
             </Heading>
           </VStack>
-          <Link href="/" passHref>
+          <Link
+            href={`https://etherscan.io/address/${config.superbowlContractAddress}`}
+            passHref
+          >
             <Box
               cursor="pointer"
               px="3"
               textAlign="center"
-              py={{ base: '3', lg: '6' }}
+              py={{ base: '3', lg: '7' }}
               borderRadius="10px"
               border="1px solid"
               borderColor="oraclesCardBorder"
