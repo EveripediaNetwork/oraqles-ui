@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   Box,
   Flex,
@@ -86,9 +86,7 @@ const Oracles = () => {
         <Text alignSelf="flex-start" fontSize="xl">
           25 states called for Trump, 27 states called for Biden.
         </Text>
-        <Box>
-          {/* <Text></Text> */}
-        </Box>
+        <Box>{/* <Text></Text> */}</Box>
         <Flex direction="column" mt="3" textAlign="center" py="7" gap="10">
           <Heading> Developer Docs</Heading>
           <OraclesResultCard
