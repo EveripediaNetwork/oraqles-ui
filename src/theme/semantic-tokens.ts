@@ -204,5 +204,9 @@ export const semanticTokens: SemanticTokens = {
       default: 'gray.300',
       _dark: 'transparent',
     },
+    pressViewCardFooter: {
+      default: 'gray.50',
+      _dark: 'whiteAlpha.100',
+    },
   },
 }

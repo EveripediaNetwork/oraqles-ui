@@ -29,9 +29,8 @@ const MarchMadnessPressViewCard = ({
           onError={() => setSrc(BROKEN_IMAGE)}
           display="block"
           w="full"
-          h="220px"
+          h="200px"
           objectFit="cover"
-          bgColor="#FAFAFA"
           borderRadius="none"
           roundedTop="lg"
         />
@@ -39,23 +38,33 @@ const MarchMadnessPressViewCard = ({
       <VStack pt="4" w="full">
         <chakra.div w="full" px="3">
           <Link href={link} passHref target="_blank">
-            <Text fontWeight="bold">VIEW</Text>
+            <Text fontWeight="bold" color="oraclesTextColor">
+              VIEW
+            </Text>
           </Link>
         </chakra.div>
 
-        <chakra.div px="3" fontWeight="light">
+        <chakra.div
+          px="3"
+          fontWeight={500}
+          fontSize="sm"
+          color="oraclesTextColor"
+        >
           {text}
         </chakra.div>
         <chakra.div
+          fontSize="sm"
           borderRadius="none"
           roundedBottom="lg"
           py="2"
           px="2"
-          fontWeight="light"
-          bg="gray.50"
+          fontWeight={500}
+          bg="pressViewCardFooter"
           w="full"
           position="relative"
           bottom="0"
+          borderTop="1px solid"
+          borderColor="oraclesPressViewCardBorder"
           color="heroBackground"
         >
           {title}
