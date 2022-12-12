@@ -9,7 +9,7 @@ interface SEOHeaderProps {
 const SEOHeader = ({ router }: SEOHeaderProps) => {
   return (
     <DefaultSeo
-      title="IQ Oraqles"
+      title="IQ OraQles"
       description="IQ OraQles is a service managed by BrainDAO that allows verified first parties to bring real-world information on-chain."
       canonical={`https://oraqles.com${router.asPath || ''}`}
       openGraph={{
@@ -17,7 +17,7 @@ const SEOHeader = ({ router }: SEOHeaderProps) => {
         description:
           'IQ OraQles is a service managed by BrainDAO that allows verified first parties to bring real-world information on-chain.',
         type: 'website',
-        site_name: 'IQ Oraqles',
+        site_name: 'IQ OraQles',
         images: [
           {
             url: 'https://oraqles-ui.vercel.app/images/og-image-default.png',

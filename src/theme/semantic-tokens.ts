@@ -176,5 +176,9 @@ export const semanticTokens: SemanticTokens = {
       default: 'gray.50',
       _dark: 'gray.700',
     },
+    oraclesPressViewCardBorder: {
+      default: 'gray.200',
+      _dark: 'whiteAlpha.100',
+    },
   },
 }

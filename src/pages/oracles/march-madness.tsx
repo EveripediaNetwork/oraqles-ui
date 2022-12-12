@@ -17,6 +17,7 @@ import shortenAccount from '@/utils/shortenAccount'
 import config from '@/config'
 import { useMarchMadness } from '@/hooks/useMarchMadness'
 import { MarchMadnessTabData } from '@/data/MarchMadnessTabData'
+import MarchMadnessPressView from '@/components/Oracles/MarchMadness/PressView'
 
 const Oracles = () => {
   const backgroundImage = useColorModeValue(
@@ -89,9 +90,9 @@ const Oracles = () => {
         defaultIndex={0}
       >
         <Box
-          pt="10"
-          w="290px"
-          pr="3"
+          pt="8"
+          w="300px"
+          pr="5"
           borderRight="1px solid"
           borderColor="oraclesPageBorder"
         >
@@ -123,7 +124,7 @@ const Oracles = () => {
             ))}
           </TabList>
         </Box>
-        <Box flexGrow="1">
+        <Box flexGrow="1" py="8" pl="8">
           <TabPanels>
             <TabPanel>
               <p>Info</p>
@@ -138,7 +139,7 @@ const Oracles = () => {
               <p>Json</p>
             </TabPanel>
             <TabPanel>
-              <p>Press</p>
+              <MarchMadnessPressView />
             </TabPanel>
           </TabPanels>
         </Box>
