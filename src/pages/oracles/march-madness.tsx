@@ -34,38 +34,57 @@ const Oracles = () => {
   })
 
   return (
-    <Box
-      bgColor="oraclesBackground"
-      minH="300px"
-      bgImage={`/images/${backgroundImage}`}
-      py={20}
-    >
-      <Flex justifyContent="center" direction="column" mx="auto" maxW="1090px">
-        <Heading textAlign="center" color="oraclesHeadingColor">
-          March Madness Oraqle Dashboard
-        </Heading>
-        <Text mt="4" color="oraclesTextColor" textAlign="center">
-          This data is read directly from the mainnet Ethereum blockchain.
-        </Text>
-        <Text textAlign="center" mt="4" color="oraclesTextColor">
-          Pulled from{' '}
-          <Box as="span" color="oraclesHeadingColor">
-            <Link
-              href={`https://etherscan.io/address/${config.marchMadnessContractAddress}`}
-              passHref
-              target="_blank"
-            >
-              <ChakraLink
-                textDecoration="none"
-                _hover={{ textDecoration: 'underline' }}
+    <>
+      <Box
+        bgColor="oraclesBackground"
+        minH="300px"
+        bgImage={`/images/${backgroundImage}`}
+        py={20}
+      >
+        <Flex
+          justifyContent="center"
+          direction="column"
+          mx="auto"
+          maxW="1090px"
+        >
+          <Heading textAlign="center" color="oraclesHeadingColor">
+            March Madness Oraqle Dashboard
+          </Heading>
+          <Text mt="4" color="oraclesTextColor" textAlign="center">
+            This data is read directly from the mainnet Ethereum blockchain.
+          </Text>
+          <Text textAlign="center" mt="4" color="oraclesTextColor">
+            Pulled from{' '}
+            <Box as="span" color="oraclesHeadingColor">
+              <Link
+                href={`https://etherscan.io/address/${config.marchMadnessContractAddress}`}
+                passHref
+                target="_blank"
               >
-                {shortenAccount(config.marchMadnessContractAddress)}
-              </ChakraLink>
-            </Link>
-          </Box>
-        </Text>
+                <ChakraLink
+                  textDecoration="none"
+                  _hover={{ textDecoration: 'underline' }}
+                >
+                  {shortenAccount(config.marchMadnessContractAddress)}
+                </ChakraLink>
+              </Link>
+            </Box>
+          </Text>
+        </Flex>
+      </Box>
+      <Flex alignItems="stretch" maxW="1280px" mx="auto" minH="500px">
+        <Box
+          w="290px"
+          pr="3"
+          borderLeft="1px solid"
+          borderRight="1px solid"
+          borderColor="oraclesPageBorder"
+        >
+          &nbsp;
+        </Box>
+        <Box flexGrow="1">&nbsp;</Box>
       </Flex>
-    </Box>
+    </>
   )
 }
 

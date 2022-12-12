@@ -168,5 +168,9 @@ export const semanticTokens: SemanticTokens = {
       default: 'gray.800',
       _dark: 'white',
     },
+    oraclesPageBorder: {
+      default: 'gray.300',
+      _dark: 'whiteAlpha.200',
+    },
   },
 }
