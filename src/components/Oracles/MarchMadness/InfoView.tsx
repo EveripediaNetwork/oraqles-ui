@@ -2,38 +2,9 @@ import React from 'react'
 import { Box, Link, Text } from '@chakra-ui/react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/nightOwl'
+import { MarchMadnessCode } from '@/data/MarchMadnessSetupData'
 
 const MarchMadnessInfoView = () => {
-  const exampleCode = `
-const ethers = require('ethers')
-const abi = [
-  {
-    inputs: [],
-    name: 'ipfsFullData',
-    outputs: [
-      {
-        internalType: 'string',
-        name: '',
-        type: 'string',
-      },
-    ],
-    stateMutability: 'view',
-    type: 'function',
-  },
-]
-
-const contractAddress = '0x17BaF6781EE3b0BBcDffD1e2A78D8C0b40c9A77D'
-
-const provider = new ethers.providers.JsonRpcProvider(
-  'https://mainnet.infura.io/v3/d9115ae7cb07489699c738f2915aea84',
-)
-
-let contract = new ethers.Contract(contractAddress, abi, provider)
-
-const ipfsHash = await contract.ipfsFullData()
-
-`.trim()
-
   return (
     <Box mt="0">
       <Text color="marchMadnessInfoHeading" fontSize="xl" fontWeight={600}>
@@ -74,10 +45,10 @@ const ipfsHash = await contract.ipfsFullData()
           </Link>
         </Text>
       </Box>
-      <Box mt="4">
+      <Box mt="8">
         <Highlight
           {...defaultProps}
-          code={exampleCode}
+          code={MarchMadnessCode.trim()}
           theme={theme}
           language="jsx"
         >
