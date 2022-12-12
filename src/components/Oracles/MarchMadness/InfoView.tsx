@@ -1,7 +1,39 @@
 import React from 'react'
 import { Box, Link, Text } from '@chakra-ui/react'
+import Highlight, { defaultProps } from 'prism-react-renderer'
+import theme from 'prism-react-renderer/themes/nightOwl'
 
 const MarchMadnessInfoView = () => {
+  const exampleCode = `
+const ethers = require('ethers')
+const abi = [
+  {
+    inputs: [],
+    name: 'ipfsFullData',
+    outputs: [
+      {
+        internalType: 'string',
+        name: '',
+        type: 'string',
+      },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+]
+
+const contractAddress = '0x17BaF6781EE3b0BBcDffD1e2A78D8C0b40c9A77D'
+
+const provider = new ethers.providers.JsonRpcProvider(
+  'https://mainnet.infura.io/v3/d9115ae7cb07489699c738f2915aea84',
+)
+
+let contract = new ethers.Contract(contractAddress, abi, provider)
+
+const ipfsHash = await contract.ipfsFullData()
+
+`.trim()
+
   return (
     <Box mt="0">
       <Text color="marchMadnessInfoHeading" fontSize="xl" fontWeight={600}>
@@ -43,7 +75,27 @@ const MarchMadnessInfoView = () => {
         </Text>
       </Box>
       <Box mt="4">
-        ;
+        <Highlight
+          {...defaultProps}
+          code={exampleCode}
+          theme={theme}
+          language="jsx"
+        >
+          {({ className, style, tokens, getLineProps, getTokenProps }) => (
+            <Box as="pre" className={className} style={style}>
+              {tokens.map((line, i) => (
+                <div {...getLineProps({ line, key: i })}>
+                  {line.map((token, key) => (
+                    <span {...getTokenProps({ token, key })} />
+                  ))}
+                </div>
+              ))}
+            </Box>
+          )}
+        </Highlight>
+      </Box>
+
+      {/* <Box mt="4">
         <Box
           as="pre"
           mt="6"
@@ -95,7 +147,7 @@ const MarchMadnessInfoView = () => {
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
           <br /> &#125;]
         </Box>
-      </Box>
+      </Box> */}
     </Box>
   )
 }
