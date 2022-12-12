@@ -9,6 +9,8 @@ import {
   Tabs,
   TabList,
   Tab,
+  TabPanels,
+  TabPanel,
 } from '@chakra-ui/react'
 import Link from 'next/link'
 import shortenAccount from '@/utils/shortenAccount'
@@ -76,33 +78,59 @@ const Oracles = () => {
           </Text>
         </Flex>
       </Box>
-      <Flex alignItems="stretch" maxW="1280px" mx="auto" minH="500px">
+      <Tabs
+        display="flex"
+        alignItems="stretch"
+        maxW="1280px"
+        mx="auto"
+        minH="500px"
+        variant="unstyled"
+        orientation="vertical"
+        defaultIndex={0}
+      >
         <Box
+          pt="10"
           w="290px"
           pr="3"
           borderRight="1px solid"
           borderColor="oraclesPageBorder"
         >
-          <Tabs variant="unstyled" orientation="vertical" pt="10">
-            <TabList w="full">
-              {MarchMadnessTabData.map(tab => (
-                <Tab
-                  fontSize="sm"
-                  w="full"
-                  borderRadius="8px"
-                  _selected={{ color: 'white', bg: 'heroBackground' }}
-                  justifyContent="flex-start"
-                  key={tab.id}
-                  mb="3"
-                >
-                  {tab.label}
-                </Tab>
-              ))}
-            </TabList>
-          </Tabs>
+          <TabList w="full">
+            {MarchMadnessTabData.map(tab => (
+              <Tab
+                fontSize="sm"
+                w="full"
+                borderRadius="8px"
+                _selected={{ color: 'white', bg: 'heroBackground' }}
+                justifyContent="flex-start"
+                key={tab.id}
+                mb="3"
+              >
+                {tab.label}
+              </Tab>
+            ))}
+          </TabList>
         </Box>
-        <Box flexGrow="1">&nbsp;</Box>
-      </Flex>
+        <Box flexGrow="1">
+          <TabPanels>
+            <TabPanel>
+              <p>Info</p>
+            </TabPanel>
+            <TabPanel>
+              <p>Brackets</p>
+            </TabPanel>
+            <TabPanel>
+              <p>Team Stats</p>
+            </TabPanel>
+            <TabPanel>
+              <p>Json</p>
+            </TabPanel>
+            <TabPanel>
+              <p>Press</p>
+            </TabPanel>
+          </TabPanels>
+        </Box>
+      </Tabs>
     </>
   )
 }
