@@ -6,7 +6,6 @@ import {
   MenuList,
   MenuItem,
   Text,
-  Image,
   MenuGroup,
   Icon,
   Box,
@@ -17,7 +16,6 @@ import { NavItemType, NAV_ITEMS } from '@/data/NavItemData'
 import NavLink from '@/components/Layout/Navbar/NavLink'
 import { useTranslation } from 'react-i18next'
 import ColorToggleButton from '@/components/Layout/ColorModeToggle'
-import { ChevronDownIcon } from '@chakra-ui/icons'
 import { FaChevronDown } from 'react-icons/fa'
 import { NETWORK_DATA } from '@/data/NetworkData'
 import { NetworkType } from '@/types/NetworkType'
@@ -61,11 +59,7 @@ const NavMenu = () => {
           </Text>
         </MenuButton>
         <MenuList borderRadius="lg" w={250} boxShadow="2xl">
-          <MenuGroup
-            fontSize="md"
-            fontWeight="medium"
-            title="Select Network"
-          >
+          <MenuGroup fontSize="md" fontWeight="medium" title="Select Network">
             {NETWORK_DATA.map((network, index) => (
               <Box px={3} key={index}>
                 <MenuItem

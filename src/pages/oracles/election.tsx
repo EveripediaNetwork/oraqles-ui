@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import {
   Box,
   Flex,
@@ -13,9 +13,6 @@ import Link from 'next/link'
 import config from '@/config'
 import shortenAccount from '@/utils/shortenAccount'
 import OraclesResultCard from '@/components/Oracles/OraclesResultCard'
-import { allStates } from '@/data/ApElectionStatesData'
-import { useApElection } from '@/hooks/useApElection'
-import { ethers } from 'ethers'
 
 const Oracles = () => {
   const backgroundImage = useColorModeValue(
