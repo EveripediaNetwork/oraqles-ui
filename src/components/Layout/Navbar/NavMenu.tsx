@@ -41,48 +41,50 @@ const NavMenu = () => {
           />
         ))}
       </Flex>
-      <Menu offset={[110, 30]}>
-        <MenuButton
-          as={Button}
-          size="sm"
-          fontWeight="500"
-          variant="outline"
-          leftIcon={<Icon as={currentNetwork.icon} fontSize="md" />}
-          rightIcon={<FaChevronDown />}
-        >
-          <Text
-            display={{ base: 'none', md: 'block' }}
-            fontSize="sm"
-            fontWeight="medium"
+      <Flex alignItems="center" gap={{ md: '2', xl: '3' }}>
+        <Menu offset={[110, 30]}>
+          <MenuButton
+            as={Button}
+            size="sm"
+            fontWeight="500"
+            variant="outline"
+            leftIcon={<Icon as={currentNetwork.icon} fontSize="md" />}
+            rightIcon={<FaChevronDown />}
           >
-            {currentNetwork.name}{' '}
-          </Text>
-        </MenuButton>
-        <MenuList borderRadius="lg" w={250} boxShadow="2xl">
-          <MenuGroup fontSize="md" fontWeight="medium" title="Select Network">
-            {NETWORK_DATA.map((network, index) => (
-              <Box px={3} key={index}>
-                <MenuItem
-                  isDisabled={!network.isActive}
-                  py={3}
-                  my={3}
-                  onClick={() => handleNetworkSwitch(network)}
-                  rounded="lg"
-                  border="solid 1px "
-                  borderColor="divider"
-                >
-                  <Icon mr={3} as={network.icon} fontSize="2xl" />
-                  <Spacer />
-                  <Text fontSize="sm" fontWeight="medium">
-                    {network.name}
-                  </Text>
-                </MenuItem>
-              </Box>
-            ))}
-          </MenuGroup>
-        </MenuList>
-      </Menu>
-      <ColorToggleButton display={{ base: 'none', md: 'inherit' }} />
+            <Text
+              display={{ base: 'none', md: 'block' }}
+              fontSize="sm"
+              fontWeight="medium"
+            >
+              {currentNetwork.name}{' '}
+            </Text>
+          </MenuButton>
+          <MenuList borderRadius="lg" w={250} boxShadow="2xl">
+            <MenuGroup fontSize="md" fontWeight="medium" title="Select Network">
+              {NETWORK_DATA.map((network, index) => (
+                <Box px={3} key={index}>
+                  <MenuItem
+                    isDisabled={!network.isActive}
+                    py={3}
+                    my={3}
+                    onClick={() => handleNetworkSwitch(network)}
+                    rounded="lg"
+                    border="solid 1px "
+                    borderColor="divider"
+                  >
+                    <Icon mr={3} as={network.icon} fontSize="2xl" />
+                    <Spacer />
+                    <Text fontSize="sm" fontWeight="medium">
+                      {network.name}
+                    </Text>
+                  </MenuItem>
+                </Box>
+              ))}
+            </MenuGroup>
+          </MenuList>
+        </Menu>
+        <ColorToggleButton display={{ base: 'none', md: 'inherit' }} />
+      </Flex>
     </Flex>
   )
 }
