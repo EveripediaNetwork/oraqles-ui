@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   Box,
   Flex,
@@ -18,7 +18,21 @@ const Oracles = () => {
     'oracles-background-dark.png',
   )
   const { marchMadnessIpfsHash } = useMarchMadness()
-  console.log(marchMadnessIpfsHash)
+
+  useEffect(() => {
+    const fetchMarchMadnessIpfsData = async () => {
+      const response = await fetch(
+        `https://gateway.pinata.cloud/ipfs/${marchMadnessIpfsHash}`,
+      )
+
+      const data = await response.json()
+
+      console.log(data)
+    }
+
+    fetchMarchMadnessIpfsData()
+  })
+
   return (
     <Box
       bgColor="oraclesBackground"
