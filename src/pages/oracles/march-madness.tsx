@@ -84,8 +84,8 @@ const Oracles = () => {
         display="flex"
         alignItems="stretch"
         maxW="1280px"
+        // overflowX="hidden"
         mx="auto"
-        minH="500px"
         variant="unstyled"
         orientation="vertical"
         defaultIndex={0}
