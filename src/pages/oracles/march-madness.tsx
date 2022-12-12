@@ -6,11 +6,15 @@ import {
   useColorModeValue,
   Text,
   Link as ChakraLink,
+  Tabs,
+  TabList,
+  Tab,
 } from '@chakra-ui/react'
 import Link from 'next/link'
 import shortenAccount from '@/utils/shortenAccount'
 import config from '@/config'
 import { useMarchMadness } from '@/hooks/useMarchMadness'
+import { MarchMadnessTabData } from '@/data/MarchMadnessTabData'
 
 const Oracles = () => {
   const backgroundImage = useColorModeValue(
@@ -76,11 +80,26 @@ const Oracles = () => {
         <Box
           w="290px"
           pr="3"
-          borderLeft="1px solid"
           borderRight="1px solid"
           borderColor="oraclesPageBorder"
         >
-          &nbsp;
+          <Tabs variant="unstyled" orientation="vertical" pt="10">
+            <TabList w="full">
+              {MarchMadnessTabData.map(tab => (
+                <Tab
+                  fontSize="sm"
+                  w="full"
+                  borderRadius="8px"
+                  _selected={{ color: 'white', bg: 'heroBackground' }}
+                  justifyContent="flex-start"
+                  key={tab.id}
+                  mb="3"
+                >
+                  {tab.label}
+                </Tab>
+              ))}
+            </TabList>
+          </Tabs>
         </Box>
         <Box flexGrow="1">&nbsp;</Box>
       </Flex>
