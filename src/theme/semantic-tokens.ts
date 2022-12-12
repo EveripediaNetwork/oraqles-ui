@@ -188,5 +188,21 @@ export const semanticTokens: SemanticTokens = {
       default: 'gray.700',
       _dark: 'whiteAlpha.800',
     },
+    codeTextColor: {
+      default: 'red.500',
+      _dark: 'red.500',
+    },
+    codeTextColor2: {
+      default: 'blue.500',
+      _dark: 'blue.500',
+    },
+    codeBackground: {
+      default: 'gray.50',
+      _dark: 'gray.700',
+    },
+    codeBorder: {
+      default: 'gray.300',
+      _dark: 'transparent',
+    },
   },
 }

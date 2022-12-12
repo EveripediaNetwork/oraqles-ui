@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react'
 import { Box, Link, Text } from '@chakra-ui/react'
 
@@ -37,9 +38,61 @@ const MarchMadnessInfoView = () => {
             target="_blank"
             href="https://gateway.pinata.cloud/ipfs/QmcJ9AQPjqDbJJ8KDMiaAF8KXRGwAJx7eWf3WNGsEijKBQ"
           >
+            {' '}
             QmcJ9AQPjqDbJJ8KDMiaAF8KXRGwAJx7eWf3WNGsEijKBQ
           </Link>
         </Text>
+      </Box>
+      <Box
+        as="pre"
+        mt="6"
+        p="6"
+        border="1px solid"
+        borderColor="codeBorder"
+        borderRadius="12px"
+        bgColor="codeBackground"
+      >
+        <Box as="span" color="codeTextColor">
+          const
+        </Box>{' '}
+        ethers ={' '}
+        <Box as="span" color="codeTextColor2">
+          require
+        </Box>
+        (
+        <Box as="span" color="green.500">
+          &quot;ethers&quot;
+        </Box>
+        );
+        <br />
+        <Box as="span" color="codeTextColor">
+          const
+        </Box>{' '}
+        abi = [&#65371;
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;
+        <Box as="span" color="green.500">
+          input
+        </Box>
+        &quot;: []
+        <br /> &nbsp;&nbsp;&nbsp;&nbsp;&quot;
+        <Box as="span" color="green.500">
+          name
+        </Box>
+        &quot;: &quot;
+        <Box as="span" color="green.500">
+          ipfsFullData
+        </Box>
+        &quot;
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;
+        <Box as="span" color="green.500">
+          outputs
+        </Box>
+        &quot;: [
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
+        <br /> &#125;]
       </Box>
     </Box>
   )
