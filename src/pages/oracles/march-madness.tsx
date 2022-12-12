@@ -98,15 +98,27 @@ const Oracles = () => {
           <TabList w="full">
             {MarchMadnessTabData.map(tab => (
               <Tab
+                h="50px"
                 fontSize="sm"
                 w="full"
                 borderRadius="8px"
                 _selected={{ color: 'white', bg: 'heroBackground' }}
-                justifyContent="flex-start"
+                justifyContent="space-between"
                 key={tab.id}
                 mb="3"
               >
-                {tab.label}
+                <Box as="span">{tab.label}</Box>
+                {tab.id === 'json' && (
+                  <Box
+                    bgColor="oraclesViewerButton"
+                    p="2"
+                    borderRadius="20px"
+                    as="span"
+                    color="oraclesTextColor"
+                  >
+                    viewer
+                  </Box>
+                )}
               </Tab>
             ))}
           </TabList>

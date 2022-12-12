@@ -172,5 +172,9 @@ export const semanticTokens: SemanticTokens = {
       default: 'gray.300',
       _dark: 'whiteAlpha.200',
     },
+    oraclesViewerButton: {
+      default: 'gray.50',
+      _dark: 'gray.700',
+    },
   },
 }
