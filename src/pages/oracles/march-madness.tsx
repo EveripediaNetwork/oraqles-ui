@@ -84,15 +84,16 @@ const Oracles = () => {
         display="flex"
         alignItems="stretch"
         maxW="1280px"
-        // overflowX="hidden"
+        px={{ base: '5', md: '8', xl: '0' }}
         mx="auto"
         variant="unstyled"
         orientation="vertical"
         defaultIndex={0}
+        flexDirection={{ base: 'column', md: 'row' }}
       >
         <Box
           pt="8"
-          w="300px"
+          w={{ md: '250px', xl: '300px' }}
           flexShrink="0"
           pr="5"
           borderRight="1px solid"
@@ -101,7 +102,7 @@ const Oracles = () => {
           <TabList w="full">
             {MarchMadnessTabData.map(tab => (
               <Tab
-                h="50px"
+                h={{ base: '30px', md: '50px' }}
                 fontSize="sm"
                 w="full"
                 borderRadius="8px"
@@ -110,7 +111,9 @@ const Oracles = () => {
                 key={tab.id}
                 mb="3"
               >
-                <Box as="span">{tab.label}</Box>
+                <Box as="span" fontSize={{ base: 'xs', lg: 'sm' }}>
+                  {tab.label}
+                </Box>
                 {tab.id === 'json' && (
                   <Box
                     bgColor="oraclesViewerButton"
@@ -118,6 +121,7 @@ const Oracles = () => {
                     borderRadius="20px"
                     as="span"
                     color="oraclesTextColor"
+                    fontSize={{ base: '6px', lg: '12px' }}
                   >
                     viewer
                   </Box>
