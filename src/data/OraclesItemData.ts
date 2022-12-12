@@ -7,6 +7,12 @@ export type OraclesItemType = {
   createdAt?: string
 }
 
+export type OraclesResultCardprops = {
+  title: string
+  text: string
+  link: string
+}
+
 export const ORAQLES_ITEMS: OraclesItemType[] = [
   {
     id: 'march-madness',
