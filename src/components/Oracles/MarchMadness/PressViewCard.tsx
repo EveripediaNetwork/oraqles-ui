@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Box, Flex, Text, chakra, Image, VStack } from '@chakra-ui/react'
 import { PressJsonprops } from '@/data/MarchMadnessPressData'
 import Link from 'next/link'
+
+const BROKEN_IMAGE = '/images/broken.png'
 
 const MarchMadnessPressViewCard = ({
   image,
@@ -9,6 +11,8 @@ const MarchMadnessPressViewCard = ({
   text,
   link,
 }: PressJsonprops) => {
+  const [src, setSrc] = useState(image || BROKEN_IMAGE)
+
   return (
     <Flex
       direction="column"
@@ -21,7 +25,8 @@ const MarchMadnessPressViewCard = ({
     >
       <Box>
         <Image
-          src={image}
+          src={src}
+          onError={() => setSrc(BROKEN_IMAGE)}
           display="block"
           w="full"
           h="220px"
@@ -51,6 +56,7 @@ const MarchMadnessPressViewCard = ({
           w="full"
           position="relative"
           bottom="0"
+          color="heroBackground"
         >
           {title}
         </chakra.div>

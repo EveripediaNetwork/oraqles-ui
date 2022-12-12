@@ -1,5 +1,5 @@
 export type PressJsonprops = {
-  image: string
+  image?: string
   title: string
   text: string
   link: string
@@ -7,29 +7,25 @@ export type PressJsonprops = {
 
 export const PRESS_JSON: PressJsonprops[] = [
   {
-    image:
-      'https://socialsharepreview.com/api/image-proxy?url=https%3A%2F%2Fcdn.buttercms.com%2FHLrxn5xQKa4ItpvAbC9K',
+    image: '/images/press--1.png',
     title: 'BRAINDAO.ORG',
     text: 'The Associated Press works with BrainDAO to publish March Madness scores on Ethereum | BrainDAO Blog',
     link: 'https://everipedia.org/blog/the-associated-press-works-with-everipedia-to-publish-march-madness-scores-on-ethereum',
   },
   {
-    image:
-      'https://socialsharepreview.com/api/image-proxy?url=https%3A%2F%2Fu.today%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F1200x900%2Fpublic%2F2021-03%2FAdobeStock_404621189.jpeg',
+    image: '/images/press--2.png',
     title: 'COINMARKETCAP.COM',
     text: 'Associated Press to Record Basketball Scores on Ethereum Blockchain | Headlines | News | CoinMarketCap',
     link: 'https://coinmarketcap.com/headlines/news/associated-press-to-record-basketball-scores-on-ethereum-blockchain/',
   },
   {
-    image:
-      'https://socialsharepreview.com/api/image-proxy?url=https%3A%2F%2Ftokenpost.com%2Fassets%2Fimages%2Ftokenpostcom%2Fcommon%2FsnsShareV3.png',
+    image: '/images/press--3.png',
     title: 'TOKENPOST.COM',
     text: 'Associated Press To Record Basketball Scores On Ethereum Blockchain - TokenPost',
     link: 'https://tokenpost.com/Associated-Press-To-Record-Basketball-Scores-On-Ethereum-Blockchain-7555',
   },
   {
-    image:
-      'https://socialsharepreview.com/api/image-proxy?url=https%3A%2F%2Fheraldsheets.com%2Fwp-content%2Fuploads%2F2021%2F03%2FUntitled-design317.jpg',
+    image: '',
     title: 'HERALDSHEETS.COM',
     text: 'Associated Press to Record Basketball Scores on Ethereum in Conjunction with Everipedia - Herald Sheets',
     link: 'https://heraldsheets.com/associated-press-to-record-basketball-scores-on-ethereum-with-everipedia/',
