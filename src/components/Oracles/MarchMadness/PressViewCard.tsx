@@ -9,8 +9,6 @@ const MarchMadnessPressViewCard = ({
   text,
   link,
 }: PressJsonprops) => {
-  console.log(title, text, link, image)
-
   return (
     <Flex
       direction="column"
