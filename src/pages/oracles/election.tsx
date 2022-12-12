@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   Box,
   Flex,
@@ -20,6 +20,8 @@ const Oracles = () => {
     'oracles-background-dark.png',
   )
   // const [jsonResult, setJsonResult] = useState([''])
+
+  useEffect(() => {}, [])
 
   return (
     <Stack w="full" mb={{ base: '6', md: '8', lg: '10' }} direction="column">
@@ -85,7 +87,7 @@ const Oracles = () => {
           25 states called for Trump, 27 states called for Biden.
         </Text>
         <Box>
-          <Text />
+          {/* <Text></Text> */}
         </Box>
         <Flex direction="column" mt="3" textAlign="center" py="7" gap="10">
           <Heading> Developer Docs</Heading>
