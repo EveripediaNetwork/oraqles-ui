@@ -5,7 +5,7 @@ import MarchMadnessPressViewCard from './PressViewCard'
 
 const MarchMadnessPressView = () => {
   return (
-    <SimpleGrid templateColumns="repeat(3, 1fr)" gap="8">
+    <SimpleGrid templateColumns="repeat(3, 1fr)" gap="5">
       {PRESS_JSON.map((press, i) => (
         <MarchMadnessPressViewCard
           key={i}
