@@ -13,6 +13,7 @@ import Link from 'next/link'
 import { useUSElection } from '@/hooks/useElection'
 import config from '@/config'
 import shortenAccount from '@/utils/shortenAccount'
+import OraclesResultCard from '@/components/Oracles/OraclesResultCard'
 
 const positions = ['U.S. Senate Class II', 'U.S. Senate Class III']
 
@@ -109,36 +110,11 @@ const Oracles = () => {
             </VStack>
           ))}
         </Stack>
-        <Link
-          href="https://docs.everipedia.org/current-oraqles-projects/jan-5-2021"
-          passHref
-        >
-          <Box
-            cursor="pointer"
-            px="3"
-            mx="5"
-            textAlign="center"
-            py={{ base: '6', lg: '10' }}
-            borderRadius="10px"
-            border="1px solid"
-            borderColor="oraclesCardBorder"
-            boxShadow="base"
-          >
-            <Heading
-              color="oraclesTextColor"
-              fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
-            >
-              Developer Docs
-            </Heading>
-            <Text
-              w="full"
-              mt={{ base: '3', md: '4', lg: '7' }}
-              color="oraclesTextColor"
-            >
-              January 5th, 2021 Senate Runoff
-            </Text>
-          </Box>
-        </Link>
+        <OraclesResultCard
+          title="Developer Docs"
+          text="January 5th, 2021 Senate Runoff"
+          link="https://docs.everipedia.org/current-oraqles-projects/jan-5-2021"
+        />
       </Box>
     </VStack>
   )

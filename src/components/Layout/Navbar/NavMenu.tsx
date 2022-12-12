@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Flex,
   Menu,
@@ -7,16 +7,29 @@ import {
   MenuItem,
   Text,
   Image,
+  MenuGroup,
+  Icon,
+  Box,
+  Spacer,
+  Button,
 } from '@chakra-ui/react'
 import { NavItemType, NAV_ITEMS } from '@/data/NavItemData'
 import NavLink from '@/components/Layout/Navbar/NavLink'
 import { useTranslation } from 'react-i18next'
 import ColorToggleButton from '@/components/Layout/ColorModeToggle'
 import { ChevronDownIcon } from '@chakra-ui/icons'
+import { FaChevronDown } from 'react-icons/fa'
+import { NETWORK_DATA } from '@/data/NetworkData'
+import { NetworkType } from '@/types/NetworkType'
 
 const NavMenu = () => {
   const { t } = useTranslation()
-
+  const [currentNetwork, setCurrentNetwork] = useState<NetworkType>(
+    NETWORK_DATA[0],
+  )
+  const handleNetworkSwitch = (newNetwork: NetworkType) => {
+    setCurrentNetwork(newNetwork)
+  }
   return (
     <Flex gap={6} alignItems="center">
       <Flex gap={{ md: 8, lg: 10 }}>
@@ -30,27 +43,49 @@ const NavMenu = () => {
           />
         ))}
       </Flex>
-      <Menu>
+      <Menu offset={[110, 30]}>
         <MenuButton
-          px={3}
-          py={2}
-          transition="all 0.2s"
-          borderRadius="md"
-          borderWidth="1px"
+          as={Button}
+          size="sm"
+          fontWeight="500"
+          variant="outline"
+          leftIcon={<Icon as={currentNetwork.icon} fontSize="md" />}
+          rightIcon={<FaChevronDown />}
         >
-          <Flex alignItems="center" justifyContent="center">
-            <Image
-              objectFit="contain"
-              boxSize="23px"
-              src="/images/ethereum.svg"
-            />
-            <Text display={{ md: 'none', xl: 'unset' }}>Ethereum</Text>
-            <ChevronDownIcon />
-          </Flex>
+          <Text
+            display={{ base: 'none', md: 'block' }}
+            fontSize="sm"
+            fontWeight="medium"
+          >
+            {currentNetwork.name}{' '}
+          </Text>
         </MenuButton>
-        <MenuList>
-          <MenuItem>Connect</MenuItem>
-          <MenuItem>Wallet</MenuItem>
+        <MenuList borderRadius="lg" w={250} boxShadow="2xl">
+          <MenuGroup
+            fontSize="md"
+            fontWeight="medium"
+            title="Select Network"
+          >
+            {NETWORK_DATA.map((network, index) => (
+              <Box px={3} key={index}>
+                <MenuItem
+                  isDisabled={!network.isActive}
+                  py={3}
+                  my={3}
+                  onClick={() => handleNetworkSwitch(network)}
+                  rounded="lg"
+                  border="solid 1px "
+                  borderColor="divider"
+                >
+                  <Icon mr={3} as={network.icon} fontSize="2xl" />
+                  <Spacer />
+                  <Text fontSize="sm" fontWeight="medium">
+                    {network.name}
+                  </Text>
+                </MenuItem>
+              </Box>
+            ))}
+          </MenuGroup>
         </MenuList>
       </Menu>
       <ColorToggleButton display={{ base: 'none', md: 'inherit' }} />

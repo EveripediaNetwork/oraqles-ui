@@ -13,6 +13,7 @@ import Link from 'next/link'
 import shortenAccount from '@/utils/shortenAccount'
 import config from '@/config'
 import { useSuperbowl } from '@/hooks/useSuperbowl'
+import OraclesResultCard from '@/components/Oracles/OraclesResultCard'
 
 const Oracles = () => {
   const backgroundImage = useColorModeValue(
@@ -85,40 +86,12 @@ const Oracles = () => {
               {winner}
             </Heading>
           </VStack>
-          <Link
-            href={`https://etherscan.io/address/${config.superbowlContractAddress}`}
-            passHref
-          >
-            <Box
-              cursor="pointer"
-              px="3"
-              textAlign="center"
-              py={{ base: '6', lg: '10' }}
-              borderRadius="10px"
-              border="1px solid"
-              borderColor="oraclesCardBorder"
-              boxShadow="sm"
-            >
-              <Heading
-                w="full"
-                textAlign="center"
-                color="oraclesTextColor"
-                fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
-              >
-                View on Ethereum Mainnet
-              </Heading>
-              <Text
-                w="full"
-                mt={{ base: '3', md: '4' }}
-                color="oraclesTextColor"
-                textAlign="center"
-                fontSize={{ base: 'xs', md: 'initial' }}
-              >
-                View what this dashbaord might look like after race calls
-                arrive.
-              </Text>
-            </Box>
-          </Link>
+          <OraclesResultCard
+            title="View on Ethereum Mainnet"
+            text=" View what this dashbaord might look like after race calls
+            arrive."
+            link={`https://etherscan.io/address/${config.superbowlContractAddress}`}
+          />
         </Stack>
       </Box>
     </VStack>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Box,
   Flex,
@@ -13,15 +13,30 @@ import Link from 'next/link'
 import config from '@/config'
 import shortenAccount from '@/utils/shortenAccount'
 import OraclesResultCard from '@/components/Oracles/OraclesResultCard'
+import { allStates } from '@/data/ApElectionStatesData'
+import { useApElection } from '@/hooks/useApElection'
+import { ethers } from 'ethers'
 
 const Oracles = () => {
   const backgroundImage = useColorModeValue(
     'oracles-background-light.png',
     'oracles-background-dark.png',
   )
-  // const [jsonResult, setJsonResult] = useState([''])
+  // const [jsonResult, setJsonResult] = useState('')
+  // allStates.map((item, i) => {
+  //   const { ApElectionWinner } = useApElection(item)
+  //   const winner: string = ApElectionWinner as string
+  //   let data = `"${item}": {"winner": "${
+  //     winner[0]
+  //   }","resultNow": "${ethers.utils.formatUnits(
+  //     winner[1],
+  //   )}","resultBlock: "${ethers.utils.formatUnits(winner[2])}",},`
+  //   let datas = jsonResult.concat(data)
+  //   setJsonResult(datas)
+  //   console.log(i, winner, typeof winner, data)
+  // })
 
-  useEffect(() => {}, [])
+  // useEffect(() => {}, [])
 
   return (
     <Stack w="full" mb={{ base: '6', md: '8', lg: '10' }} direction="column">
