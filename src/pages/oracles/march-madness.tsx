@@ -11,6 +11,7 @@ import {
   Tab,
   TabPanels,
   TabPanel,
+  Divider,
 } from '@chakra-ui/react'
 import Link from 'next/link'
 import shortenAccount from '@/utils/shortenAccount'
@@ -91,14 +92,7 @@ const Oracles = () => {
         defaultIndex={0}
         flexDirection={{ base: 'column', md: 'row' }}
       >
-        <Box
-          pt="8"
-          w={{ md: '250px', xl: '300px' }}
-          flexShrink="0"
-          pr="5"
-          borderRight="1px solid"
-          borderColor="oraclesPageBorder"
-        >
+        <Box pt="8" w={{ md: '250px', xl: '300px' }} flexShrink="0" pr="5">
           <TabList w="full">
             {MarchMadnessTabData.map(tab => (
               <Tab
@@ -130,7 +124,11 @@ const Oracles = () => {
             ))}
           </TabList>
         </Box>
-        <Box flexGrow="1" py="8" pl="8">
+        <Box minH="100vh" display={{ base: 'none', md: 'block' }}>
+          <Divider orientation="vertical" />
+        </Box>
+
+        <Box flexGrow="1" py="8" pl={{ base: '0', md: '8' }}>
           <TabPanels>
             <TabPanel p="0">
               <MarchMadnessInfoView />
