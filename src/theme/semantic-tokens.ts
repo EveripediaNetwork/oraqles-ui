@@ -180,5 +180,13 @@ export const semanticTokens: SemanticTokens = {
       default: 'gray.200',
       _dark: 'whiteAlpha.100',
     },
+    marchMadnessInfoHeading: {
+      default: 'gray.600',
+      _dark: 'whiteAlpha.600',
+    },
+    marchMadnessInfoText: {
+      default: 'gray.700',
+      _dark: 'whiteAlpha.800',
+    },
   },
 }

@@ -18,6 +18,7 @@ import config from '@/config'
 import { useMarchMadness } from '@/hooks/useMarchMadness'
 import { MarchMadnessTabData } from '@/data/MarchMadnessTabData'
 import MarchMadnessPressView from '@/components/Oracles/MarchMadness/PressView'
+import MarchMadnessInfoView from '@/components/Oracles/MarchMadness/InfoView'
 
 const Oracles = () => {
   const backgroundImage = useColorModeValue(
@@ -92,6 +93,7 @@ const Oracles = () => {
         <Box
           pt="8"
           w="300px"
+          flexShrink="0"
           pr="5"
           borderRight="1px solid"
           borderColor="oraclesPageBorder"
@@ -126,19 +128,19 @@ const Oracles = () => {
         </Box>
         <Box flexGrow="1" py="8" pl="8">
           <TabPanels>
-            <TabPanel>
-              <p>Info</p>
+            <TabPanel p="0">
+              <MarchMadnessInfoView />
             </TabPanel>
-            <TabPanel>
+            <TabPanel p="0">
               <p>Brackets</p>
             </TabPanel>
-            <TabPanel>
+            <TabPanel p="0">
               <p>Team Stats</p>
             </TabPanel>
-            <TabPanel>
+            <TabPanel p="0">
               <p>Json</p>
             </TabPanel>
-            <TabPanel>
+            <TabPanel p="0">
               <MarchMadnessPressView />
             </TabPanel>
           </TabPanels>

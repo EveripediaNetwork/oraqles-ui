@@ -14,7 +14,7 @@ const MarchMadnessPressViewCard = ({
     <Flex
       direction="column"
       border="1px solid"
-      minH="450px"
+      minH="350px"
       justifyContent="space-between"
       borderColor="oraclesPressViewCardBorder"
     >
