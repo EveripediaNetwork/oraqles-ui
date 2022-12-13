@@ -13,27 +13,32 @@ import Link from 'next/link'
 import config from '@/config'
 import shortenAccount from '@/utils/shortenAccount'
 import OraclesResultCard from '@/components/Oracles/OraclesResultCard'
+import { allStates } from '@/data/ApElectionStatesData'
+import { useApElection } from '@/hooks/useApElection'
 
 const Oracles = () => {
   const backgroundImage = useColorModeValue(
     'oracles-background-light.png',
     'oracles-background-dark.png',
   )
-  // const [jsonResult, setJsonResult] = useState('')
-  // allStates.map((item, i) => {
-  //   const { ApElectionWinner } = useApElection(item)
-  //   const winner: string = ApElectionWinner as string
-  //   let data = `"${item}": {"winner": "${
-  //     winner[0]
-  //   }","resultNow": "${ethers.utils.formatUnits(
-  //     winner[1],
-  //   )}","resultBlock: "${ethers.utils.formatUnits(winner[2])}",},`
-  //   let datas = jsonResult.concat(data)
-  //   setJsonResult(datas)
-  //   console.log(i, winner, typeof winner, data)
-  // })
 
-  // useEffect(() => {}, [])
+  const GetWinner = (item: string) => {
+    const { ApElectionWinner } = useApElection(item)
+    return ApElectionWinner
+  }
+  const allData = allStates.map(item => {
+    const ApElectionWinner = GetWinner(item)
+    const winner: string = ApElectionWinner as string
+    const winnerString = winner?.toString()
+    const winnerArray = winnerString?.split(',')
+    if (winnerArray) {
+      const jsonTemplate = `"${item}": { "winner": "${winnerArray[0]}", "resultNow": "${winnerArray[1]}", "resultBlock: "${winnerArray[2]}" }, `
+      const cover = ''
+      const data = cover.concat(jsonTemplate)
+      return data
+    }
+    return ''
+  })
 
   return (
     <Stack w="full" mb={{ base: '6', md: '8', lg: '10' }} direction="column">
@@ -96,9 +101,24 @@ const Oracles = () => {
           states + D.C. + US)
         </Text>
         <Text alignSelf="flex-start" fontSize="xl">
-          25 states called for Trump, 27 states called for Biden.
+          <chakra.span color="red.500">25 states called for Trump </chakra.span>
+          ,{' '}
+          <chakra.span color="blue.500">
+            27 states called for Biden.
+          </chakra.span>
         </Text>
-        <Box>{/* <Text></Text> */}</Box>
+        <Box
+          my="10"
+          overflow="auto"
+          overflowY="scroll"
+          py="5"
+          px="5"
+          h="400px"
+          borderWidth="1px"
+          borderRadius="lg"
+        >
+          <Text>{`{${allData}}`}</Text>
+        </Box>
         <Flex direction="column" mt="3" textAlign="center" py="7" gap="10">
           <Heading> Developer Docs</Heading>
           <OraclesResultCard
