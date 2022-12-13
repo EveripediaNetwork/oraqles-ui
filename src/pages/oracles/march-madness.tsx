@@ -21,6 +21,7 @@ import { MarchMadnessTabData } from '@/data/MarchMadnessTabData'
 import MarchMadnessPressView from '@/components/Oracles/MarchMadness/PressView'
 import MarchMadnessInfoView from '@/components/Oracles/MarchMadness/InfoView'
 import { MarchMadnessSEO } from '@/components/SEO/Oracles'
+import JsonViewer from '@/components/Oracles/MarchMadness/JsonViewer'
 
 const Oracles = () => {
   const backgroundImage = useColorModeValue(
@@ -142,7 +143,7 @@ const Oracles = () => {
               <p>Team Stats</p>
             </TabPanel>
             <TabPanel p="0">
-              <p>Json</p>
+              <JsonViewer />
             </TabPanel>
             <TabPanel p="0">
               <MarchMadnessPressView />

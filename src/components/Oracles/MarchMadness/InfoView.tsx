@@ -1,7 +1,8 @@
 import React from 'react'
 import { Box, Link, Text } from '@chakra-ui/react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
-import theme from 'prism-react-renderer/themes/nightOwl'
+import theme from 'prism-react-renderer/themes/github'
+
 import { MarchMadnessCode } from '@/data/MarchMadnessSetupData'
 
 const MarchMadnessInfoView = () => {
@@ -45,7 +46,14 @@ const MarchMadnessInfoView = () => {
           </Link>
         </Text>
       </Box>
-      <Box mt="8">
+      <Box
+        mt="8"
+        overflow="auto"
+        overflowY="scroll"
+        h="500px"
+        borderWidth="1px"
+        borderRadius="lg"
+      >
         <Highlight
           {...defaultProps}
           code={MarchMadnessCode.trim()}

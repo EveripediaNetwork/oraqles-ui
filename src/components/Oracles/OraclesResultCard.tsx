@@ -17,14 +17,14 @@ const OraclesResultCard = ({ title, text, link }: OraclesResultCardprops) => {
         borderColor="oraclesCardBorder"
         boxShadow="base"
       >
-        <Heading color="oraclesTextColor" fontSize={{ base: '2xl', md: '3xl' }}>
+        <Heading color="oraclesTextColor" fontSize={{ base: 'xl', md: '2xl' }}>
           {title}
         </Heading>
         <Text
           w="full"
           mt={{ base: '3', md: '4', lg: '7' }}
           color="oraclesTextColor"
-          fontSize={{ base: 'xl', md: '2xl' }}
+          fontSize={{ base: 'lg', md: 'xl' }}
         >
           {text}
         </Text>
