@@ -26,20 +26,26 @@ const Oracles = () => {
     const { ApElectionWinner } = useApElection(item)
     return ApElectionWinner
   }
+
   const allData = allStates.map(item => {
     const ApElectionWinner = GetWinner(item)
     const winner: string = ApElectionWinner as string
     const winnerString = winner?.toString()
     const winnerArray = winnerString?.split(',')
     if (winnerArray) {
-      const jsonTemplate = `"${item}": { "winner": "${winnerArray[0]}", "resultNow": "${winnerArray[1]}", "resultBlock: "${winnerArray[2]}" }, `
+      const jsonTemplate = `
+      "${item}": {
+        "winner": "${winnerArray[0]}",
+        "resultNow": "${winnerArray[1]}", 
+        "resultBlock": "${winnerArray[2]}"
+      }`
       const cover = ''
       const data = cover.concat(jsonTemplate)
       return data
     }
     return ''
   })
-
+  console.log(allData)
   return (
     <Stack w="full" mb={{ base: '6', md: '8', lg: '10' }} direction="column">
       <Box
@@ -117,9 +123,18 @@ const Oracles = () => {
           borderWidth="1px"
           borderRadius="lg"
         >
-          <Text>{`{${allData}}`}</Text>
+          <pre>{`{${allData}}`}</pre>
         </Box>
-        <Flex direction="column" mt="3" textAlign="center" py="7" gap="10">
+        <Flex
+          direction="column"
+          mt="3"
+          textAlign="center"
+          py="7"
+          gap="10"
+          px={{ base: 3, lg: 10 }}
+          w={{ base: 'full', md: '768px' }}
+          mx="auto"
+        >
           <Heading> Developer Docs</Heading>
           <OraclesResultCard
             title="Fetch election calls with solidity"
