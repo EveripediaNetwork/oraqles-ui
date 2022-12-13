@@ -20,6 +20,7 @@ import { useMarchMadness } from '@/hooks/useMarchMadness'
 import { MarchMadnessTabData } from '@/data/MarchMadnessTabData'
 import MarchMadnessPressView from '@/components/Oracles/MarchMadness/PressView'
 import MarchMadnessInfoView from '@/components/Oracles/MarchMadness/InfoView'
+import { MarchMadnessSEO } from '@/components/SEO/Oracles'
 
 const Oracles = () => {
   const backgroundImage = useColorModeValue(
@@ -44,6 +45,7 @@ const Oracles = () => {
 
   return (
     <>
+      <MarchMadnessSEO />
       <Box
         bgColor="oraclesBackground"
         minH="300px"

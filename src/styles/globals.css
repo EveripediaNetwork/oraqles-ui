@@ -2,4 +2,7 @@
   padding: 24px;
   border-radius: 12px;
   overflow-x: scroll;
+  display: block !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
 }

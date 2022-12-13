@@ -10,12 +10,12 @@ const SEOHeader = ({ router }: SEOHeaderProps) => {
   return (
     <DefaultSeo
       title="IQ OraQles"
-      description="IQ OraQles is a service managed by BrainDAO that allows verified first parties to bring real-world information on-chain."
-      canonical={`https://oraqles.com${router.asPath || ''}`}
+      description="BrainDAO brings real-world information onto the blockchain with our innovative OraQle product. Try it on Ethereum today."
+      canonical={`https://oraqles-ui.vercel.app/${router.asPath || ''}`}
       openGraph={{
         title: 'IQ Oraqles',
         description:
-          'IQ OraQles is a service managed by BrainDAO that allows verified first parties to bring real-world information on-chain.',
+          'BrainDAO brings real-world information onto the blockchain with our innovative OraQle product. Try it on Ethereum today.',
         type: 'website',
         site_name: 'IQ OraQles',
         images: [
