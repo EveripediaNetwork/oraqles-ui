@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import { Box, Flex, Text, chakra, Image, VStack } from '@chakra-ui/react'
+import { Box, Flex, Text, chakra, Image, VStack, Link } from '@chakra-ui/react'
 import { PressJsonprops } from '@/data/MarchMadnessPressData'
-import Link from 'next/link'
 
 const BROKEN_IMAGE = '/images/broken.png'
 
@@ -37,7 +36,7 @@ const MarchMadnessPressViewCard = ({
       </Box>
       <VStack pt="4" w="full">
         <chakra.div w="full" px="3">
-          <Link href={link} passHref target="_blank">
+          <Link href={link} target="_blank">
             <Text fontWeight="bold" color="oraclesTextColor">
               VIEW
             </Text>
@@ -53,7 +52,7 @@ const MarchMadnessPressViewCard = ({
           {text}
         </chakra.div>
         <chakra.div
-          fontSize="sm"
+          fontSize="xs"
           borderRadius="none"
           roundedBottom="lg"
           py="2"
