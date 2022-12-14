@@ -37,8 +37,8 @@ const Navbar = () => {
         <Flex display={{ base: 'none', md: 'flex' }}>
           <NavMenu />
         </Flex>
-        <Box>
-          <Flex display={{ base: 'inline-block', md: 'none' }}>
+        <Box display={{ base: 'flex', md: 'none' }} alignItems="center">
+          <Flex>
             <NetworkMenu />
           </Flex>
           <IconButton

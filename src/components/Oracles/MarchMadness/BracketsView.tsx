@@ -47,7 +47,7 @@ const FirstRound = () => {
 const MarchMadnessBracketsView = ({
   tournament,
 }: MarchMadnessBracketsViewProps) => {
-  console.log(tournament.rounds)
+  console.log(tournament)
   return (
     <Flex overflowX="scroll">
       <FirstRound />
