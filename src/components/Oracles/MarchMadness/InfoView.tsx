@@ -48,9 +48,9 @@ const MarchMadnessInfoView = () => {
       </Box>
       <Box
         mt="8"
-        overflow="auto"
-        overflowY="scroll"
-        h="500px"
+        // overflow="auto"
+        // overflowY="scroll"
+        // h="500px"
         borderWidth="1px"
         borderRadius="lg"
       >

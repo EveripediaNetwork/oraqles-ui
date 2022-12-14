@@ -100,13 +100,20 @@ const Oracles = () => {
         alignItems="stretch"
         maxW="1280px"
         px={{ base: '5', md: '8', xl: '0' }}
+        pl={{ base: '5', md: 0 }}
         mx="auto"
         variant="unstyled"
         orientation="vertical"
         defaultIndex={1}
-        flexDirection={{ base: 'column', md: 'row' }}
+        flexDirection={{ base: 'column', lg: 'row' }}
       >
-        <Box pt="8" w={{ md: '250px', xl: '300px' }} flexShrink="0" pr="5">
+        <Box
+          pt="8"
+          px={{ md: '8', lg: 4 }}
+          w={{ lg: '250px', xl: '300px' }}
+          flexShrink="0"
+          pr="5"
+        >
           <TabList w="full">
             {MarchMadnessTabData.map(tab => (
               <Tab
@@ -138,7 +145,7 @@ const Oracles = () => {
             ))}
           </TabList>
         </Box>
-        <Box minH="100vh" display={{ base: 'none', md: 'block' }}>
+        <Box minH="100vh" display={{ base: 'none', lg: 'block' }}>
           <Divider orientation="vertical" />
         </Box>
 

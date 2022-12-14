@@ -8,10 +8,9 @@ const MarchMadnessPressView = () => {
     <SimpleGrid
       templateColumns={{
         base: 'repeat(1, 1fr)',
-        lg: 'repeat(2, 1fr)',
+        md: 'repeat(2, 1fr)',
         xl: 'repeat(3, 1fr)',
       }}
-      pr={{ base: '0', md: '20', lg: '0' }}
       gap="5"
     >
       {PRESS_JSON.map((press, i) => (

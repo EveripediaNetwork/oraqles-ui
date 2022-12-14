@@ -224,5 +224,13 @@ export const semanticTokens: SemanticTokens = {
       default: 'gray.200',
       _dark: 'whiteAlpha.300',
     },
+    bracketsCardLoserText: {
+      default: 'gray.800',
+      _dark: 'whiteAlpha.900',
+    },
+    bracketsFooterText: {
+      default: 'gray.500',
+      _dark: 'whiteAlpha.500',
+    },
   },
 }

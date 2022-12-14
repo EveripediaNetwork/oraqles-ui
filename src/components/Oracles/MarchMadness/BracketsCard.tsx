@@ -15,7 +15,7 @@ const MarchMadnessBracketsCard = () => {
         justifyContent="space-between"
         w="full"
         bgColor="bracketsCardTopBg"
-        h="90px"
+        h="80px"
         p="2.5"
       >
         <Flex justifyContent="space-between" alignItems="center">
@@ -31,11 +31,32 @@ const MarchMadnessBracketsCard = () => {
             </Text>
           </Box>
         </Flex>
-        <Flex justifyContent="space-between">&nbsp;</Flex>
+        <Flex justifyContent="space-between">
+          <Flex alignItems="center" gap="1">
+            <Text fontSize="xs" fontWeight={500} color="bracketsCardLoserText">
+              MSM (16)
+            </Text>
+          </Flex>
+          <Box>
+            <Text fontSize="xs" fontWeight={500} color="bracketsCardLoserText">
+              52
+            </Text>
+          </Box>
+        </Flex>
       </Flex>
-      <Box w="full" bgColor="bracketsCardBottomBg" p="2.5">
-        &nbsp;
-      </Box>
+      <Flex
+        w="full"
+        justifyContent="space-between"
+        bgColor="bracketsCardBottomBg"
+        p="2.5"
+      >
+        <Text color="bracketsFooterText" fontSize="10px" fontWeight={500}>
+          Thu Mar 18, 2021
+        </Text>
+        <Text color="bracketsFooterText" fontSize="10px" fontWeight={500}>
+          10:10:00PM
+        </Text>
+      </Flex>
     </Flex>
   )
 }
