@@ -102,7 +102,7 @@ const Oracles = () => {
         mx="auto"
         variant="unstyled"
         orientation="vertical"
-        defaultIndex={0}
+        defaultIndex={1}
         flexDirection={{ base: 'column', md: 'row' }}
       >
         <Box pt="8" w={{ md: '250px', xl: '300px' }} flexShrink="0" pr="5">
@@ -146,7 +146,7 @@ const Oracles = () => {
             <TabPanel p="0">
               <MarchMadnessInfoView />
             </TabPanel>
-            <TabPanel p="0">
+            <TabPanel p="0" overflowX="hidden" maxW="full">
               <MarchMadnessBracketsView
                 tournament={marchMadnessData?.tournament}
               />

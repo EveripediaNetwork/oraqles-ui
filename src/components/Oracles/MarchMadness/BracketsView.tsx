@@ -1,5 +1,6 @@
 import React from 'react'
-import { Box } from '@chakra-ui/react'
+import { Box, Flex, Text } from '@chakra-ui/react'
+import MarchMadnessBracketsCard from './BracketsCard'
 
 interface MarchMadnessBracketsViewProps {
   //   tournament: {
@@ -32,11 +33,26 @@ interface MarchMadnessBracketsViewProps {
   tournament: any
 }
 
+const FirstRound = () => {
+  return (
+    <Box w="320px">
+      <Text color="bracketsHeading" textAlign="center" mb="6">
+        First Four
+      </Text>
+      <MarchMadnessBracketsCard />
+    </Box>
+  )
+}
+
 const MarchMadnessBracketsView = ({
   tournament,
 }: MarchMadnessBracketsViewProps) => {
-  console.log(tournament)
-  return <Box>&nbsp;</Box>
+  console.log(tournament.rounds)
+  return (
+    <Flex overflowX="scroll">
+      <FirstRound />
+    </Flex>
+  )
 }
 
 export default MarchMadnessBracketsView

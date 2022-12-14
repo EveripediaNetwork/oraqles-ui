@@ -208,5 +208,21 @@ export const semanticTokens: SemanticTokens = {
       default: 'gray.50',
       _dark: 'whiteAlpha.100',
     },
+    bracketsHeading: {
+      default: 'gray.600',
+      _dark: 'whiteAlpha.600',
+    },
+    bracketsCardTopBg: {
+      default: 'gray.100',
+      _dark: 'gray.700',
+    },
+    bracketsCardBottomBg: {
+      default: 'white',
+      _dark: 'gray.800',
+    },
+    bracketsCardBorder: {
+      default: 'gray.200',
+      _dark: 'whiteAlpha.300',
+    },
   },
 }
