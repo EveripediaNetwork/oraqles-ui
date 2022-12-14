@@ -45,7 +45,6 @@ const Oracles = () => {
     }
     return ''
   })
-  console.log(allData)
   return (
     <Stack w="full" mb={{ base: '6', md: '8', lg: '10' }} direction="column">
       <Box
@@ -101,18 +100,19 @@ const Oracles = () => {
         </Flex>
       </Box>
       <Box w="full" p="5">
-        <Text alignSelf="flex-start" fontSize="xl">
+        <Text textAlign="center" fontSize="xl" w="full">
           Associated press had called{' '}
           <chakra.span fontWeight="bold"> 52 </chakra.span>out of 52 states. (50
           states + D.C. + US)
         </Text>
-        <Text alignSelf="flex-start" fontSize="xl">
+        <Text textAlign="center" fontSize="xl" w="full">
           <chakra.span color="red.500">25 states called for Trump </chakra.span>
           ,{' '}
           <chakra.span color="blue.500">
             27 states called for Biden.
           </chakra.span>
         </Text>
+
         <Box
           my="10"
           overflow="auto"
@@ -122,9 +122,11 @@ const Oracles = () => {
           h="400px"
           borderWidth="1px"
           borderRadius="lg"
+          w={{ base: 'full', md: '768px' }}
         >
           <pre>{`{${allData}}`}</pre>
         </Box>
+
         <Flex
           direction="column"
           mt="3"
