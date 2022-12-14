@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Box,
   Flex,
@@ -22,6 +22,7 @@ import MarchMadnessPressView from '@/components/Oracles/MarchMadness/PressView'
 import MarchMadnessInfoView from '@/components/Oracles/MarchMadness/InfoView'
 import { MarchMadnessSEO } from '@/components/SEO/Oracles'
 import JsonViewer from '@/components/Oracles/MarchMadness/JsonViewer'
+import MarchMadnessBracketsView from '@/components/Oracles/MarchMadness/BracketsView'
 
 const Oracles = () => {
   const backgroundImage = useColorModeValue(
@@ -29,6 +30,10 @@ const Oracles = () => {
     'oracles-background-dark.png',
   )
   const { marchMadnessIpfsHash } = useMarchMadness()
+  const [marchMadnessData, setMarchMadnessData] = useState({
+    tournament: {},
+    statistics: {},
+  })
 
   useEffect(() => {
     const fetchMarchMadnessIpfsData = async () => {
@@ -38,11 +43,17 @@ const Oracles = () => {
 
       const data = await response.json()
 
-      console.log(data)
+      setMarchMadnessData(prevData => {
+        return {
+          ...prevData,
+          tournament: data.tournament,
+          statistics: data.statistics,
+        }
+      })
     }
 
     fetchMarchMadnessIpfsData()
-  })
+  }, [])
 
   return (
     <>
@@ -137,7 +148,9 @@ const Oracles = () => {
               <MarchMadnessInfoView />
             </TabPanel>
             <TabPanel p="0">
-              <p>Brackets</p>
+              <MarchMadnessBracketsView
+                tournament={marchMadnessData?.tournament}
+              />
             </TabPanel>
             <TabPanel p="0">
               <p>Team Stats</p>

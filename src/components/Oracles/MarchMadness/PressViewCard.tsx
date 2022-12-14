@@ -4,12 +4,15 @@ import { PressJsonprops } from '@/data/MarchMadnessPressData'
 
 const BROKEN_IMAGE = '/images/broken.png'
 
-const MarchMadnessPressViewCard = ({
-  image,
-  title,
-  text,
-  link,
-}: PressJsonprops) => {
+type PressViewCardProps = { id: number } & PressJsonprops
+
+const MarchMadnessPressViewCard = (props: PressViewCardProps) => {
+  const { image, link, text, id, title } = props
+
+  const index = id + 1
+
+  console.log(index)
+
   const [src, setSrc] = useState(image || BROKEN_IMAGE)
 
   return (
