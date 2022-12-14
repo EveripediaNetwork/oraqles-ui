@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { Box } from '@chakra-ui/react'
 import ReactJson from 'react-json-view'
 import { useMarchMadness } from '@/hooks/useMarchMadness'
+import dynamic from 'next/dynamic'
+
+const DynamicReactJson = dynamic(import('react-json-view'), { ssr: false })
 
 const JsonViewer = () => {
   const [jsonData, setJsonData] = useState({})
@@ -27,7 +30,7 @@ const JsonViewer = () => {
       borderWidth="1px"
       borderRadius="lg"
     >
-      <ReactJson
+      <DynamicReactJson
         collapsed={3}
         enableClipboard={false}
         src={jsonData}

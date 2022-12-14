@@ -21,7 +21,7 @@ import { MarchMadnessTabData } from '@/data/MarchMadnessTabData'
 import MarchMadnessPressView from '@/components/Oracles/MarchMadness/PressView'
 import MarchMadnessInfoView from '@/components/Oracles/MarchMadness/InfoView'
 import { MarchMadnessSEO } from '@/components/SEO/Oracles'
-import JsonViewer from '@/components/Oracles/MarchMadness/JsonViewer'
+import MarchMadnessJsonViewer from '@/components/Oracles/MarchMadness/JsonViewer'
 import MarchMadnessBracketsView from '@/components/Oracles/MarchMadness/BracketsView'
 
 const Oracles = () => {
@@ -156,7 +156,7 @@ const Oracles = () => {
               <p>Team Stats</p>
             </TabPanel>
             <TabPanel p="0">
-              <JsonViewer />
+              <MarchMadnessJsonViewer />
             </TabPanel>
             <TabPanel p="0">
               <MarchMadnessPressView />
