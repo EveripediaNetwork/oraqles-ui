@@ -6,3 +6,31 @@
   min-width: 100% !important;
   max-width: 100% !important;
 }
+
+:root[data-theme='light'] .prism-code {
+  background-color: #f7fafc !important;
+}
+
+:root[data-theme='light'] .prism-code .keyword {
+  color: #e53e3e !important;
+}
+
+:root[data-theme='light'] .prism-code .string {
+  color: #38a169 !important;
+}
+
+:root[data-theme='light'] .prism-code .class-name {
+  color: #3182ce !important;
+}
+
+:root[data-theme='light'] .prism-code .interpolation {
+  color: #ff5caa !important;
+}
+
+:root[data-theme='light'] .prism-code .plain {
+  color: #4a5568 !important;
+}
+
+:root[data-theme='dark'] .prism-code {
+  background-color: #2d3748 !important;
+}
