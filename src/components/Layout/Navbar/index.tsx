@@ -11,6 +11,7 @@ import {
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
 import NavMenu from '@/components/Layout/Navbar/NavMenu'
 import MobileNav from './MobileNav'
+import NetworkMenu from './NetworkMenu'
 
 const Navbar = () => {
   const [isHamburgerOpen, setHamburger] = useState<boolean>(false)
@@ -36,22 +37,28 @@ const Navbar = () => {
         <Flex display={{ base: 'none', md: 'flex' }}>
           <NavMenu />
         </Flex>
-        <IconButton
-          onClick={() => {
-            setHamburger(!isHamburgerOpen)
-          }}
-          display={{ base: 'inline-block', md: 'none' }}
-          icon={
-            isHamburgerOpen ? (
-              <CloseIcon w={4} h={4} />
-            ) : (
-              <HamburgerIcon boxSize={{ base: 6, lg: 7 }} />
-            )
-          }
-          variant="ghost"
-          aria-label="Toggle Navigation"
-        />
+        <Box>
+          <Flex display={{ base: 'inline-block', md: 'none' }}>
+            <NetworkMenu />
+          </Flex>
+          <IconButton
+            onClick={() => {
+              setHamburger(!isHamburgerOpen)
+            }}
+            display={{ base: 'inline-block', md: 'none' }}
+            icon={
+              isHamburgerOpen ? (
+                <CloseIcon w={4} h={4} />
+              ) : (
+                <HamburgerIcon boxSize={{ base: 6, lg: 7 }} />
+              )
+            }
+            variant="ghost"
+            aria-label="Toggle Navigation"
+          />
+        </Box>
       </Flex>
+
       <Collapse
         in={isHamburgerOpen}
         animateOpacity

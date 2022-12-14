@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { Box } from '@chakra-ui/react'
+import { Box, useColorMode } from '@chakra-ui/react'
 import { useMarchMadness } from '@/hooks/useMarchMadness'
 import dynamic from 'next/dynamic'
 
 const DynamicReactJson = dynamic(import('react-json-view'), { ssr: false })
 
 const JsonViewer = () => {
+  const { colorMode } = useColorMode()
   const [jsonData, setJsonData] = useState({})
   const { marchMadnessIpfsHash } = useMarchMadness()
   const fetchMarchMadnessIpfsData = async () => {
@@ -33,7 +34,7 @@ const JsonViewer = () => {
         collapsed={3}
         enableClipboard={false}
         src={jsonData}
-        // theme={{"ocean"}}
+        theme={colorMode === 'dark' ? 'codeschool' : 'bright:inverted'}
       />
     </Box>
   )
