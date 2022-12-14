@@ -34,3 +34,23 @@
 :root[data-theme='dark'] .prism-code {
   background-color: #2d3748 !important;
 }
+
+:root[data-theme='dark'] .prism-code .keyword {
+  color: #e53e3e !important;
+}
+
+:root[data-theme='dark'] .prism-code .plain {
+  color: #ffffff99 !important;
+}
+
+:root[data-theme='dark'] .prism-code .string {
+  color: #38a169 !important;
+}
+
+:root[data-theme='dark'] .prism-code .class-name {
+  color: #3182ce !important;
+}
+
+:root[data-theme='dark'] .prism-code .interpolation {
+  color: #ff5caa !important;
+}
