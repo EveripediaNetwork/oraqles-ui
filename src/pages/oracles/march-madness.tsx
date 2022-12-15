@@ -23,7 +23,7 @@ import MarchMadnessInfoView from '@/components/Oracles/MarchMadness/InfoView'
 import { MarchMadnessSEO } from '@/components/SEO/Oracles'
 import MarchMadnessJsonViewer from '@/components/Oracles/MarchMadness/JsonViewer'
 import MarchMadnessBracketsView from '@/components/Oracles/MarchMadness/BracketsView'
-import { ConvertFromSportRadarType } from '@/types/BracketsType'
+import { MarchMadnessData } from '@/types/MarchMadness'
 
 const Oracles = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -32,36 +32,31 @@ const Oracles = () => {
     'oracles-background-dark.png',
   )
   const { marchMadnessIpfsHash } = useMarchMadness()
-  const [marchMadnessData, setMarchMadnessData] = useState({
-    tournament:{},
-    statistics: {},
-  })
+  const [marchMadnessData, setMarchMadnessData] = useState<MarchMadnessData>()
 
   useEffect(() => {
     const fetchMarchMadnessIpfsData = async () => {
       try {
-        setIsLoading(true)
         const response = await fetch(
           `https://gateway.pinata.cloud/ipfs/${marchMadnessIpfsHash}`,
         )
-
-        const data = await response.json()
-
+        const data = (await response.json()) as MarchMadnessData
         setMarchMadnessData(prevData => {
           return {
             ...prevData,
             tournament: data.tournament,
-            statistics: data.statistics,
+            statistics_hash: data.statistics_hash,
           }
         })
-        setIsLoading(false)
       } catch (err) {
-        console.log(err)
+        // eslint-disable-next-line no-console
+        console.error(err)
       }
     }
-
+    setIsLoading(true)
     fetchMarchMadnessIpfsData()
-  }, [])
+    setIsLoading(false)
+  }, [marchMadnessIpfsHash])
 
   return (
     <>

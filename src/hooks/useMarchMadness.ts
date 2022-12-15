@@ -2,15 +2,13 @@ import { marchMadnessAbi } from '@/abis/march-madness.abi'
 import config from '@/config'
 import { useContractRead } from 'wagmi'
 
-const readContract = {
-  address: config.marchMadnessContractAddress,
-  abi: marchMadnessAbi,
-}
+const abi = [...marchMadnessAbi] as const
 
 export const useMarchMadness = () => {
-  const { data: marchMadness } = useContractRead({
-    ...readContract,
+  const { data: marchMadness } = useContractRead<typeof abi, string, string>({
     functionName: 'ipfsFullData',
+    abi,
+    address: config.marchMadnessContractAddress,
   })
 
   const getMarchMadnessIpfsHash = () => {

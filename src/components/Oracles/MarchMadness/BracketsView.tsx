@@ -1,42 +1,7 @@
 import React from 'react'
 import { Flex } from '@chakra-ui/react'
 import { Bracket, Seed, SeedItem, SeedTeam } from 'react-brackets'
-import {
-  GamesType,
-  ConvertFromSportRadarType,
-  BracketedType,
-  SeedTeamWrapperType,
-} from '@/types/BracketsType'
-
-interface MarchMadnessBracketsViewProps {
-  //   tournament: {
-  //     id: string
-  //     league: {
-  //       id: string
-  //       alias: string
-  //       name: string
-  //     }
-  //     location: string
-  //     name: string
-  //     rounds: {
-  //       id: string
-  //       name: string
-  //       sequence: number
-  //       game: []
-  //       bracketed: {
-  //         bracket: {
-  //           id: string
-  //           location: string
-  //           name: string
-  //         }
-  //         games: {
-  //           id: string
-  //           status: string
-  //         }[]
-  //       }[]
-  //     }[]
-  //   }
-}
+import { Bracketed, Game, Team, Tournament } from '@/types/MarchMadness'
 
 const regions = [
   'South Regional',
@@ -45,20 +10,22 @@ const regions = [
   'Midwest Regional',
 ]
 
-const GetGamesInOrder = (games: GamesType[]) => {
-  return games.sort((a, b) =>
-    Number(a.title.match('Game ([0-9]+)')[1]) >
-    Number(b.title.match('Game ([0-9]+)')[1])
-      ? 1
-      : -1,
-  )
+const GetGamesInOrder = (games: Game[]) => {
+  return games.sort((a, b) => {
+    const aTitle = a.title.match('Game ([0-9]+)')
+    const bTitle = b.title.match('Game ([0-9]+)')
+    if (aTitle && bTitle) {
+      return Number(aTitle[1]) > Number(bTitle[1]) ? 1 : -1
+    }
+    return 0
+  })
 }
 
-const GetBracketsInOrder = (round: number, brackets: BracketedType[]) => {
-  let allGames: GamesType[] = []
+const GetBracketsInOrder = (round: number, brackets?: Bracketed[]) => {
+  let allGames: Game[] = []
 
   regions.forEach(region => {
-    const regionBracket = brackets.find(b => b.bracket.name === region)
+    const regionBracket = brackets?.find(b => b.bracket.name === region)
 
     if (!regionBracket) {
       return
@@ -69,30 +36,30 @@ const GetBracketsInOrder = (round: number, brackets: BracketedType[]) => {
   return allGames
 }
 
-const convertFromSportRadar = (data: ConvertFromSportRadarType | any) => {
+const convertFromSportRadar = (data: Tournament) => {
   const firstFour = GetBracketsInOrder(
     0,
-    data.rounds.find(r => r.sequence === 1).bracketed,
+    data.rounds.find(r => r.sequence === 1)?.bracketed,
   )
 
   const firstRound = GetBracketsInOrder(
     1,
-    data.rounds.find(r => r.sequence === 2).bracketed,
+    data.rounds.find(r => r.sequence === 2)?.bracketed,
   )
   const secondRound = GetBracketsInOrder(
     2,
-    data.rounds.find(r => r.sequence === 3).bracketed,
+    data.rounds.find(r => r.sequence === 3)?.bracketed,
   )
   const sweet16 = GetBracketsInOrder(
     3,
-    data.rounds.find(r => r.sequence === 4).bracketed,
+    data.rounds.find(r => r.sequence === 4)?.bracketed,
   )
   const eliteEight = GetBracketsInOrder(
     4,
-    data.rounds.find(r => r.sequence === 5).bracketed,
+    data.rounds.find(r => r.sequence === 5)?.bracketed,
   )
-  const finalFour = data.rounds.find(r => r.sequence === 6).games
-  const nationalChampionship = data.rounds.find(r => r.sequence === 7).games
+  const finalFour = data.rounds.find(r => r.sequence === 6)?.games
+  const nationalChampionship = data.rounds.find(r => r.sequence === 7)?.games
   return {
     firstFour,
     firstRound,
@@ -104,9 +71,10 @@ const convertFromSportRadar = (data: ConvertFromSportRadarType | any) => {
   }
 }
 
-const convertFromGameObjToSeeds = (games: GamesType[], j: number) =>
+const convertFromGameObjToSeeds = (games: Game[], j: number) => {
+  let i = j
   games.map(g => {
-    j += 1
+    i += 1
     let winner
 
     if (g.home_points && g.away_points) {
@@ -120,7 +88,7 @@ const convertFromGameObjToSeeds = (games: GamesType[], j: number) =>
     }
 
     return {
-      id: j,
+      id: i,
       date: `${new Date(g.scheduled).toDateString()} ${new Date(
         g.scheduled,
       ).toLocaleTimeString('en-US')}`,
@@ -129,12 +97,17 @@ const convertFromGameObjToSeeds = (games: GamesType[], j: number) =>
       game: g,
     }
   })
+}
 
 const SeedTeamWrapper = ({
   winner,
   team,
   team_points,
-}: SeedTeamWrapperType) => {
+}: {
+  winner: string
+  team: Team
+  team_points: number
+}) => {
   const isWinner = winner === team?.alias
   return (
     <SeedTeam style={{ color: isWinner ? 'green' : 'white' }}>
