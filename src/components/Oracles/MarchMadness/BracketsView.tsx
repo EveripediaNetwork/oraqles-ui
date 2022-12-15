@@ -1,6 +1,12 @@
 import React from 'react'
 import { Flex } from '@chakra-ui/react'
 import { Bracket, Seed, SeedItem, SeedTeam } from 'react-brackets'
+import {
+  GamesType,
+  ConvertFromSportRadarType,
+  BracketedType,
+  SeedTeamWrapperType,
+} from '@/types/BracketsType'
 
 interface MarchMadnessBracketsViewProps {
   //   tournament: {
@@ -30,7 +36,6 @@ interface MarchMadnessBracketsViewProps {
   //       }[]
   //     }[]
   //   }
-  tournament: any
 }
 
 const regions = [
@@ -40,7 +45,7 @@ const regions = [
   'Midwest Regional',
 ]
 
-const GetGamesInOrder = games => {
+const GetGamesInOrder = (games: GamesType[]) => {
   return games.sort((a, b) =>
     Number(a.title.match('Game ([0-9]+)')[1]) >
     Number(b.title.match('Game ([0-9]+)')[1])
@@ -49,8 +54,8 @@ const GetGamesInOrder = games => {
   )
 }
 
-const GetBracketsInOrder = (round, brackets: any) => {
-  let allGames: any[] = []
+const GetBracketsInOrder = (round: number, brackets: BracketedType[]) => {
+  let allGames: GamesType[] = []
 
   regions.forEach(region => {
     const regionBracket = brackets.find(b => b.bracket.name === region)
@@ -61,11 +66,10 @@ const GetBracketsInOrder = (round, brackets: any) => {
 
     allGames = allGames.concat(GetGamesInOrder(regionBracket.games))
   })
-
   return allGames
 }
 
-const convertFromSportRadar = data => {
+const convertFromSportRadar = (data: ConvertFromSportRadarType) => {
   const firstFour = GetBracketsInOrder(
     0,
     data.rounds.find(r => r.sequence === 1).bracketed,
@@ -100,10 +104,9 @@ const convertFromSportRadar = data => {
   }
 }
 
-const convertFromGameObjToSeeds = (games, j) =>
+const convertFromGameObjToSeeds = (games: GamesType[], j: number) =>
   games.map(g => {
     j += 1
-
     let winner
 
     if (g.home_points && g.away_points) {
@@ -127,7 +130,11 @@ const convertFromGameObjToSeeds = (games, j) =>
     }
   })
 
-const SeedTeamWrapper = ({ winner, team, team_points, tooltip_position }) => {
+const SeedTeamWrapper = ({
+  winner,
+  team,
+  team_points,
+}: SeedTeamWrapperType) => {
   const isWinner = winner === team?.alias
   return (
     <SeedTeam style={{ color: isWinner ? 'green' : 'white' }}>
@@ -141,7 +148,7 @@ const SeedTeamWrapper = ({ winner, team, team_points, tooltip_position }) => {
   )
 }
 
-const CustomSeed = (_seed, breakpoint, roundIndex) => {
+const CustomSeed = (_seed, breakpoint) => {
   const { seed } = _seed
   return (
     <Seed mobileBreakpoint={breakpoint} style={{ fontSize: 14 }}>
@@ -153,13 +160,11 @@ const CustomSeed = (_seed, breakpoint, roundIndex) => {
                 winner={seed.winner}
                 team={seed.teams[0]}
                 team_points={seed.game.home_points}
-                tooltip_position="top"
               />
               <SeedTeamWrapper
                 winner={seed.winner}
                 team={seed.teams[1]}
                 team_points={seed.game.away_points}
-                tooltip_position="bottom"
               />
             </>
           ) : null}
@@ -170,7 +175,7 @@ const CustomSeed = (_seed, breakpoint, roundIndex) => {
   )
 }
 
-export const ReactBrackets = ({ data }) => {
+export const ReactBrackets = data => {
   const {
     firstFour,
     firstRound,
@@ -223,11 +228,7 @@ export const ReactBrackets = ({ data }) => {
   )
 }
 
-const MarchMadnessBracketsView = ({
-  tournament,
-}: MarchMadnessBracketsViewProps) => {
-  // console.log(rounds)
-
+const MarchMadnessBracketsView = (tournament: ConvertFromSportRadarType) => {
   return (
     <Flex overflowX="scroll">
       <ReactBrackets data={tournament} />
