@@ -10,9 +10,9 @@ export const resources = {
       //--Copies for Oraqles--
 
       //Home page
-      heroHeading: 'Welcome to IQ Oraqle',
+      heroHeading: 'Welcome to IQ OraQles',
       heroParagraph:
-        'The Oraqle Service That Feeds Information To The Blockchain.',
+        'IQ OraQles is a service managed by BrainDAO that allows verified first parties to bring real-world information on-chain.',
       updatesFooterHeading: 'Get updated with IQ.Wiki',
       updatesFooterText:
         'Join our mailing list to stay in the loop with our newest feature releases, NFT drops, and tips and tricks for navigating IQ.Wiki.',
