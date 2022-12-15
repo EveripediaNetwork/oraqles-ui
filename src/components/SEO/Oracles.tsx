@@ -7,7 +7,7 @@ export const MarchMadnessSEO = () => {
       title="March Madness 2021 OraQle"
       titleTemplate="%s | IQ OraQles"
       description="BrainDAO brings real-world information onto the blockchain with our innovative OraQle product. Try it on Ethereum today."
-      canonical="https://oraqles-ui.vercel.app/oracles/march-madness"
+      canonical="https://oraqles.com/oracles/march-madness"
       openGraph={{
         title: 'March Madness 2021 OraQle',
         description:
@@ -16,6 +16,71 @@ export const MarchMadnessSEO = () => {
           {
             url: 'https://gateway.pinata.cloud/ipfs/QmSYvzgmBQAaX1q3oyV2uVZzcmRn7JDgepFMTzAbemQZnF',
             alt: 'March Madness 2021 OraQle',
+          },
+        ],
+      }}
+    />
+  )
+}
+
+export const SuperbowlLVSEO = () => {
+  return (
+    <NextSeo
+      title="February 7th Super Bowl LV"
+      titleTemplate="%s | IQ OraQles"
+      description="BrainDAO brings real-world information onto the blockchain with our innovative OraQle product. Try it on Ethereum today."
+      canonical="https://oraqles.com/oracles/superbowl-lv"
+      openGraph={{
+        title: 'February 7th Super Bowl LV',
+        description:
+          'BrainDAO brings real-world information onto the blockchain with our innovative OraQle product. Try it on Ethereum today.',
+        images: [
+          {
+            url: 'https://gateway.pinata.cloud/ipfs/QmSYvzgmBQAaX1q3oyV2uVZzcmRn7JDgepFMTzAbemQZnF',
+            alt: 'February 7th Super Bowl LV',
+          },
+        ],
+      }}
+    />
+  )
+}
+
+export const SenateRunoffSEO = () => {
+  return (
+    <NextSeo
+      title="January 5th Senate Runoff"
+      titleTemplate="%s | IQ OraQles"
+      description="BrainDAO brings real-world information onto the blockchain with our innovative OraQle product. Try it on Ethereum today."
+      canonical="https://oraqles.com/oracles/us-senate-runoff"
+      openGraph={{
+        title: 'January 5th Senate Runoff',
+        description:
+          'BrainDAO brings real-world information onto the blockchain with our innovative OraQle product. Try it on Ethereum today.',
+        images: [
+          {
+            url: 'https://gateway.pinata.cloud/ipfs/QmSYvzgmBQAaX1q3oyV2uVZzcmRn7JDgepFMTzAbemQZnF',
+            alt: 'January 5th Senate Runoff',
+          },
+        ],
+      }}
+    />
+  )
+}
+export const ApElectionSEO = () => {
+  return (
+    <NextSeo
+      title="AP Election Mission Control"
+      titleTemplate="%s | IQ OraQles"
+      description="BrainDAO brings real-world information onto the blockchain with our innovative OraQle product. Try it on Ethereum today."
+      canonical="https://oraqles.com/oracles/election"
+      openGraph={{
+        title: 'AP Election Mission Control',
+        description:
+          'BrainDAO brings real-world information onto the blockchain with our innovative OraQle product. Try it on Ethereum today.',
+        images: [
+          {
+            url: 'https://gateway.pinata.cloud/ipfs/QmSYvzgmBQAaX1q3oyV2uVZzcmRn7JDgepFMTzAbemQZnF',
+            alt: 'AP Election Mission Control',
           },
         ],
       }}
