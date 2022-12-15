@@ -211,7 +211,7 @@ const MarchMadnessBracketsView = ({
   tournament: Tournament
 }) => {
   if (!tournament) return <></>
-  console.log(tournament)
+
   return (
     <Flex overflowX="scroll">
       <ReactBrackets tournament={tournament} />

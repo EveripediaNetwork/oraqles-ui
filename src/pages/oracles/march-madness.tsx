@@ -12,6 +12,7 @@ import {
   TabPanels,
   TabPanel,
   Divider,
+  Spinner,
 } from '@chakra-ui/react'
 import Link from 'next/link'
 import shortenAccount from '@/utils/shortenAccount'
@@ -176,7 +177,11 @@ const Oracles = () => {
           </Box>
         </Tabs>
       )}
-      {isLoading && <Box>Loading...</Box>}
+      {isLoading && (
+        <Flex alignItems="center" justifyContent="center" h="50vh">
+          <Spinner emptyColor="gray.200" color="blue.500" size="xl" />
+        </Flex>
+      )}
     </>
   )
 }
