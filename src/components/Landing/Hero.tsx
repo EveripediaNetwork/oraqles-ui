@@ -37,7 +37,7 @@ const Hero = () => {
           >
             <Heading
               color="white"
-              fontSize={{ base: '18', md: '32', lg: '54' }}
+              fontSize={{ base: '18', md: '32', lg: '50' }}
             >{`${t('heroHeading')}`}</Heading>
             <Text
               w={{ base: '100%', lg: '80%' }}

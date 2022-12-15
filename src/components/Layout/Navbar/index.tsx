@@ -7,6 +7,7 @@ import {
   useColorModeValue,
   IconButton,
   Collapse,
+  Text,
 } from '@chakra-ui/react'
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
 import NavMenu from '@/components/Layout/Navbar/NavMenu'
@@ -30,8 +31,18 @@ const Navbar = () => {
         justifyContent="space-between"
         px={{ base: 5, md: 3, lg: 8 }}
       >
-        <ChakraLink href="/">
-          <Image src={`/images/${logoSrc}`} />
+        <ChakraLink
+          href="/"
+          _hover={{
+            textDecoration: 'none',
+          }}
+        >
+          <Flex alignItems="center" justifyContent="center">
+            <Image src={`/images/${logoSrc}`} />
+            <Text fontWeight="extrabold" fontSize="xl">
+              OraQles
+            </Text>
+          </Flex>
         </ChakraLink>
 
         <Flex display={{ base: 'none', md: 'flex' }}>
