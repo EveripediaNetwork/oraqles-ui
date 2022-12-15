@@ -69,7 +69,7 @@ const GetBracketsInOrder = (round: number, brackets: BracketedType[]) => {
   return allGames
 }
 
-const convertFromSportRadar = (data: ConvertFromSportRadarType) => {
+const convertFromSportRadar = (data: ConvertFromSportRadarType | any) => {
   const firstFour = GetBracketsInOrder(
     0,
     data.rounds.find(r => r.sequence === 1).bracketed,
@@ -175,7 +175,7 @@ const CustomSeed = (_seed, breakpoint) => {
   )
 }
 
-export const ReactBrackets = data => {
+export const ReactBrackets = (data: any) => {
   const {
     firstFour,
     firstRound,
@@ -184,7 +184,7 @@ export const ReactBrackets = data => {
     eliteEight,
     finalFour,
     nationalChampionship,
-  } = convertFromSportRadar(data)
+  } = convertFromSportRadar(data.data.tournament)
   const i = 1
   const j = 0
   const firstFourRound = [
@@ -228,7 +228,7 @@ export const ReactBrackets = data => {
   )
 }
 
-const MarchMadnessBracketsView = (tournament: ConvertFromSportRadarType) => {
+const MarchMadnessBracketsView = (tournament: any) => {
   return (
     <Flex overflowX="scroll">
       <ReactBrackets data={tournament} />

@@ -23,6 +23,7 @@ import MarchMadnessInfoView from '@/components/Oracles/MarchMadness/InfoView'
 import { MarchMadnessSEO } from '@/components/SEO/Oracles'
 import MarchMadnessJsonViewer from '@/components/Oracles/MarchMadness/JsonViewer'
 import MarchMadnessBracketsView from '@/components/Oracles/MarchMadness/BracketsView'
+import { ConvertFromSportRadarType } from '@/types/BracketsType'
 
 const Oracles = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -32,7 +33,7 @@ const Oracles = () => {
   )
   const { marchMadnessIpfsHash } = useMarchMadness()
   const [marchMadnessData, setMarchMadnessData] = useState({
-    tournament: {},
+    tournament:{},
     statistics: {},
   })
 

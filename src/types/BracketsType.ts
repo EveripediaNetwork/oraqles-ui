@@ -87,3 +87,8 @@ export type SeedTeamWrapperType = {
   team: GamesAwayType
   team_points: number
 }
+
+export type TournamentType = {
+  tournament: ConvertFromSportRadarType
+  statistics: {}
+}
