@@ -11,7 +11,6 @@ const MarchMadnessPressViewCard = (props: PressViewCardProps) => {
 
   const index = id + 1
 
-  console.log(index)
 
   const [src, setSrc] = useState(image || BROKEN_IMAGE)
 
