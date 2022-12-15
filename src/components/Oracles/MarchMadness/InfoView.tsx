@@ -73,7 +73,6 @@ const MarchMadnessInfoView = () => {
           )}
         </Highlight>
       </Box>
-
     </Box>
   )
 }

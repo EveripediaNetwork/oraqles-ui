@@ -16,7 +16,6 @@ const MarchMadnessPressView = () => {
       {PRESS_JSON.map((press, i) => (
         <MarchMadnessPressViewCard
           key={i}
-          id={i}
           image={press.image}
           link={press.link}
           title={press.title}
