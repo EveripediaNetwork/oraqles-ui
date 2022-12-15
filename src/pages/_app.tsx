@@ -8,6 +8,7 @@ import { provider } from '@/config/wagmi'
 import SEOHeader from '@/components/SEO/default'
 import chakraTheme from '../theme'
 import '../utils/i18n'
+import '../styles/globals.css'
 
 type OraqleAppProp = Omit<AppProps, 'Component'> & {
   Component: AppProps['Component'] & { noFooter?: boolean }

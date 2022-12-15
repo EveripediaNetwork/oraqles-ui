@@ -168,5 +168,69 @@ export const semanticTokens: SemanticTokens = {
       default: 'gray.800',
       _dark: 'white',
     },
+    oraclesPageBorder: {
+      default: 'gray.300',
+      _dark: 'whiteAlpha.200',
+    },
+    oraclesViewerButton: {
+      default: 'gray.50',
+      _dark: 'gray.700',
+    },
+    oraclesPressViewCardBorder: {
+      default: 'gray.200',
+      _dark: 'whiteAlpha.100',
+    },
+    marchMadnessInfoHeading: {
+      default: 'gray.600',
+      _dark: 'whiteAlpha.600',
+    },
+    marchMadnessInfoText: {
+      default: 'gray.700',
+      _dark: 'whiteAlpha.800',
+    },
+    codeTextColor: {
+      default: 'red.500',
+      _dark: 'red.500',
+    },
+    codeTextColor2: {
+      default: 'blue.500',
+      _dark: 'blue.500',
+    },
+    codeBackground: {
+      default: 'gray.50',
+      _dark: 'gray.700',
+    },
+    codeBorder: {
+      default: 'gray.300',
+      _dark: 'transparent',
+    },
+    pressViewCardFooter: {
+      default: 'gray.50',
+      _dark: 'whiteAlpha.100',
+    },
+    bracketsHeading: {
+      default: 'gray.600',
+      _dark: 'whiteAlpha.600',
+    },
+    bracketsCardTopBg: {
+      default: 'gray.100',
+      _dark: 'gray.700',
+    },
+    bracketsCardBottomBg: {
+      default: 'white',
+      _dark: 'gray.800',
+    },
+    bracketsCardBorder: {
+      default: 'gray.200',
+      _dark: 'whiteAlpha.300',
+    },
+    bracketsCardLoserText: {
+      default: 'gray.800',
+      _dark: 'whiteAlpha.900',
+    },
+    bracketsFooterText: {
+      default: 'gray.500',
+      _dark: 'whiteAlpha.500',
+    },
   },
 }
