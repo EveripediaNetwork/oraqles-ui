@@ -1,6 +1,12 @@
 import React from 'react'
 import { Flex } from '@chakra-ui/react'
-import { Bracket, Seed, SeedItem, SeedTeam } from 'react-brackets'
+import {
+  Bracket,
+  Seed,
+  SeedItem,
+  SeedTeam,
+  IRenderSeedProps,
+} from 'react-brackets'
 import { Bracketed, Game, Team, Tournament } from '@/types/MarchMadness'
 
 const regions = [
@@ -26,22 +32,21 @@ const GetBracketsInOrder = (round: number, brackets?: Bracketed[]) => {
 
   regions.forEach(region => {
     const regionBracket = brackets?.find(b => b.bracket.name === region)
-
-    if (!regionBracket) {
-      return
-    }
-
+    if (!regionBracket) return
     allGames = allGames.concat(GetGamesInOrder(regionBracket.games))
   })
   return allGames
 }
 
 const convertFromSportRadar = (data: Tournament) => {
+  console.log(data)
+
+  console.log(data.rounds)
+
   const firstFour = GetBracketsInOrder(
     0,
     data.rounds.find(r => r.sequence === 1)?.bracketed,
   )
-
   const firstRound = GetBracketsInOrder(
     1,
     data.rounds.find(r => r.sequence === 2)?.bracketed,
@@ -58,7 +63,8 @@ const convertFromSportRadar = (data: Tournament) => {
     4,
     data.rounds.find(r => r.sequence === 5)?.bracketed,
   )
-  const finalFour = data.rounds.find(r => r.sequence === 6)?.games
+  const finalFour = data.rounds.find(r => r.sequence === 6)?.games as Game[]
+
   const nationalChampionship = data.rounds.find(r => r.sequence === 7)?.games
   return {
     firstFour,
@@ -73,7 +79,7 @@ const convertFromSportRadar = (data: Tournament) => {
 
 const convertFromGameObjToSeeds = (games: Game[], j: number) => {
   let i = j
-  games.map(g => {
+  return games.map(g => {
     i += 1
     let winner
 
@@ -121,34 +127,31 @@ const SeedTeamWrapper = ({
   )
 }
 
-const CustomSeed = (_seed, breakpoint) => {
-  const { seed } = _seed
-  return (
-    <Seed mobileBreakpoint={breakpoint} style={{ fontSize: 14 }}>
-      <SeedItem>
-        <div>
-          {seed ? (
-            <>
-              <SeedTeamWrapper
-                winner={seed.winner}
-                team={seed.teams[0]}
-                team_points={seed.game.home_points}
-              />
-              <SeedTeamWrapper
-                winner={seed.winner}
-                team={seed.teams[1]}
-                team_points={seed.game.away_points}
-              />
-            </>
-          ) : null}
-        </div>
-      </SeedItem>
-      <div className="sc-gKsewC ha-DNGW">{seed.date}</div>
-    </Seed>
-  )
-}
+const CustomSeed = ({ seed, breakpoint }: IRenderSeedProps) => (
+  <Seed mobileBreakpoint={breakpoint} style={{ fontSize: 14 }}>
+    <SeedItem>
+      <div>
+        {seed ? (
+          <>
+            <SeedTeamWrapper
+              winner={seed.winner}
+              team={seed.teams[0] as Team}
+              team_points={seed.game.home_points}
+            />
+            <SeedTeamWrapper
+              winner={seed.winner}
+              team={seed.teams[1] as Team}
+              team_points={seed.game.away_points}
+            />
+          </>
+        ) : null}
+      </div>
+    </SeedItem>
+    <div className="sc-gKsewC ha-DNGW">{seed.date}</div>
+  </Seed>
+)
 
-export const ReactBrackets = (data: any) => {
+export const ReactBrackets = ({ tournament }: { tournament: Tournament }) => {
   const {
     firstFour,
     firstRound,
@@ -157,7 +160,8 @@ export const ReactBrackets = (data: any) => {
     eliteEight,
     finalFour,
     nationalChampionship,
-  } = convertFromSportRadar(data.data.tournament)
+  } = convertFromSportRadar(tournament)
+
   const i = 1
   const j = 0
   const firstFourRound = [
@@ -189,7 +193,7 @@ export const ReactBrackets = (data: any) => {
     },
     {
       title: 'National Championship',
-      seeds: convertFromGameObjToSeeds(nationalChampionship, i) || [],
+      seeds: convertFromGameObjToSeeds(nationalChampionship as Game[], i) || [],
     },
   ]
 
@@ -201,10 +205,16 @@ export const ReactBrackets = (data: any) => {
   )
 }
 
-const MarchMadnessBracketsView = (tournament: any) => {
+const MarchMadnessBracketsView = ({
+  tournament,
+}: {
+  tournament: Tournament
+}) => {
+  if (!tournament) return <></>
+  console.log(tournament)
   return (
     <Flex overflowX="scroll">
-      <ReactBrackets data={tournament} />
+      <ReactBrackets tournament={tournament} />
     </Flex>
   )
 }

@@ -41,6 +41,7 @@ const Oracles = () => {
           `https://gateway.pinata.cloud/ipfs/${marchMadnessIpfsHash}`,
         )
         const data = (await response.json()) as MarchMadnessData
+
         setMarchMadnessData(prevData => {
           return {
             ...prevData,
@@ -159,9 +160,11 @@ const Oracles = () => {
                 <MarchMadnessInfoView />
               </TabPanel>
               <TabPanel p="0" overflowX="hidden" maxW="full">
-                <MarchMadnessBracketsView
-                  tournament={marchMadnessData?.tournament}
-                />
+                {marchMadnessData?.tournament && (
+                  <MarchMadnessBracketsView
+                    tournament={marchMadnessData?.tournament}
+                  />
+                )}
               </TabPanel>
               <TabPanel p="0">
                 <MarchMadnessJsonViewer />
