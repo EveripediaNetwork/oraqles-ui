@@ -39,10 +39,6 @@ const GetBracketsInOrder = (round: number, brackets?: Bracketed[]) => {
 }
 
 const convertFromSportRadar = (data: Tournament) => {
-  console.log(data)
-
-  console.log(data.rounds)
-
   const firstFour = GetBracketsInOrder(
     0,
     data.rounds.find(r => r.sequence === 1)?.bracketed,
