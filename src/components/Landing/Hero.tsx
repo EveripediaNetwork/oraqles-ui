@@ -11,9 +11,7 @@ const Hero = () => {
       }}
       bgPos="center"
       h={{ base: '200px', md: '300px' }}
-    >
-      &nbsp;
-    </Box>
+    />
   )
 }
 
