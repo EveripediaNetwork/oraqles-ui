@@ -12,7 +12,7 @@ export const resources = {
       //Home page
       heroHeading: 'Welcome to IQ OraQles',
       heroParagraph:
-        'IQ OraQles is a service managed by BrainDAO that allows verified first parties to bring real-world information on-chain.',
+        'IQ.wiki OraQles formerly Everipedia OraQles is a service that allows verified first parties to bring real-world information on-chain.',
       updatesFooterHeading: 'Get updated with IQ.Wiki',
       updatesFooterText:
         'Join our mailing list to stay in the loop with our newest feature releases, NFT drops, and tips and tricks for navigating IQ.Wiki.',
