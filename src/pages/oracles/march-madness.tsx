@@ -154,7 +154,6 @@ const Oracles = () => {
           <Box minH="100vh" display={{ base: 'none', lg: 'block' }}>
             <Divider orientation="vertical" />
           </Box>
-
           <Box flexGrow="1" py="8" pl={{ base: '0', md: '8' }}>
             <TabPanels>
               <TabPanel p="0">
@@ -167,6 +166,7 @@ const Oracles = () => {
                   />
                 )}
               </TabPanel>
+              <TabPanel>Team Stats</TabPanel>
               <TabPanel p="0">
                 <MarchMadnessJsonViewer />
               </TabPanel>

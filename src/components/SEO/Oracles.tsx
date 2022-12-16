@@ -5,7 +5,6 @@ export const MarchMadnessSEO = () => {
   return (
     <NextSeo
       title="March Madness 2021 OraQle"
-      titleTemplate="%s | IQ OraQles"
       description="BrainDAO brings real-world information onto the blockchain with our innovative OraQle product. Try it on Ethereum today."
       canonical="https://oraqles.com/oracles/march-madness"
       openGraph={{
@@ -27,7 +26,6 @@ export const SuperbowlLVSEO = () => {
   return (
     <NextSeo
       title="February 7th Super Bowl LV"
-      titleTemplate="%s | IQ OraQles"
       description="BrainDAO brings real-world information onto the blockchain with our innovative OraQle product. Try it on Ethereum today."
       canonical="https://oraqles.com/oracles/superbowl-lv"
       openGraph={{
@@ -49,7 +47,6 @@ export const SenateRunoffSEO = () => {
   return (
     <NextSeo
       title="January 5th Senate Runoff"
-      titleTemplate="%s | IQ OraQles"
       description="BrainDAO brings real-world information onto the blockchain with our innovative OraQle product. Try it on Ethereum today."
       canonical="https://oraqles.com/oracles/us-senate-runoff"
       openGraph={{
@@ -70,7 +67,6 @@ export const ApElectionSEO = () => {
   return (
     <NextSeo
       title="AP Election Mission Control"
-      titleTemplate="%s | IQ OraQles"
       description="BrainDAO brings real-world information onto the blockchain with our innovative OraQle product. Try it on Ethereum today."
       canonical="https://oraqles.com/oracles/election"
       openGraph={{
