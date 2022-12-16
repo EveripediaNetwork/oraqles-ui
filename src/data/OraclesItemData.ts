@@ -18,28 +18,28 @@ export const ORAQLES_ITEMS: OraclesItemType[] = [
     id: 'march-madness',
     title: 'March madness 2021',
     summary:
-      'Associated Press and BrainDAO partner to bring March Madness 2021 Results on-chain!',
+      'The Associated Press used IQ OraQles to publish March Madness scores on Ethereum for the first time!',
     image: '/images/oracles--1.png',
   },
   {
     id: 'superbowl-lv',
-    title: 'February 7th, 2021 Super Bowl LV',
+    title: 'Super Bowl LV',
     summary:
-      'Associated Press and BrainDAO partner to bring March Madness 2021 Results on-chain!',
+      'The Associated Press used IQ OraQles to publish the winner of Super Bowl LV on Ethereum for the first time!',
     image: '/images/oracles--2.png',
   },
   {
     id: 'us-senate-runoff',
-    title: 'January 5th, 2021 Senate Runoff',
+    title: 'January 5th Senate Runoff',
     summary:
-      'Associated Press and BrainDAO partner to bring March Madness 2021 Results on-chain!',
+      'The Associated Press used IQ OraQles to publish their election race calls from the January 5th Senate Runoff races on Ethereum!',
     image: '/images/oracles--3.png',
   },
   {
     id: 'election',
-    title: 'November 3rd, 2021 Election',
+    title: '2020 US Presidential Election',
     summary:
-      'Associated Press and BrainDAO partner to bring March Madness 2021 Results on-chain!',
+      'The Associated Press teamed up with IQ.wiki formerly Everipedia to publish election race calls on the blockchain. This was the first time a US Presidential Election had been recorded on-chain.',
     image: '/images/oracles--4.png',
   },
 ]
