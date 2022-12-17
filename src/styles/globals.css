@@ -54,3 +54,13 @@
 :root[data-theme='dark'] .prism-code .interpolation {
   color: #ff5caa !important;
 }
+
+:root[data-theme='light'] .prism-code .operator,
+:root[data-theme='light'] .prism-code .punctuation {
+  color: #4a5568 !important;
+}
+
+:root[data-theme='dark'] .prism-code .operator,
+:root[data-theme='dark'] .prism-code .punctuation {
+  color: #ffffff99 !important;
+}

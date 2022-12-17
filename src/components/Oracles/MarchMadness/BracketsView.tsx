@@ -195,8 +195,16 @@ export const ReactBrackets = ({ tournament }: { tournament: Tournament }) => {
 
   return (
     <div>
-      <Bracket rounds={firstFourRound} renderSeedComponent={CustomSeed} />
-      <Bracket rounds={rounds} renderSeedComponent={CustomSeed} />
+      <Bracket
+        swipeableProps={{ enableMouseEvents: true, animateHeight: true }}
+        rounds={firstFourRound}
+        renderSeedComponent={CustomSeed}
+      />
+      <Bracket
+        rounds={rounds}
+        renderSeedComponent={CustomSeed}
+        swipeableProps={{ enableMouseEvents: true, animateHeight: true }}
+      />
     </div>
   )
 }
@@ -209,7 +217,7 @@ const MarchMadnessBracketsView = ({
   if (!tournament) return <></>
 
   return (
-    <Flex overflowX="scroll">
+    <Flex>
       <ReactBrackets tournament={tournament} />
     </Flex>
   )

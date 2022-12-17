@@ -110,7 +110,7 @@ const Oracles = () => {
           mx="auto"
           variant="unstyled"
           orientation="vertical"
-          defaultIndex={1}
+          defaultIndex={0}
           flexDirection={{ base: 'column', lg: 'row' }}
         >
           <Box
@@ -155,12 +155,17 @@ const Oracles = () => {
             <Divider orientation="vertical" />
           </Box>
 
-          <Box flexGrow="1" py="8" pl={{ base: '0', md: '8' }}>
+          <Box
+            flexGrow="1"
+            py="8"
+            pl={{ base: '0', md: '8' }}
+            overflowX="scroll"
+          >
             <TabPanels>
               <TabPanel p="0">
                 <MarchMadnessInfoView />
               </TabPanel>
-              <TabPanel p="0" overflowX="hidden" maxW="full">
+              <TabPanel p="0">
                 {marchMadnessData?.tournament && (
                   <MarchMadnessBracketsView
                     tournament={marchMadnessData?.tournament}
