@@ -2,6 +2,7 @@ import React, { Suspense } from 'react'
 import dynamic from 'next/dynamic'
 import { Stack, Box } from '@chakra-ui/react'
 import Navbar from '../Navbar'
+import GoogleAnalyticsScripts from './GoogleAnalyticsScript'
 
 const Footer = dynamic(() => import('@/components/Layout/Footer/Footer'), {
   suspense: true,
@@ -15,11 +16,14 @@ const Layout = ({
   noFooter?: boolean
 }) => {
   return (
-    <Stack minH="100vh" spacing={0} overflowX="hidden">
-      <Navbar />
-      <Box as="main">{children}</Box>
-      <Suspense>{!noFooter && <Footer />}</Suspense>
-    </Stack>
+    <>
+      <GoogleAnalyticsScripts />
+      <Stack minH="100vh" spacing={0} overflowX="hidden">
+        <Navbar />
+        <Box as="main">{children}</Box>
+        <Suspense>{!noFooter && <Footer />}</Suspense>
+      </Stack>
+    </>
   )
 }
 
