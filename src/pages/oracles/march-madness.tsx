@@ -50,6 +50,8 @@ const Oracles = () => {
             statistics_hash: data.statistics_hash,
           }
         })
+
+        console.log(data.statistics_hash)
       } catch (err) {
         // eslint-disable-next-line no-console
         console.error(err)
@@ -167,6 +169,7 @@ const Oracles = () => {
                   />
                 )}
               </TabPanel>
+              <TabPanel p="0">Team Stats</TabPanel>
               <TabPanel p="0">
                 <MarchMadnessJsonViewer />
               </TabPanel>

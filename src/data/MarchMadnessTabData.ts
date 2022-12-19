@@ -13,6 +13,10 @@ export const MarchMadnessTabData: MarchMadnessTabprops[] = [
     label: 'Bracket',
   },
   {
+    id: 'team-stats',
+    label: 'Team Statistics',
+  },
+  {
     id: 'json',
     label: 'JSON',
   },
