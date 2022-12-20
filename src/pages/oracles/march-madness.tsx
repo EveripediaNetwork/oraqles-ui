@@ -166,7 +166,6 @@ const Oracles = () => {
                   />
                 )}
               </TabPanel>
-              <TabPanel>Team Stats</TabPanel>
               <TabPanel p="0">
                 <MarchMadnessJsonViewer />
               </TabPanel>
