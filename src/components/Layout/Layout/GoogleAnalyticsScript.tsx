@@ -6,11 +6,10 @@ const GoogleAnalyticsScripts = () => {
     <>
       <Script
         id="google-analytics"
-        strategy="worker"
-        defer
+        strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
       />
-      <Script id="google-analytics-config" strategy="worker" defer>
+      <Script strategy="afterInteractive" id="google-analytics-config">
         {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

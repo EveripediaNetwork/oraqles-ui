@@ -7,6 +7,7 @@ import { createClient, WagmiConfig } from 'wagmi'
 import { provider } from '@/config/wagmi'
 import SEOHeader from '@/components/SEO/default'
 import { pageView } from '@/utils/googleAnalytics'
+import GoogleAnalyticsScripts from '@/components/Layout/Layout/GoogleAnalyticsScript'
 import chakraTheme from '../theme'
 import '../utils/i18n'
 import '../styles/globals.css'
@@ -43,6 +44,7 @@ const App = (props: OraqleAppProp) => {
       `}</style>
       <ChakraProvider resetCSS theme={chakraTheme}>
         <WagmiConfig client={client}>
+          <GoogleAnalyticsScripts />
           <SEOHeader router={router} />
           <Layout noFooter={Component.noFooter}>
             <Component {...pageProps} />
