@@ -17,7 +17,12 @@ const Footer = () => {
     <>
       <Divider orientation="horizontal" />
       <Box py="8">
-        <Text color="oraclesTextColor" textAlign="center" fontWeight={600}>
+        <Text
+          color="oraclesTextColor"
+          fontSize={{ base: 'xs', md: 'sm' }}
+          textAlign="center"
+          fontWeight={600}
+        >
           {t('footerHeading')}{' '}
           <Link href="https://braindao.org/" target="_blank">
             BrainDAO
@@ -46,7 +51,12 @@ const Footer = () => {
             <Icon as={RiTelegramFill} w={6} h={6} />
           </Link>
         </Flex>
-        <Text color="oraclesTextColor" textAlign="center" mt="5">
+        <Text
+          color="oraclesTextColor"
+          fontSize={{ base: 'xs', md: 'sm' }}
+          textAlign="center"
+          mt="5"
+        >
           {t('copyRight')}
         </Text>
       </Box>
