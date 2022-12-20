@@ -15,6 +15,7 @@ export const resources = {
         'IQ.wiki OraQles formerly Everipedia OraQles is a service that allows verified first parties to bring real-world information on-chain.',
       updatesFooterHeading: 'Get updated with IQ.Wiki',
       footerHeading: 'Powered by',
+      copyRight: '©️2022 IQ.Wiki. All Rights Reserved.',
 
       //---End of Copies for Oraqles--
 

@@ -15,6 +15,9 @@ const Footer = () => {
             BrainDAO
           </Link>
         </Text>
+        <Text color="oraclesTextColor" textAlign="center" mt="5">
+          {t('copyRight')}
+        </Text>
       </Box>
     </>
   )
