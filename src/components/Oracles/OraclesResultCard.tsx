@@ -21,7 +21,9 @@ const OraclesResultCard = ({ title, text, link }: OraclesResultCardprops) => {
           {title}
         </Heading>
         <Text
-          w="full"
+          w="80%"
+          mx="auto"
+          textAlign="center"
           mt={{ base: '3', md: '4', lg: '7' }}
           color="oraclesTextColor"
           fontSize={{ base: 'lg', md: 'xl' }}
