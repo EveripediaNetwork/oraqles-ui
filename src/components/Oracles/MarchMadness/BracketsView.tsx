@@ -146,6 +146,7 @@ const CustomSeed = ({ seed, breakpoint }: IRenderSeedProps) => {
         borderColor="bracketsCardBorder"
         borderRadius="6px"
         w="full"
+        overflow="hidden"
       >
         <SeedItem className="event_bracket_style">
           <div>
