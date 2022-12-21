@@ -120,6 +120,7 @@ const Oracles = () => {
           py="5"
           px="5"
           h="400px"
+          mx="auto"
           borderWidth="1px"
           borderRadius="lg"
           w={{ base: 'full', md: '768px' }}

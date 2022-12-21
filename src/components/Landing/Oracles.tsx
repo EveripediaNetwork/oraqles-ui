@@ -10,7 +10,7 @@ const Oracles = () => {
       px={{ base: 3, lg: 20 }}
       w="full"
       mx="auto"
-      my={{ base: '12', md: '16', lg: '20' }}
+      my={{ base: '12', md: '13', lg: '18' }}
     >
       <SimpleGrid rowGap={{ base: '8', md: '10', lg: '15' }}>
         {ORAQLES_ITEMS.map((oraqle: OraclesItemType) => (

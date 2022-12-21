@@ -51,16 +51,17 @@ const OraclesCard = ({ id, image, title, summary }: OraclesItemType) => {
         py={{ base: '0', md: '3', lg: '6' }}
       >
         <Heading
+          w="full"
           color="oraclesHeadingColor"
           fontSize={{ base: 'xs', md: 'lg', lg: 'xl' }}
         >
           {t(title)}
         </Heading>
         <Text
-          w={{ base: 'full', md: '75%' }}
+          w="full"
           mt={{ base: '3', md: '4', lg: '7' }}
           color="oraclesTextColor"
-          fontSize={{ base: 'xs', md: 'md', lg: '2xl' }}
+          fontSize={{ base: '10px', md: 'md', lg: '2xl' }}
         >
           {t(summary)}
         </Text>
