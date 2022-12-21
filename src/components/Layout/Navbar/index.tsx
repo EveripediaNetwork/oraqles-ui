@@ -37,10 +37,10 @@ const Navbar = () => {
             textDecoration: 'none',
           }}
         >
-          <Flex alignItems="center" justifyContent="center">
+          <Flex alignItems="center" justifyContent="center" gap="2">
             <Image src={`/images/${logoSrc}`} />
             <Text fontWeight="extrabold" fontSize="xl">
-              OraQles
+              IQ OraQles
             </Text>
           </Flex>
         </ChakraLink>

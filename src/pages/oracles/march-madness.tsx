@@ -26,6 +26,7 @@ import MarchMadnessJsonViewer from '@/components/Oracles/MarchMadness/JsonViewer
 import MarchMadnessBracketsView from '@/components/Oracles/MarchMadness/BracketsView'
 import { MarchMadnessData, MarchMadnessFullData } from '@/types/MarchMadness'
 import TeamStatsViewer from '@/components/Oracles/MarchMadness/TeamStatsViewer'
+import { Statistics } from '@/types/Statistics'
 
 const Oracles = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -49,15 +50,7 @@ const Oracles = () => {
           `https://gateway.pinata.cloud/ipfs/${data.statistics_hash}`,
         )
 
-        console.log(data.statistics_hash)
-
-        const statisticsData = await statisticsRes.json()
-
-        console.log(statisticsData)
-
-        console.log(Object.keys(statisticsData))
-
-        console.log(Object.values(statisticsData))
+        const statisticsData = (await statisticsRes.json()) as Statistics[]
 
         setMarchMadnessData(prevData => {
           return {
@@ -126,7 +119,7 @@ const Oracles = () => {
           mx="auto"
           variant="unstyled"
           orientation="vertical"
-          defaultIndex={1}
+          defaultIndex={0}
           flexDirection={{ base: 'column', lg: 'row' }}
         >
           <Box
@@ -170,12 +163,18 @@ const Oracles = () => {
           <Box minH="100vh" display={{ base: 'none', lg: 'block' }}>
             <Divider orientation="vertical" />
           </Box>
-          <Box flexGrow="1" py="8" pl={{ base: '0', md: '8' }}>
+
+          <Box
+            flexGrow="1"
+            py="8"
+            pl={{ base: '0', md: '8' }}
+            overflowX="scroll"
+          >
             <TabPanels>
               <TabPanel p="0">
                 <MarchMadnessInfoView />
               </TabPanel>
-              <TabPanel p="0" overflowX="hidden" maxW="full">
+              <TabPanel p="0">
                 {marchMadnessData?.tournament && (
                   <MarchMadnessBracketsView
                     tournament={marchMadnessData?.tournament}

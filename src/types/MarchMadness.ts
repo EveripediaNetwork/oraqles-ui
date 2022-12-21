@@ -1,21 +1,13 @@
+import { Statistics } from './Statistics'
+
 export type MarchMadnessFullData = {
   tournament: Tournament
-  statistics: Array<keyof StatisticsData>
+  statistics: Statistics[]
 }
 
 export interface MarchMadnessData {
   tournament: Tournament
   statistics_hash: string
-}
-
-export interface StatisticsData {
-  id: string
-  name: string
-  location: string
-  status: string
-  league: League
-  season: Season
-  rounds: Round[]
 }
 
 export interface Tournament {

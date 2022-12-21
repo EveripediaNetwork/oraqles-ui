@@ -54,3 +54,113 @@
 :root[data-theme='dark'] .prism-code .interpolation {
   color: #ff5caa !important;
 }
+
+:root[data-theme='light'] .prism-code .operator,
+:root[data-theme='light'] .prism-code .punctuation {
+  color: #4a5568 !important;
+}
+
+:root[data-theme='dark'] .prism-code .operator,
+:root[data-theme='dark'] .prism-code .punctuation {
+  color: #ffffff99 !important;
+}
+
+.event_bracket_style {
+  box-shadow: none !important;
+  border-radius: 0px !important;
+}
+
+:root[data-theme='light'] .event_bracket_style {
+  background: #edf2f7 !important;
+}
+
+:root[data-theme='dark'] .event_bracket_style {
+  background: #2d3748 !important;
+}
+
+.winner {
+  color: #38a169;
+}
+
+:root[data-theme='light'] .no-winner {
+  color: #1a202c;
+}
+
+:root[data-theme='dark'] .no-winner {
+  color: #ffffffeb;
+}
+
+:root[data-theme='light'] .event_bracket_seed {
+  border: 1px solid #e2e8f0;
+}
+
+:root[data-theme='dark'] .event_bracket_seed {
+  border: 1px solid #ffffff29;
+}
+
+:root[data-theme='light'] .jLBsOW:nth-child(even)::after {
+  border-color: #1a202c !important;
+}
+
+:root[data-theme='light'] .jLBsOW:nth-child(odd):not(:last-child)::after {
+  border-color: #1a202c !important;
+}
+
+:root[data-theme='dark'] .jLBsOW:nth-child(even)::after {
+  border-color: #ffffffeb !important;
+}
+
+:root[data-theme='light'] .jLBsOW:nth-child(even)::before {
+  border-color: #1a202c !important;
+}
+
+:root[data-theme='dark'] .jLBsOW:nth-child(even)::before {
+  border-color: #ffffffeb !important;
+}
+
+:root[data-theme='dark'] .jLBsOW:nth-child(odd):not(:last-child)::after {
+  border-color: #ffffffeb !important;
+}
+
+:root[data-theme='dark'] .react-json-view {
+  background: none !important;
+}
+
+:root[data-theme='light'] .string-value {
+  color: #38a169 !important;
+}
+
+:root[data-theme='light'] .data-type-label {
+  color: #3182ce !important;
+}
+
+:root[data-theme='light'] .object-key {
+  color: #4a5568 !important;
+}
+
+:root[data-theme='dark'] .string-value {
+  color: #38a169 !important;
+}
+
+:root[data-theme='dark'] .data-type-label {
+  color: #3182ce !important;
+}
+
+:root[data-theme='dark'] .object-key {
+  color: #ffffff99 !important;
+}
+
+.brackets {
+  -webkit-overflow-scrolling: touch;
+}
+
+:root[data-theme='dark'] .imHUME {
+  color: #ffffffa3;
+}
+
+@media only screen and (max-width: 767px) {
+  .imHUME {
+    text-align: left !important;
+    padding-left: 30px;
+  }
+}

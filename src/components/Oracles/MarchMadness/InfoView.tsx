@@ -46,14 +46,7 @@ const MarchMadnessInfoView = () => {
           </Link>
         </Text>
       </Box>
-      <Box
-        mt="8"
-        // overflow="auto"
-        // overflowY="scroll"
-        // h="500px"
-        borderWidth="1px"
-        borderRadius="lg"
-      >
+      <Box mt="8" borderWidth="1px" borderRadius="lg">
         <Highlight
           {...defaultProps}
           code={MarchMadnessCode.trim()}

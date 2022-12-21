@@ -1,8 +1,9 @@
-import { StatisticsData } from '@/types/MarchMadness'
+import { StatisticsData } from '@/types/Statistics'
 import { Box } from '@chakra-ui/react'
 import React from 'react'
 
-const TeamStatsViewer = ({ statistics }: Array<keyof StatisticsData>) => {
+const TeamStatsViewer = ({ statistics }: Record<string, StatisticsData>) => {
+  console.log(statistics)
   return <Box>&nbsp;</Box>
 }
 

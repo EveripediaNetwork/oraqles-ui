@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex } from '@chakra-ui/react'
+import { Box, Flex, Icon, Text } from '@chakra-ui/react'
 import {
   Bracket,
   Seed,
@@ -8,6 +8,7 @@ import {
   IRenderSeedProps,
 } from 'react-brackets'
 import { Bracketed, Game, Team, Tournament } from '@/types/MarchMadness'
+import { RiTrophyFill } from 'react-icons/ri'
 
 const regions = [
   'South Regional',
@@ -112,40 +113,76 @@ const SeedTeamWrapper = ({
 }) => {
   const isWinner = winner === team?.alias
   return (
-    <SeedTeam style={{ color: isWinner ? 'green' : 'white' }}>
-      <div style={{ fontWeight: isWinner ? '700' : '400' }}>
-        {isWinner ? '🏆' : ''}
+    <SeedTeam className={isWinner ? 'winner' : 'no-winner'}>
+      <Flex alignItems="center" fontWeight={500} gap="1" fontSize="xs">
         {team?.alias || 'NO TEAM '} {team?.seed && `(${team?.seed})`}
-      </div>
+        {isWinner ? <Icon as={RiTrophyFill} fill="yellow.500" /> : ''}
+      </Flex>
 
       <div style={{ display: 'inline' }}>{team_points}</div>
     </SeedTeam>
   )
 }
 
-const CustomSeed = ({ seed, breakpoint }: IRenderSeedProps) => (
-  <Seed mobileBreakpoint={breakpoint} style={{ fontSize: 14 }}>
-    <SeedItem>
-      <div>
-        {seed ? (
-          <>
-            <SeedTeamWrapper
-              winner={seed.winner}
-              team={seed.teams[0] as Team}
-              team_points={seed.game.home_points}
-            />
-            <SeedTeamWrapper
-              winner={seed.winner}
-              team={seed.teams[1] as Team}
-              team_points={seed.game.away_points}
-            />
-          </>
-        ) : null}
-      </div>
-    </SeedItem>
-    <div className="sc-gKsewC ha-DNGW">{seed.date}</div>
-  </Seed>
-)
+const CustomSeed = ({ seed, breakpoint }: IRenderSeedProps) => {
+  const eventDateObj = new Date(seed.date as string)
+
+  const EventDate = new Intl.DateTimeFormat('en-US', {
+    weekday: 'short',
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  }).format(eventDateObj)
+
+  const EventTime = eventDateObj.toLocaleTimeString('en-US', {
+    minute: '2-digit',
+    hour: '2-digit',
+  })
+
+  return (
+    <Seed mobileBreakpoint={breakpoint} style={{ fontSize: 14 }}>
+      <Box
+        border="1px solid"
+        borderColor="bracketsCardBorder"
+        borderRadius="6px"
+        w="full"
+        overflow="hidden"
+      >
+        <SeedItem className="event_bracket_style">
+          <div>
+            {seed ? (
+              <>
+                <SeedTeamWrapper
+                  winner={seed.winner}
+                  team={seed.teams[0] as Team}
+                  team_points={seed.game.home_points}
+                />
+                <SeedTeamWrapper
+                  winner={seed.winner}
+                  team={seed.teams[1] as Team}
+                  team_points={seed.game.away_points}
+                />
+              </>
+            ) : null}
+          </div>
+        </SeedItem>
+        <Flex
+          w="full"
+          justifyContent="space-between"
+          bgColor="bracketsCardBottomBg"
+          p="2.5"
+        >
+          <Text color="bracketsFooterText" fontSize="11px" fontWeight={500}>
+            {EventDate}
+          </Text>
+          <Text color="bracketsFooterText" fontSize="11px" fontWeight={500}>
+            {EventTime}
+          </Text>
+        </Flex>
+      </Box>
+    </Seed>
+  )
+}
 
 export const ReactBrackets = ({ tournament }: { tournament: Tournament }) => {
   const {
@@ -195,8 +232,26 @@ export const ReactBrackets = ({ tournament }: { tournament: Tournament }) => {
 
   return (
     <div>
-      <Bracket rounds={firstFourRound} renderSeedComponent={CustomSeed} />
-      <Bracket rounds={rounds} renderSeedComponent={CustomSeed} />
+      <Bracket
+        bracketClassName="brackets"
+        swipeableProps={{
+          enableMouseEvents: true,
+          animateHeight: true,
+          ignoreNativeScroll: true,
+        }}
+        rounds={firstFourRound}
+        renderSeedComponent={CustomSeed}
+      />
+      <Bracket
+        bracketClassName="brackets"
+        rounds={rounds}
+        renderSeedComponent={CustomSeed}
+        swipeableProps={{
+          enableMouseEvents: true,
+          animateHeight: true,
+          ignoreNativeScroll: true,
+        }}
+      />
     </div>
   )
 }
@@ -209,7 +264,7 @@ const MarchMadnessBracketsView = ({
   if (!tournament) return <></>
 
   return (
-    <Flex overflowX="scroll">
+    <Flex>
       <ReactBrackets tournament={tournament} />
     </Flex>
   )
