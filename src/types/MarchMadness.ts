@@ -1,6 +1,15 @@
+export type MarchMadnessFullData = {
+  tournament: Tournament
+  statistics: Array<keyof StatisticsData>
+}
+
 export interface MarchMadnessData {
   tournament: Tournament
   statistics_hash: string
+}
+
+export interface StatisticsData {
+  id: string
 }
 
 export interface Tournament {
