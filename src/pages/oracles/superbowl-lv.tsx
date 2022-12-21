@@ -88,7 +88,7 @@ const Oracles = () => {
           </VStack>
           <OraclesResultCard
             title="View on Ethereum Mainnet"
-            text=" View what this dashbaord might look like after race calls
+            text=" View what this dashboard might look like after race calls
             arrive."
             link={`https://etherscan.io/address/${config.superbowlContractAddress}`}
           />

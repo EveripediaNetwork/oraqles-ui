@@ -39,7 +39,7 @@ export const ORAQLES_ITEMS: OraclesItemType[] = [
     id: 'election',
     title: '2020 US Presidential Election',
     summary:
-      'The Associated Press teamed up with IQ.wiki formerly Everipedia to publish election race calls on the blockchain. This was the first time a US Presidential Election had been recorded on-chain.',
+      'The Associated Press teamed up with IQ.wiki to publish election race calls on the blockchain. This was the first time a US Presidential Election had been recorded on-chain.',
     image: '/images/oracles--4.png',
   },
 ]

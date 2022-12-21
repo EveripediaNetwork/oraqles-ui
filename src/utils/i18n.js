@@ -14,32 +14,8 @@ export const resources = {
       heroParagraph:
         'IQ.wiki OraQles formerly Everipedia OraQles is a service that allows verified first parties to bring real-world information on-chain.',
       updatesFooterHeading: 'Get updated with IQ.Wiki',
-      updatesFooterText:
-        'Join our mailing list to stay in the loop with our newest feature releases, NFT drops, and tips and tricks for navigating IQ.Wiki.',
-      subScribeFooterBttn: 'Suscribe Now',
-
-      communityFooterHeading: 'Community Hub',
-      iqWiki: 'IQ.Wiki',
-      visionFooterText:
-        'IQ.Wiki’s vision is to bring blockchain knowledge to the world and knowledge onto the blockchain.',
-      whatIQ: "What's IQ?",
-      iq: 'IQ',
-      bridges: 'Bridges',
-      staking: 'Staking',
-      bonds: 'Bonds',
-      aboutUs: 'About us',
-      careers: 'Careers',
-      brainies: 'brainies',
-      resources: 'Resources',
-      glossary: 'Glossary',
-      help: 'Help',
-      blog: 'Blog',
-      faq: 'FAQ',
-      policies: 'Policies',
-      guideLines: 'Guidelines',
-      privacyPolicy: 'Privacy Policy',
-      termsOfService: 'Terms of service',
-      copyRight: '© 2022 IQ.Wiki Powered By IQ',
+      footerHeading: 'Powered by',
+      copyRight: '©️2022 IQ.Wiki. All Rights Reserved.',
 
       //---End of Copies for Oraqles--
 
