@@ -10,6 +10,12 @@ export interface MarchMadnessData {
 
 export interface StatisticsData {
   id: string
+  name: string
+  location: string
+  status: string
+  league: League
+  season: Season
+  rounds: Round[]
 }
 
 export interface Tournament {

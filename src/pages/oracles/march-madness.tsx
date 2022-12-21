@@ -25,6 +25,7 @@ import { MarchMadnessSEO } from '@/components/SEO/Oracles'
 import MarchMadnessJsonViewer from '@/components/Oracles/MarchMadness/JsonViewer'
 import MarchMadnessBracketsView from '@/components/Oracles/MarchMadness/BracketsView'
 import { MarchMadnessData, MarchMadnessFullData } from '@/types/MarchMadness'
+import TeamStatsViewer from '@/components/Oracles/MarchMadness/TeamStatsViewer'
 
 const Oracles = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -48,9 +49,15 @@ const Oracles = () => {
           `https://gateway.pinata.cloud/ipfs/${data.statistics_hash}`,
         )
 
+        console.log(data.statistics_hash)
+
         const statisticsData = await statisticsRes.json()
 
         console.log(statisticsData)
+
+        console.log(Object.keys(statisticsData))
+
+        console.log(Object.values(statisticsData))
 
         setMarchMadnessData(prevData => {
           return {
@@ -163,7 +170,6 @@ const Oracles = () => {
           <Box minH="100vh" display={{ base: 'none', lg: 'block' }}>
             <Divider orientation="vertical" />
           </Box>
-
           <Box flexGrow="1" py="8" pl={{ base: '0', md: '8' }}>
             <TabPanels>
               <TabPanel p="0">
@@ -176,7 +182,11 @@ const Oracles = () => {
                   />
                 )}
               </TabPanel>
-              <TabPanel p="0">Team Stats</TabPanel>
+              <TabPanel p="0">
+                {marchMadnessData?.statistics && (
+                  <TeamStatsViewer statistics={marchMadnessData?.statistics} />
+                )}
+              </TabPanel>
               <TabPanel p="0">
                 <MarchMadnessJsonViewer />
               </TabPanel>
