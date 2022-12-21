@@ -122,6 +122,34 @@
   border-color: #ffffffeb !important;
 }
 
+:root[data-theme='dark'] .react-json-view {
+  background: none !important;
+}
+
+:root[data-theme='light'] .string-value {
+  color: #38a169 !important;
+}
+
+:root[data-theme='light'] .data-type-label {
+  color: #3182ce !important;
+}
+
+:root[data-theme='light'] .object-key {
+  color: #4a5568 !important;
+}
+
+:root[data-theme='dark'] .string-value {
+  color: #38a169 !important;
+}
+
+:root[data-theme='dark'] .data-type-label {
+  color: #3182ce !important;
+}
+
+:root[data-theme='dark'] .object-key {
+  color: #ffffff99 !important;
+}
+
 .brackets {
   -webkit-overflow-scrolling: touch;
 }
