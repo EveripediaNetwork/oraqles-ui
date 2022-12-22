@@ -15,6 +15,7 @@ import {
   Spinner,
 } from '@chakra-ui/react'
 import Link from 'next/link'
+
 import shortenAccount from '@/utils/shortenAccount'
 import config from '@/config'
 import { useMarchMadness } from '@/hooks/useMarchMadness'
@@ -163,7 +164,6 @@ const Oracles = () => {
           <Box minH="100vh" display={{ base: 'none', lg: 'block' }}>
             <Divider orientation="vertical" />
           </Box>
-
           <Box
             flexGrow="1"
             py="8"

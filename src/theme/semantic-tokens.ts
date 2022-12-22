@@ -232,5 +232,29 @@ export const semanticTokens: SemanticTokens = {
       default: 'gray.500',
       _dark: 'whiteAlpha.500',
     },
+    accordionIconToggle: {
+      default: 'brand.500',
+      _dark: 'pink.500',
+    },
+    accordionButtonColor: {
+      default: 'gray.50',
+      _dark: 'gray.700',
+    },
+    accordionBorder: {
+      default: 'gray.300',
+      _dark: 'whiteAlpha.400',
+    },
+    tableBorderColor: {
+      default: 'gray.300',
+      _dark: 'whiteAlpha.200',
+    },
+    tableHeaderTextColor: {
+      default: 'gray.900',
+      _dark: 'whiteAlpha.900',
+    },
+    tableHeaderBackground: {
+      default: 'gray.50',
+      _dark: 'gray.700',
+    },
   },
 }
