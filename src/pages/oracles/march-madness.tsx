@@ -51,7 +51,9 @@ const Oracles = () => {
           `https://gateway.pinata.cloud/ipfs/${data.statistics_hash}`,
         )
 
-        const statisticsData = (await statisticsRes.json()) as Statistics[]
+        const statisticsData = (await statisticsRes.json()) as Statistics
+
+        console.log(statisticsData)
 
         setMarchMadnessData(prevData => {
           return {

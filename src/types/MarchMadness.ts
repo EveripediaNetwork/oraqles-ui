@@ -2,7 +2,7 @@ import { Statistics } from './Statistics'
 
 export type MarchMadnessFullData = {
   tournament: Tournament
-  statistics: Statistics[]
+  statistics: Statistics
 }
 
 export interface MarchMadnessData {

@@ -32,11 +32,11 @@ export interface Team {
 }
 
 export interface OwnRecord {
-  total: OwnRecordTotal
+  total: Total
   average: OwnRecordAverage
 }
 
-export interface OwnRecordTotal {
+export interface Total {
   games_played: number
   minutes: number
   field_goals_made: number
@@ -105,47 +105,8 @@ export interface OwnRecordAverage {
 }
 
 export interface Opponents {
-  total: OpponentsTotal
+  total: Total
   average: OpponentsAverage
-}
-
-export interface OpponentsTotal {
-  games_played: number
-  minutes: number
-  field_goals_made: number
-  field_goals_att: number
-  field_goals_pct: number
-  two_points_made: number
-  two_points_att: number
-  two_points_pct: number
-  three_points_made: number
-  three_points_att: number
-  three_points_pct: number
-  blocked_att: number
-  free_throws_made: number
-  free_throws_att: number
-  free_throws_pct: number
-  offensive_rebounds: number
-  defensive_rebounds: number
-  rebounds: number
-  assists: number
-  turnovers: number
-  assists_turnover_ratio: number
-  steals: number
-  blocks: number
-  personal_fouls: number
-  tech_fouls: number
-  points: number
-  fast_break_pts: number
-  flagrant_fouls: number
-  points_off_turnovers: number
-  second_chance_pts: number
-  ejections: number
-  foulouts: number
-  points_in_paint: number
-  efficiency: number
-  true_shooting_att: number
-  true_shooting_pct: number
 }
 
 export interface OpponentsAverage {
@@ -185,44 +146,8 @@ export interface Player {
   position: string
   primary_position: string
   jersey_number: string
-  total: PlayerTotal
+  total: Total
   average: PlayerAverage
-}
-
-export interface PlayerTotal {
-  games_played: number
-  games_started: number
-  minutes: number
-  field_goals_made: number
-  field_goals_att: number
-  field_goals_pct: number
-  two_points_made: number
-  two_points_att: number
-  two_points_pct: number
-  three_points_made: number
-  three_points_att: number
-  three_points_pct: number
-  blocked_att: number
-  free_throws_made: number
-  free_throws_att: number
-  free_throws_pct: number
-  offensive_rebounds: number
-  defensive_rebounds: number
-  rebounds: number
-  assists: number
-  turnovers: number
-  assists_turnover_ratio: number
-  steals: number
-  blocks: number
-  personal_fouls: number
-  tech_fouls: number
-  points: number
-  flagrant_fouls: number
-  ejections: number
-  foulouts: number
-  true_shooting_att: number
-  true_shooting_pct: number
-  efficiency: number
 }
 
 export interface PlayerAverage {

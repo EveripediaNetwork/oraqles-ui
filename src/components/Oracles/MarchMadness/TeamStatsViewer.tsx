@@ -1,4 +1,10 @@
-import { Player, StatisticsData } from '@/types/Statistics'
+import {
+  Player,
+  StatisticsData,
+  PlayerAverage,
+  Total,
+  Statistics,
+} from '@/types/Statistics'
 import {
   Accordion,
   AccordionButton,
@@ -46,6 +52,10 @@ const TeamStatsTable = ({
 }: Pick<Player, 'full_name' | 'total' | 'average'>) => {
   const tableRows = new Set([...Object.keys(average), ...Object.keys(total)])
 
+  // console.log(tableRows)
+
+  // console.log(average)
+
   return (
     <Box
       maxW="calc(33.333% - 24px)"
@@ -82,7 +92,6 @@ const TeamStatsTable = ({
                   bgColor="tableHeaderBackground"
                   borderBottom="1px solid"
                   borderBottomColor="tableBorderColor"
-                  isNumeric={row.id !== 'stat'}
                 >
                   {row.label}
                 </Th>
@@ -90,27 +99,17 @@ const TeamStatsTable = ({
             </Tr>
           </Thead>
           <Tbody>
-            {[...tableRows].map((row: number) => {
+            {Array.from(tableRows).map(h => {
               return (
-                <Tr key={`stat-${row}`}>
+                <Tr key={`stat-${h}`}>
                   <Td color="oraclesTextColor" fontWeight={500} fontSize="12px">
-                    {row}
+                    {h}
                   </Td>
-                  <Td
-                    color="oraclesTextColor"
-                    fontWeight={500}
-                    fontSize="12px"
-                    isNumeric
-                  >
-                    {average[row]}
+                  <Td color="oraclesTextColor" fontWeight={500} fontSize="12px">
+                    {average[h as keyof PlayerAverage]}
                   </Td>
-                  <Td
-                    color="oraclesTextColor"
-                    fontWeight={500}
-                    fontSize="12px"
-                    isNumeric
-                  >
-                    {total[row]}
+                  <Td color="oraclesTextColor" fontWeight={500} fontSize="12px">
+                    {total[h as keyof Total]}
                   </Td>
                 </Tr>
               )
@@ -122,7 +121,7 @@ const TeamStatsTable = ({
   )
 }
 
-const TeamStatsViewer = ({ statistics }: Record<string, StatisticsData>) => {
+const TeamStatsViewer = ({ statistics }: { statistics: Statistics }) => {
   const MarchMadnessStats = Object.values(statistics) as StatisticsData[]
 
   return (
