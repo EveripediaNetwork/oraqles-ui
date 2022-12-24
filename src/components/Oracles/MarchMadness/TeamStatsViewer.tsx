@@ -52,10 +52,6 @@ const TeamStatsTable = ({
 }: Pick<Player, 'full_name' | 'total' | 'average'>) => {
   const tableRows = new Set([...Object.keys(average), ...Object.keys(total)])
 
-  // console.log(tableRows)
-
-  // console.log(average)
-
   return (
     <Box
       maxW="calc(33.333% - 24px)"
