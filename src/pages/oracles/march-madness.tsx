@@ -53,8 +53,6 @@ const Oracles = () => {
 
         const statisticsData = (await statisticsRes.json()) as Statistics
 
-        console.log(statisticsData)
-
         setMarchMadnessData(prevData => {
           return {
             ...prevData,
