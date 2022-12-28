@@ -63,7 +63,6 @@ const TeamStatsTable = ({
       border="1px solid"
       borderColor="tableBorderColor"
       pb={4}
-      minH="300px"
     >
       <Box
         py="2.5"
