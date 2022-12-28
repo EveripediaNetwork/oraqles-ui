@@ -12,6 +12,7 @@ import {
   Box,
   Flex,
   Icon,
+  SimpleGrid,
   Table,
   TableContainer,
   Tbody,
@@ -36,9 +37,6 @@ const TeamStatsTable = ({
   )
   return (
     <Box
-      maxW="calc(33.333% - 24px)"
-      flexBasis="calc(33.333% - 24px)"
-      flexShrink="0"
       flexGrow="1"
       borderRadius="12px"
       border="1px solid"
@@ -79,13 +77,33 @@ const TeamStatsTable = ({
             {Array.from(tableRows).map(h => {
               return (
                 <Tr key={`stat-${h}`}>
-                  <Td color="oraclesTextColor" fontWeight={500} fontSize="12px">
+                  <Td
+                    py="7px"
+                    px="6"
+                    color="oraclesTextColor"
+                    fontWeight={500}
+                    fontSize="12px"
+                  >
                     {h}
                   </Td>
-                  <Td color="oraclesTextColor" fontWeight={500} fontSize="12px">
+                  <Td
+                    py="7px"
+                    px="6"
+                    color="oraclesTextColor"
+                    w="64px"
+                    fontWeight={500}
+                    fontSize="12px"
+                  >
                     {average[h as keyof PlayerAverage]}
                   </Td>
-                  <Td color="oraclesTextColor" fontWeight={500} fontSize="12px">
+                  <Td
+                    py="7px"
+                    px="6"
+                    color="oraclesTextColor"
+                    w="64px"
+                    fontWeight={500}
+                    fontSize="12px"
+                  >
                     {total[h as keyof Total]}
                   </Td>
                 </Tr>
@@ -149,7 +167,11 @@ const TeamStatsViewer = ({ statistics }: { statistics: StatisticsData[] }) => {
                 overflowX="scroll"
               >
                 {isExpanded && (
-                  <Flex gap="6" overflowX="scroll" flexWrap="wrap">
+                  <SimpleGrid
+                    gap="6"
+                    overflowX="scroll"
+                    templateColumns="repeat(3, 1fr)"
+                  >
                     {stat.players.map((player, j) => (
                       <TeamStatsTable
                         key={j}
@@ -158,7 +180,7 @@ const TeamStatsViewer = ({ statistics }: { statistics: StatisticsData[] }) => {
                         total={player.total}
                       />
                     ))}
-                  </Flex>
+                  </SimpleGrid>
                 )}
               </AccordionPanel>
             </>
