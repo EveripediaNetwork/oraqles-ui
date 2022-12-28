@@ -50,7 +50,9 @@ const MarchMadnessPressViewCard = (props: PressViewCardProps) => {
         >
           {text}
         </chakra.div>
-        <chakra.div
+        <Link
+          href={`https://${title}`}
+          target="_blank"
           fontSize="xs"
           borderRadius="none"
           roundedBottom="lg"
@@ -66,7 +68,7 @@ const MarchMadnessPressViewCard = (props: PressViewCardProps) => {
           color="heroBackground"
         >
           {title}
-        </chakra.div>
+        </Link>
       </VStack>
     </Flex>
   )
