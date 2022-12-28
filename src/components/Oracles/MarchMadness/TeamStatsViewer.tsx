@@ -76,7 +76,7 @@ const TeamStatsTable = ({
         </Text>
       </Box>
       <TableContainer w="full">
-         <Table w="full" variant="simple">
+        <Table w="full" variant="simple">
           <Thead>
             <Tr>
               {TableRowData.map(row => (
@@ -94,7 +94,7 @@ const TeamStatsTable = ({
                 </Th>
               ))}
             </Tr>
-          </Thead> 
+          </Thead>
           <Tbody>
             {Array.from(tableRows).map(h => {
               return (
@@ -111,10 +111,9 @@ const TeamStatsTable = ({
                 </Tr>
               )
             })}
-          </Tbody> 
+          </Tbody>
         </Table>
-      </TableContainer> 
-
+      </TableContainer>
     </Box>
   )
 }

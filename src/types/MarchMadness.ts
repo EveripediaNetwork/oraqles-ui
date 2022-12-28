@@ -1,4 +1,4 @@
-import { Statistics, StatisticsData } from './Statistics'
+import { StatisticsData } from './Statistics'
 
 export type MarchMadnessFullData = {
   tournament: Tournament
