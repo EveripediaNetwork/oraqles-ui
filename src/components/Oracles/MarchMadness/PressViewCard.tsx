@@ -1,15 +1,33 @@
-import React, { useState } from 'react'
-import { Box, Flex, Text, chakra, Image, VStack, Link } from '@chakra-ui/react'
+import React, { useEffect, useState } from 'react'
+import {
+  Box,
+  Flex,
+  Text,
+  chakra,
+  Image,
+  VStack,
+  Link,
+  useColorModeValue,
+} from '@chakra-ui/react'
 import { PressJsonprops } from '@/data/MarchMadnessPressData'
-
-const BROKEN_IMAGE = '/images/broken.png'
 
 type PressViewCardProps = PressJsonprops
 
 const MarchMadnessPressViewCard = (props: PressViewCardProps) => {
   const { image, link, text, title } = props
 
-  const [src, setSrc] = useState(image || BROKEN_IMAGE)
+  const [error, setError] = useState<boolean>(false)
+
+  const brokenImageSrc = useColorModeValue(
+    'broken-image-light.png',
+    'broken-image-dark.png',
+  )
+
+  const [src, setSrc] = useState(image || brokenImageSrc)
+
+  useEffect(() => {
+    if (error) setSrc(`/images/${brokenImageSrc}`)
+  }, [error, brokenImageSrc])
 
   return (
     <Flex
@@ -24,7 +42,9 @@ const MarchMadnessPressViewCard = (props: PressViewCardProps) => {
       <Box>
         <Image
           src={src}
-          onError={() => setSrc(BROKEN_IMAGE)}
+          onError={() => {
+            setError(true)
+          }}
           display="block"
           w="full"
           h="200px"
