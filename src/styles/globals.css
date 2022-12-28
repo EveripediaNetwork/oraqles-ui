@@ -9,6 +9,12 @@
 
 :root[data-theme='light'] .prism-code {
   background-color: #f7fafc !important;
+  border: 1px solid #cbd5e0;
+}
+
+:root[data-theme='dark'] .prism-code {
+  background-color: #2d3748 !important;
+  border: 1px solid #2d3748;
 }
 
 :root[data-theme='light'] .prism-code .keyword {
@@ -29,10 +35,6 @@
 
 :root[data-theme='light'] .prism-code .plain {
   color: #4a5568 !important;
-}
-
-:root[data-theme='dark'] .prism-code {
-  background-color: #2d3748 !important;
 }
 
 :root[data-theme='dark'] .prism-code .keyword {

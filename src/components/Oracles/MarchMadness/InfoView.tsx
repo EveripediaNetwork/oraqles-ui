@@ -46,7 +46,7 @@ const MarchMadnessInfoView = () => {
           </Link>
         </Text>
       </Box>
-      <Box mt="8" borderWidth="1px" borderRadius="lg">
+      <Box mt="8">
         <Highlight
           {...defaultProps}
           code={MarchMadnessCode.trim()}
