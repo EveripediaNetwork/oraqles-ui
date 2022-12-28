@@ -1,9 +1,32 @@
 import React from 'react'
-import { SimpleGrid } from '@chakra-ui/react'
+import { Box, SimpleGrid } from '@chakra-ui/react'
 import { PRESS_JSON } from '@/data/MarchMadnessPressData'
 import MarchMadnessPressViewCard from './PressViewCard'
 
+const chunkSize = 5
+
 const MarchMadnessPressView = () => {
+  const row = Math.round(PRESS_JSON.length / 5)
+
+  const content = []
+
+  for (let i = 0; i < row; i += 1) {
+    content.push(
+      <Box>
+        {PRESS_JSON.slice(i, i + chunkSize).map((press, j) => (
+          <MarchMadnessPressViewCard
+            isGrid={i === 2}
+            key={j}
+            image={press.image}
+            link={press.link}
+            title={press.title}
+            text={press.text}
+          />
+        ))}
+      </Box>,
+    )
+  }
+
   return (
     <SimpleGrid
       templateColumns={{
@@ -13,15 +36,7 @@ const MarchMadnessPressView = () => {
       }}
       gap="5"
     >
-      {PRESS_JSON.map((press, i) => (
-        <MarchMadnessPressViewCard
-          key={i}
-          image={press.image}
-          link={press.link}
-          title={press.title}
-          text={press.text}
-        />
-      ))}
+      {content}
     </SimpleGrid>
   )
 }

@@ -11,10 +11,12 @@ import {
 } from '@chakra-ui/react'
 import { PressJsonprops } from '@/data/MarchMadnessPressData'
 
-type PressViewCardProps = PressJsonprops
+type PressViewCardProps = PressJsonprops & {
+  isGrid: boolean
+}
 
 const MarchMadnessPressViewCard = (props: PressViewCardProps) => {
-  const { image, link, text, title } = props
+  const { image, link, text, title, isGrid } = props
 
   const [error, setError] = useState<boolean>(false)
 
@@ -31,9 +33,10 @@ const MarchMadnessPressViewCard = (props: PressViewCardProps) => {
 
   return (
     <Flex
+      mb="6"
       direction="column"
       border="1px solid"
-      minH="350px"
+      minH={isGrid ? '390px' : '350px'}
       justifyContent="space-between"
       borderColor="oraclesPressViewCardBorder"
       cursor="pointer"
