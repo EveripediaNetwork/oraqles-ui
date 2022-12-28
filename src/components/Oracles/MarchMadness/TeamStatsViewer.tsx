@@ -21,28 +21,9 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react'
+import { TableRowData } from '@/data/MarchMadnessTableData'
 import React, { memo, useMemo } from 'react'
 import { HiOutlinePlusCircle, HiOutlineMinusCircle } from 'react-icons/hi'
-
-type TableRowDataProps = {
-  id: string
-  label: string
-}
-
-const TableRowData: TableRowDataProps[] = [
-  {
-    id: 'stat',
-    label: 'Stat',
-  },
-  {
-    id: 'average',
-    label: 'Average',
-  },
-  {
-    id: 'total',
-    label: 'Total',
-  },
-]
 
 const TeamStatsTable = ({
   full_name,
