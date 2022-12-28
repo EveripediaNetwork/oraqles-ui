@@ -1,8 +1,8 @@
-import { Statistics } from './Statistics'
+import { Statistics, StatisticsData } from './Statistics'
 
 export type MarchMadnessFullData = {
   tournament: Tournament
-  statistics: Statistics
+  statistics: StatisticsData[]
 }
 
 export interface MarchMadnessData {

@@ -27,7 +27,7 @@ import MarchMadnessJsonViewer from '@/components/Oracles/MarchMadness/JsonViewer
 import MarchMadnessBracketsView from '@/components/Oracles/MarchMadness/BracketsView'
 import { MarchMadnessData, MarchMadnessFullData } from '@/types/MarchMadness'
 import TeamStatsViewer from '@/components/Oracles/MarchMadness/TeamStatsViewer'
-import { Statistics } from '@/types/Statistics'
+import { Statistics, StatisticsData } from '@/types/Statistics'
 
 const Oracles = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -52,12 +52,12 @@ const Oracles = () => {
         )
 
         const statisticsData = (await statisticsRes.json()) as Statistics
-
+        const statistics = Object.values(statisticsData) as StatisticsData[]
         setMarchMadnessData(prevData => {
           return {
             ...prevData,
             tournament: data.tournament,
-            statistics: statisticsData,
+            statistics,
           }
         })
       } catch (err) {
@@ -122,6 +122,7 @@ const Oracles = () => {
           orientation="vertical"
           defaultIndex={0}
           flexDirection={{ base: 'column', lg: 'row' }}
+          isLazy
         >
           <Box
             pt="8"

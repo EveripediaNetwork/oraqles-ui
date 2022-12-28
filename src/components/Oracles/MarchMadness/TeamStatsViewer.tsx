@@ -3,7 +3,6 @@ import {
   StatisticsData,
   PlayerAverage,
   Total,
-  Statistics,
 } from '@/types/Statistics'
 import {
   Accordion,
@@ -22,7 +21,7 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react'
-import React from 'react'
+import React, { memo, useMemo } from 'react'
 import { HiOutlinePlusCircle, HiOutlineMinusCircle } from 'react-icons/hi'
 
 type TableRowDataProps = {
@@ -50,8 +49,10 @@ const TeamStatsTable = ({
   average,
   total,
 }: Pick<Player, 'full_name' | 'total' | 'average'>) => {
-  const tableRows = new Set([...Object.keys(average), ...Object.keys(total)])
-
+  const tableRows = useMemo(
+    () => new Set([...Object.keys(average), ...Object.keys(total)]),
+    [],
+  )
   return (
     <Box
       maxW="calc(33.333% - 24px)"
@@ -75,7 +76,7 @@ const TeamStatsTable = ({
         </Text>
       </Box>
       <TableContainer w="full">
-        <Table w="full" variant="simple">
+         <Table w="full" variant="simple">
           <Thead>
             <Tr>
               {TableRowData.map(row => (
@@ -93,7 +94,7 @@ const TeamStatsTable = ({
                 </Th>
               ))}
             </Tr>
-          </Thead>
+          </Thead> 
           <Tbody>
             {Array.from(tableRows).map(h => {
               return (
@@ -110,20 +111,19 @@ const TeamStatsTable = ({
                 </Tr>
               )
             })}
-          </Tbody>
+          </Tbody> 
         </Table>
-      </TableContainer>
+      </TableContainer> 
+
     </Box>
   )
 }
 
-const TeamStatsViewer = ({ statistics }: { statistics: Statistics }) => {
-  const MarchMadnessStats = Object.values(statistics) as StatisticsData[]
-
+const TeamStatsViewer = ({ statistics }: { statistics: StatisticsData[] }) => {
   return (
     <Accordion allowToggle>
-      {MarchMadnessStats.map((stat, i) => (
-        <AccordionItem key={stat.id + i} mb={2} border="none">
+      {statistics.map((stat, i) => (
+        <AccordionItem key={i} mb={2} border="none">
           {({ isExpanded }) => (
             <>
               <AccordionButton
@@ -169,16 +169,18 @@ const TeamStatsViewer = ({ statistics }: { statistics: Statistics }) => {
                 borderBottomRadius="6px"
                 overflowX="scroll"
               >
-                <Flex gap="6" overflowX="scroll" flexWrap="wrap">
-                  {stat.players.map((player, j) => (
-                    <TeamStatsTable
-                      key={player.id + j}
-                      full_name={player.full_name}
-                      average={player.average}
-                      total={player.total}
-                    />
-                  ))}
-                </Flex>
+                {isExpanded && (
+                  <Flex gap="6" overflowX="scroll" flexWrap="wrap">
+                    {stat.players.map((player, j) => (
+                      <TeamStatsTable
+                        key={j}
+                        full_name={player.full_name}
+                        average={player.average}
+                        total={player.total}
+                      />
+                    ))}
+                  </Flex>
+                )}
               </AccordionPanel>
             </>
           )}
@@ -188,4 +190,4 @@ const TeamStatsViewer = ({ statistics }: { statistics: Statistics }) => {
   )
 }
 
-export default TeamStatsViewer
+export default memo(TeamStatsViewer)
