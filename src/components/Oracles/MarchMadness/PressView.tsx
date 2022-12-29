@@ -10,7 +10,13 @@ const MarchMadnessPressView = () => {
 
   for (let i = 0; i < PRESS_JSON.length; i += chunkSize) {
     const chunk = (
-      <Box>
+      <Box
+        key={i}
+        display={content[1] && { md: 'grid', lg: 'block' }}
+        gridTemplateColumns={content[1] && 'repeat(2,1fr)'}
+        gridColumn={content[1] && { md: 'span 2', lg: 'initial' }}
+        columnGap={content[1] && { md: '6', lg: '0' }}
+      >
         {PRESS_JSON.slice(i, i + chunkSize).map((press, j) => (
           <MarchMadnessPressViewCard
             isGrid={i === 2}
@@ -26,6 +32,8 @@ const MarchMadnessPressView = () => {
     content.push(chunk)
   }
 
+  console.log(content)
+
   return (
     <SimpleGrid
       templateColumns={{
@@ -34,6 +42,7 @@ const MarchMadnessPressView = () => {
         xl: 'repeat(3, 1fr)',
       }}
       gap={{ base: 0, md: '5' }}
+      rowGap={{ md: '0', lg: '5' }}
     >
       {content}
     </SimpleGrid>
