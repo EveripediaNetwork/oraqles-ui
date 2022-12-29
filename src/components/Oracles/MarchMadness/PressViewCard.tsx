@@ -1,21 +1,42 @@
-import React, { useState } from 'react'
-import { Box, Flex, Text, chakra, Image, VStack, Link } from '@chakra-ui/react'
+import React, { useEffect, useState } from 'react'
+import {
+  Box,
+  Flex,
+  Text,
+  chakra,
+  Image,
+  VStack,
+  Link,
+  useColorModeValue,
+} from '@chakra-ui/react'
 import { PressJsonprops } from '@/data/MarchMadnessPressData'
 
-const BROKEN_IMAGE = '/images/broken.png'
-
-type PressViewCardProps = PressJsonprops
+type PressViewCardProps = PressJsonprops & {
+  isGrid: boolean
+}
 
 const MarchMadnessPressViewCard = (props: PressViewCardProps) => {
-  const { image, link, text, title } = props
+  const { image, link, text, title, isGrid } = props
 
-  const [src, setSrc] = useState(image || BROKEN_IMAGE)
+  const [error, setError] = useState<boolean>(false)
+
+  const brokenImageSrc = useColorModeValue(
+    'broken-image-light.png',
+    'broken-image-dark.png',
+  )
+
+  const [src, setSrc] = useState(image || brokenImageSrc)
+
+  useEffect(() => {
+    if (error) setSrc(`/images/${brokenImageSrc}`)
+  }, [error, brokenImageSrc])
 
   return (
     <Flex
+      mb="6"
       direction="column"
       border="1px solid"
-      minH="350px"
+      minH={isGrid ? '390px' : '350px'}
       justifyContent="space-between"
       borderColor="oraclesPressViewCardBorder"
       cursor="pointer"
@@ -24,7 +45,9 @@ const MarchMadnessPressViewCard = (props: PressViewCardProps) => {
       <Box>
         <Image
           src={src}
-          onError={() => setSrc(BROKEN_IMAGE)}
+          onError={() => {
+            setError(true)
+          }}
           display="block"
           w="full"
           h="200px"
@@ -50,7 +73,9 @@ const MarchMadnessPressViewCard = (props: PressViewCardProps) => {
         >
           {text}
         </chakra.div>
-        <chakra.div
+        <Link
+          href={`https://${title}`}
+          target="_blank"
           fontSize="xs"
           borderRadius="none"
           roundedBottom="lg"
@@ -66,7 +91,7 @@ const MarchMadnessPressViewCard = (props: PressViewCardProps) => {
           color="heroBackground"
         >
           {title}
-        </chakra.div>
+        </Link>
       </VStack>
     </Flex>
   )

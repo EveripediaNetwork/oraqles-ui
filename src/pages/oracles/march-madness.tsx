@@ -15,6 +15,7 @@ import {
   Spinner,
 } from '@chakra-ui/react'
 import Link from 'next/link'
+
 import shortenAccount from '@/utils/shortenAccount'
 import config from '@/config'
 import { useMarchMadness } from '@/hooks/useMarchMadness'
@@ -24,7 +25,9 @@ import MarchMadnessInfoView from '@/components/Oracles/MarchMadness/InfoView'
 import { MarchMadnessSEO } from '@/components/SEO/Oracles'
 import MarchMadnessJsonViewer from '@/components/Oracles/MarchMadness/JsonViewer'
 import MarchMadnessBracketsView from '@/components/Oracles/MarchMadness/BracketsView'
-import { MarchMadnessData } from '@/types/MarchMadness'
+import { MarchMadnessData, MarchMadnessFullData } from '@/types/MarchMadness'
+import TeamStatsViewer from '@/components/Oracles/MarchMadness/TeamStatsViewer'
+import { Statistics, StatisticsData } from '@/types/Statistics'
 
 const Oracles = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -33,7 +36,8 @@ const Oracles = () => {
     'oracles-background-dark.png',
   )
   const { marchMadnessIpfsHash } = useMarchMadness()
-  const [marchMadnessData, setMarchMadnessData] = useState<MarchMadnessData>()
+  const [marchMadnessData, setMarchMadnessData] =
+    useState<MarchMadnessFullData>()
 
   useEffect(() => {
     const fetchMarchMadnessIpfsData = async () => {
@@ -43,11 +47,17 @@ const Oracles = () => {
         )
         const data = (await response.json()) as MarchMadnessData
 
+        const statisticsRes = await fetch(
+          `https://gateway.pinata.cloud/ipfs/${data.statistics_hash}`,
+        )
+
+        const statisticsData = (await statisticsRes.json()) as Statistics
+        const statistics = Object.values(statisticsData) as StatisticsData[]
         setMarchMadnessData(prevData => {
           return {
             ...prevData,
             tournament: data.tournament,
-            statistics_hash: data.statistics_hash,
+            statistics,
           }
         })
       } catch (err) {
@@ -112,6 +122,7 @@ const Oracles = () => {
           orientation="vertical"
           defaultIndex={0}
           flexDirection={{ base: 'column', lg: 'row' }}
+          isLazy
         >
           <Box
             pt="8"
@@ -154,7 +165,6 @@ const Oracles = () => {
           <Box minH="100vh" display={{ base: 'none', lg: 'block' }}>
             <Divider orientation="vertical" />
           </Box>
-
           <Box
             flexGrow="1"
             py="8"
@@ -170,6 +180,11 @@ const Oracles = () => {
                   <MarchMadnessBracketsView
                     tournament={marchMadnessData?.tournament}
                   />
+                )}
+              </TabPanel>
+              <TabPanel p="0">
+                {marchMadnessData?.statistics && (
+                  <TeamStatsViewer statistics={marchMadnessData?.statistics} />
                 )}
               </TabPanel>
               <TabPanel p="0">

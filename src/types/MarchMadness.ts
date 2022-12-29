@@ -1,3 +1,10 @@
+import { StatisticsData } from './Statistics'
+
+export type MarchMadnessFullData = {
+  tournament: Tournament
+  statistics: StatisticsData[]
+}
+
 export interface MarchMadnessData {
   tournament: Tournament
   statistics_hash: string
