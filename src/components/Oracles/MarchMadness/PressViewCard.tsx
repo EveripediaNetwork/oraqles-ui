@@ -18,8 +18,6 @@ type PressViewCardProps = PressJsonprops & {
 const MarchMadnessPressViewCard = (props: PressViewCardProps) => {
   const { image, link, text, title, isGrid } = props
 
-  console.log(isGrid)
-
   const [error, setError] = useState<boolean>(false)
 
   const brokenImageSrc = useColorModeValue(
