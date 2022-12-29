@@ -6,12 +6,10 @@ import MarchMadnessPressViewCard from './PressViewCard'
 const chunkSize = 5
 
 const MarchMadnessPressView = () => {
-  const row = Math.round(PRESS_JSON.length / 5)
-
   const content = []
 
-  for (let i = 0; i < row; i += 1) {
-    content.push(
+  for (let i = 0; i < PRESS_JSON.length; i += chunkSize) {
+    const chunk = (
       <Box>
         {PRESS_JSON.slice(i, i + chunkSize).map((press, j) => (
           <MarchMadnessPressViewCard
@@ -23,8 +21,9 @@ const MarchMadnessPressView = () => {
             text={press.text}
           />
         ))}
-      </Box>,
+      </Box>
     )
+    content.push(chunk)
   }
 
   return (
