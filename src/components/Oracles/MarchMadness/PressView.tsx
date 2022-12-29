@@ -33,7 +33,7 @@ const MarchMadnessPressView = () => {
         md: 'repeat(2, 1fr)',
         xl: 'repeat(3, 1fr)',
       }}
-      gap="5"
+      gap={{ base: 0, md: '5' }}
     >
       {content}
     </SimpleGrid>
