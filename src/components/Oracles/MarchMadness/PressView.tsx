@@ -32,8 +32,6 @@ const MarchMadnessPressView = () => {
     content.push(chunk)
   }
 
-  console.log(content)
-
   return (
     <SimpleGrid
       templateColumns={{
