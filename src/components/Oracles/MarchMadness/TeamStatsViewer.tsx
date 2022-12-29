@@ -33,7 +33,7 @@ const TeamStatsTable = ({
 }: Pick<Player, 'full_name' | 'total' | 'average'>) => {
   const tableRows = useMemo(
     () => new Set([...Object.keys(average), ...Object.keys(total)]),
-    [],
+    [average, total],
   )
   return (
     <Box
